@@ -12,7 +12,7 @@ Install via modman or copy the files into your magento installation.
 This extension writes a lot of data into the database and we exclude only a few core classes. If you have many writes in the backend, please have a look into this to avoid a full hard disk!
 
 ## Core Team
-* Tobias Zander (@airbone)
+* Tobias Zander (@airbone42)
 * Ralf Siepker (@mageconsult)
 * Carmen Bremen (@neoshops)
 * Fabian Blechschmidt (@Schrank)
