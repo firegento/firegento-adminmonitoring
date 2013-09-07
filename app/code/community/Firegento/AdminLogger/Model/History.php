@@ -20,7 +20,7 @@ class Firegento_AdminLogger_Model_History extends Mage_Core_Model_Abstract
      * @return stdObject
      */
     public function getDecodedContentDiff() {
-        return json_decode($this->getContentDiff());
+        return json_decode($this->getContentDiff(), true);
     }
 
 }

@@ -23,7 +23,7 @@ class Firegento_AdminLogger_Adminhtml_HistoryController extends Mage_Adminhtml_C
     public function revertAction() {
         $history = Mage::getModel('firegento_adminlogger/history')->load($this->getRequest()->getParam('id'));
         $model = $history->getOriginalModel();
-        $model->addData(json_decode($history->getContentDiff(), true));
+        $model->addData($history->getDecodedContentDiff());
         $model->save();
         Mage::getSingleton('core/session')->addSuccess(
             $this->__(
