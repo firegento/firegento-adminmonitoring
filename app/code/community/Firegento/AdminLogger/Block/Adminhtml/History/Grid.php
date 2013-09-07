@@ -15,6 +15,18 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $this->setSaveParametersInSession(true);
     }
 
+    /**
+     * @param mixed $value
+     * @param string $key
+     * @return string
+     */
+    private function formatCellContent ($key, $value) {
+        if (is_array($value)) {
+            $value = print_r($value, true);
+        }
+        return  $key . ': ' . $value . '<br />';
+    }
+
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('firegento_adminlogger/history')->getCollection();
@@ -141,10 +153,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
             foreach ($oldContent as $key => $value ) {
 
                 if (array_key_exists($key, $newContent)) {
-                    if (is_array($newContent[$key])) {
-                        $newContent[$key] = print_r($newContent[$key], true);
-                    }
-                    $cell .= $key.': ' . $newContent[$key] . '<br />';
+                    $cell .= $this->formatCellContent($key, $newContent[$key]);
                 }
             }
         }
@@ -161,10 +170,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
 
         if (is_array($oldContent)) {
            foreach ($oldContent as $key => $value ) {
-               if (is_array($value)) {
-                   $value = print_r($value, true);
-               }
-               $cell .= $key.': ' . $value . '<br />';
+               $cell .= $this->formatCellContent($key, $value);
            }
         }
         return $cell;
