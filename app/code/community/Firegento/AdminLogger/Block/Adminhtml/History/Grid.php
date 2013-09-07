@@ -102,6 +102,13 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
             'index' => 'user_agent',
         ));
 
+        $this->addColumn('revert', array(
+            'header'    => Mage::helper('customer')->__('Revert'),
+            'width'     => 10,
+            'sortable'  => false,
+            'filter'    => false,
+            'renderer'  => 'firegento_adminlogger/adminhtml_history_grid_revert',
+        ));
 
         parent::_prepareColumns();
         return $this;
