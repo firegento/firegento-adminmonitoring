@@ -13,9 +13,9 @@
             <firegento_adminlogger_resource>
                 <class>Firegento_AdminLogger_Model_Resource</class>
                 <entities>
-                    <firegento_adminlogger>
-                        <table>log_firegento_adminlogger</table>
-                    </firegento_adminlogger>
+                    <history>
+                        <table>firegento_adminlogger_history</table>
+                    </history>
                 </entities>
             </firegento_adminlogger_resource>
         </models>

@@ -3,23 +3,9 @@
 
 $installer = $this;
 
-/*
-data
-scope
-scope_id
-user_id
-user_name
-IP
-Datum-Uhrzeit
-User Agent
-action
-object_type
- */
-
-
-$logTable = $installer->getConnection()->newTable($installer->getTable('firegento_adminlogger/firegento_adminlogger'))
+$logTable = $installer->getConnection()->newTable($installer->getTable('firegento_adminlogger/history'))
     ->addColumn(
-        'log_id',
+        'history_id',
         Varien_Db_Ddl_Table::TYPE_INTEGER,
         null,
         array(
