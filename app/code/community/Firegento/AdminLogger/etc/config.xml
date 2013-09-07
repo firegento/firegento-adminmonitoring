@@ -33,4 +33,16 @@
             </firegento_adminlogger>
         </helpers>
     </global>
+    <adminhtml>
+        <events>
+            <model_save_after>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer</class>
+                        <method>modelSaveAfter</method>
+                    </firegento_adminlogger>
+                </observers>
+            </model_save_after>
+        </events>
+    </adminhtml>
 </config>
