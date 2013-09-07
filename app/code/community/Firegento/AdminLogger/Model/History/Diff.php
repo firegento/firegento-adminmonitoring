@@ -28,9 +28,26 @@ class Firegento_AdminLogger_Model_History_Diff {
      * @var Firegento_AdminLogger_Model_History
      */
     private $previousHistory;
+
+    /**
+     * @param Firegento_AdminLogger_Model_History $history
+     * @return array
+     */
+    public function getObjectDiff (Firegento_AdminLogger_Model_History $history) {
+        $dataOld = json_decode($history->getContent());
+        $dataNew = $this->dataModel->getContent();
+        $dataDiff = array();
+        foreach ($dataOld as $key => $oldValue) {
+            if (json_encode($oldValue) != json_encode($dataNew[$key])) {
+                $dataDiff[$key] = $oldValue;
+            }
+        }
+        return $dataDiff;
+    }
+
     /**
      * @param Mage_Core_Model_Abstract $savedModel
-     * @return bool|Varien_Object
+     * @return bool|Firegento_AdminLogger_Model_History
      */
     private function getPreviousHistory() {
         if (!isset($this->previousHistory)) {
@@ -55,25 +72,8 @@ class Firegento_AdminLogger_Model_History_Diff {
         $history = $this->getPreviousHistory();
 
         if ($history) {
-            $dataOld = json_decode($history->getContent(), true);
-            $dataNew = $this->dataModel->getContent();
-            $dataDiff = array();
-            foreach ($dataOld as $key => $oldValue) {
-                if (json_encode($oldValue) != json_encode($dataNew[$key])) {
-                    $dataDiff[$key] = $oldValue;
-                }
-            }
+            $dataDiff = $this->getObjectDiff($history);
             return json_encode($dataDiff);
-/*            return json_encode(
-                array_udiff(
-                    $dataOld,
-                    $dataNew,
-                    function ($a, $b) {
-                        // compare objects serialized
-                        return (json_encode($a) != json_encode($b));
-                    }
-                )
-            );*/
         }
         return '';
     }
