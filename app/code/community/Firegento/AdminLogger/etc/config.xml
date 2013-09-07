@@ -1,7 +1,7 @@
 <config>
     <modules>
         <Firegento_AdminLogger>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Firegento_AdminLogger>
     </modules>
     <default>
