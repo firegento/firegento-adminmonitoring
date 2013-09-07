@@ -137,21 +137,26 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         return false;
     }
 
+    /**
+     * @param string $content
+     * @return mixed
+     */
+    private function decodeContent($content) {
+        $content = html_entity_decode($content);
+        return json_decode($content, true);
+    }
 
-    public function showNewContent($newContent, $row)
-    {
+
+    public function showNewContent($newContent, $row) {
         $cell = '';
 
         $oldContent = $row->getData('content_diff');
-        $oldContent = html_entity_decode($oldContent);
-        $oldContent = json_decode($oldContent, true);
+        $oldContent = $this->decodeContent($oldContent);
 
-        $newContent = html_entity_decode($newContent);
-        $newContent = json_decode($newContent, true);
+        $newContent = $this->decodeContent($newContent);
 
         if (is_array($oldContent) && is_array($newContent)) {
             foreach ($oldContent as $key => $value ) {
-
                 if (array_key_exists($key, $newContent)) {
                     $cell .= $this->formatCellContent($key, $newContent[$key]);
                 }
@@ -162,11 +167,9 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
     }
 
 
-    public function showOldContent($oldContent, $row)
-    {
+    public function showOldContent($oldContent) {
         $cell = '';
-        $oldContent = html_entity_decode($oldContent);
-        $oldContent = json_decode($oldContent, true);
+        $oldContent = $this->decodeContent($oldContent);
 
         if (is_array($oldContent)) {
            foreach ($oldContent as $key => $value ) {
