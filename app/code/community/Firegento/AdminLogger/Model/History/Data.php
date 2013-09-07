@@ -23,9 +23,29 @@ class Firegento_AdminLogger_Model_History_Data {
      * @return array
      */
     public function getContent() {
-        $data = $this->savedModel->getData();
+        // have to re-load the model as based on database datatypes the format of values changes
+        $className = get_class($this->savedModel);
+        $model = new $className;
+        $model->load($this->savedModel->getId());
+        return $this->filterObligatoryFields($model->getData());
+   }
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    protected function filterObligatoryFields($data) {
+        // TODO make configurable in config.xml
         unset($data['updated_at']);
         return $data;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOrigContent() {
+        $data = $this->savedModel->getOrigData();
+        return $this->filterObligatoryFields($data);
     }
 
     /**

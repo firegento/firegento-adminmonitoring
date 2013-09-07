@@ -161,7 +161,7 @@ class Firegento_AdminLogger_Model_Observer {
         ) {
             $this->dataModel = Mage::getModel('firegento_adminlogger/history_data', $savedModel);
             $this->diffModel = Mage::getModel('firegento_adminlogger/history_diff', $this->dataModel);
-            if ($this->isUpdate($savedModel) AND $this->diffModel->hasChanged()) {
+            if (!$this->isUpdate($savedModel) OR $this->diffModel->hasChanged()) {
                 $this->createHistoryForModelAction($savedModel);
             }
         }

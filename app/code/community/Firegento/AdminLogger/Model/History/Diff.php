@@ -16,71 +16,35 @@ class Firegento_AdminLogger_Model_History_Diff {
      * @return bool
      */
     public function hasChanged() {
-        $history = $this->getPreviousHistory();
-
-        if ($history AND $history->getContent() == $this->dataModel->getSerializedContent()) {
-            return false;
-        }
-        return true;
+        return ($this->dataModel->getContent() != $this->dataModel->getOrigContent());
     }
 
     /**
-     * @var Firegento_AdminLogger_Model_History
-     */
-    private $previousHistory;
-
-    /**
-     * @param Firegento_AdminLogger_Model_History $history
      * @return array
      */
-    private function getObjectDiff (Firegento_AdminLogger_Model_History $history) {
-        if ($history->getContent()) {
-            $dataOld = json_decode($history->getContent());
-            $dataNew = $this->dataModel->getContent();
-            $dataDiff = array();
-            foreach ($dataOld as $key => $oldValue) {
-                // compare objects serialized
-                if (json_encode($oldValue) != json_encode($dataNew[$key])) {
-                    $dataDiff[$key] = $oldValue;
-                }
+    private function getObjectDiff () {
+        $dataOld = $this->dataModel->getOrigContent();
+        $dataNew = $this->dataModel->getContent();
+        $dataDiff = array();
+        $dataDiffNew = array();
+        foreach ($dataOld as $key => $oldValue) {
+            // compare objects serialized
+            if (
+                isset($dataNew[$key])
+                AND (json_encode($oldValue) != json_encode($dataNew[$key]))
+            ) {
+                $dataDiff[$key] = $oldValue;
             }
-            return $dataDiff;
-        } else {
-            return array();
         }
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return bool|Firegento_AdminLogger_Model_History
-     */
-    private function getPreviousHistory() {
-        if (!isset($this->previousHistory)) {
-            /**
-             * @var $collection Firegento_AdminLogger_Model_Resource_History_Collection
-             */
-            $collection = Mage::getModel('firegento_adminlogger/history')
-                ->getCollection();
-            $collection->addFieldToFilter('object_type', $this->dataModel->getObjectType());
-            $collection->addFieldToFilter('object_id', $this->dataModel->getObjectId());
-            $collection->setOrder('created_at');
-            $collection->setPageSize(1);
-            $this->previousHistory = $collection->getFirstItem();
-        }
-        return $this->previousHistory;
+        return $dataDiff;
     }
 
     /**
      * @return string
      */
     public function getSerializedDiff() {
-        $history = $this->getPreviousHistory();
-
-        if ($history) {
-            $dataDiff = $this->getObjectDiff($history);
-            return json_encode($dataDiff);
-        }
-        return '';
+        $dataDiff = $this->getObjectDiff();
+        return json_encode($dataDiff);
     }
 
 }
