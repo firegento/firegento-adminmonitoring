@@ -66,7 +66,7 @@ class Firegento_AdminLogger_Test_Model_Observer extends EcomDev_PHPUnit_Test_Cas
         $customer->setEmail($mail);
         $customer->setFirstname($firstname);
         $customer->setLastname($lastname);
-        $customer->setPasswordHash('1234567890ß');
+        $customer->setPasswordHash($password);
 
         $data = array('object' => $customer);
         $observer = $this->_createObserver($data);
@@ -74,9 +74,8 @@ class Firegento_AdminLogger_Test_Model_Observer extends EcomDev_PHPUnit_Test_Cas
         $mock = $this->getModelMock('firegento_adminlogger/history', null);
         $mock->expects($this->once())->method('save');
         $this->replaceByMock('model', 'firegento_adminlogger/history', $mock);
-
-        Mage::getModel('firegento_adminlogger/observer')->modelSaveAfter($observer);
-
+        $this->_object->modelSaveBefore($observer);
+        $this->_object->modelSaveAfter($observer);
         $data = $mock->getData();
         $this->assertRegExp('#^[0-9]*$#', $mock->getHistoryId());
         $this->assertRegExp(
