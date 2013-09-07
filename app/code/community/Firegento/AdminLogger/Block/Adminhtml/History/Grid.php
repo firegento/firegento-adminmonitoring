@@ -38,6 +38,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $this->addColumn('created_at', array(
             'header' => Mage::helper('firegento_adminlogger')->__('Date/Time'),
             'index' => 'created_at',
+            'type' => 'datetime',
         ));
 
         $this->addColumn('action', array(
@@ -59,18 +60,19 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $this->addColumn('object_id', array(
             'header' => Mage::helper('firegento_adminlogger')->__('Object ID'),
             'index' => 'object_id',
+            'type' => 'number',
         ));
 
         $this->addColumn('content', array(
-            'header' => Mage::helper('firegento_adminlogger')->__('Content'),
+            'header' => Mage::helper('firegento_adminlogger')->__('Content New'),
             'index' => 'content',
-            'frame_callback' => array($this, 'truncateContent'),
+            'frame_callback' => array($this, 'showNewContent'),
         ));
 
         $this->addColumn('content_diff', array(
-            'header' => Mage::helper('firegento_adminlogger')->__('Content'),
+            'header' => Mage::helper('firegento_adminlogger')->__('Content Old'),
             'index' => 'content_diff',
-            'frame_callback' => array($this, 'truncateContent'),
+            'frame_callback' => array($this, 'showOldContent'),
         ));
 
         $optionArray = array();
@@ -114,7 +116,6 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         return $this;
     }
 
-
     /**
      * @param $row
      * @return bool|string
@@ -125,29 +126,47 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
     }
 
 
-    /**
-     *
-     * @param $content
-     * @param $row
-     * @return string
-     */
-    public function truncateContent($content, $row)
+    public function showNewContent($newContent, $row)
     {
         $cell = '';
-        $content = html_entity_decode($content);
-        $content = json_decode($content, true);
 
-        if (is_array($content)) {
-            foreach ($content as $key => $value ) {
-                if (is_array($value)) {
-                    $value = print_r($value, true);
+        $oldContent = $row->getData('content_diff');
+        $oldContent = html_entity_decode($oldContent);
+        $oldContent = json_decode($oldContent, true);
+
+        $newContent = html_entity_decode($newContent);
+        $newContent = json_decode($newContent, true);
+
+        if (is_array($oldContent) && is_array($newContent)) {
+            foreach ($oldContent as $key => $value ) {
+
+                if (array_key_exists($key, $newContent)) {
+                    if (is_array($newContent[$key])) {
+                        $newContent[$key] = print_r($newContent[$key], true);
+                    }
+                    $cell .= $key.': ' . $newContent[$key] . '<br />';
                 }
-                $cell .= $key.': ' . $value . '<br />';
             }
         }
 
-        #$cell = substr($value, 0, 40);
         return $cell;
     }
 
+
+    public function showOldContent($oldContent, $row)
+    {
+        $cell = '';
+        $oldContent = html_entity_decode($oldContent);
+        $oldContent = json_decode($oldContent, true);
+
+        if (is_array($oldContent)) {
+           foreach ($oldContent as $key => $value ) {
+               if (is_array($value)) {
+                   $value = print_r($value, true);
+               }
+               $cell .= $key.': ' . $value . '<br />';
+           }
+        }
+        return $cell;
+    }
 }
