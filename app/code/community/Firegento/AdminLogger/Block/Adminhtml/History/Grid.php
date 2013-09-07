@@ -83,14 +83,14 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         }
 
         $this->addColumn('user_id', array(
-            'header' => Mage::helper('firegento_adminlogger')->__('User ID'),
+            'header' => Mage::helper('firegento_adminlogger')->__('User'),
             'index' => 'user_id',
             'type' => 'options',
             'options' => $optionArray,
         ));
 
         $this->addColumn('user_name', array(
-            'header' => Mage::helper('firegento_adminlogger')->__('User Name'),
+            'header' => Mage::helper('firegento_adminlogger')->__('User name logged'),
             'index' => 'user_name',
         ));
 
