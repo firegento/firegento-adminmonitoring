@@ -11,6 +11,7 @@
                     <Mage_Index_Model_Event />
                     <!-- omit infinite loops -->
                     <Firegento_AdminLogger_Model_History />
+                    <Mage_Admin_Model_User />
                 </object_types>
             </exclude>
         </firegento_adminlogger_config>
