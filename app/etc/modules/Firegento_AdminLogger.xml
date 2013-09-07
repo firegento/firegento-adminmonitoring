@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Firegento_AdminLogger>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Firegento_AdminLogger>
+    </modules>
+</config>
