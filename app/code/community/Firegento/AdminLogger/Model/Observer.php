@@ -156,7 +156,7 @@ class Firegento_AdminLogger_Model_Observer {
                  'user_id'     => $this->getUserId(),
                  'user_name'   => $this->getUserName(),
                  'action'      => $this->getAction($savedModel),
-                 'created_at'  => time(),
+                 'created_at'  => now(),
             )
         );
         $history->save();

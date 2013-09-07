@@ -50,7 +50,7 @@ $logTable = $installer->getConnection()->newTable($installer->getTable('firegent
     )
     ->addColumn(
         'created_at',
-        Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
+        Varien_Db_Ddl_Table::TYPE_DATETIME,
         null,
         array(),
         'created at'
