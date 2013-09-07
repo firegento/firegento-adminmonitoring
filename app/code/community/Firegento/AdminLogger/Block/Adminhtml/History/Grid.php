@@ -131,9 +131,12 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $content = json_decode($content, true);
 
         if (is_array($content)) {
-           foreach ($content as $key => $value ) {
-             $cell .= $key.': ' . $value . '<br />';
-           }
+            foreach ($content as $key => $value ) {
+                if (is_array($value)) {
+                    $value = print_r($value, true);
+                }
+                $cell .= $key.': ' . $value . '<br />';
+            }
         }
 
         #$cell = substr($value, 0, 40);
