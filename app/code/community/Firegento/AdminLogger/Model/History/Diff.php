@@ -33,7 +33,7 @@ class Firegento_AdminLogger_Model_History_Diff {
      * @param Firegento_AdminLogger_Model_History $history
      * @return array
      */
-    public function getObjectDiff (Firegento_AdminLogger_Model_History $history) {
+    private function getObjectDiff (Firegento_AdminLogger_Model_History $history) {
         $dataOld = json_decode($history->getContent());
         $dataNew = $this->dataModel->getContent();
         $dataDiff = array();
