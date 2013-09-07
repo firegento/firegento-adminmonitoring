@@ -9,9 +9,8 @@ If we know all the changes in the backend, we can provide versioning.
 Install via modman or copy the files into your magento installation.
 
 ### Dependencies
-* PHP 5.3
-* Magento CE >= 1.6
-* maybe Magento EE... no one tested it yet.
+* PHP 5.3 (or even 5.0 as long as [spl](http://www.php.net/manual/en/book.spl.php) is activated)
+* Magento CE >= 1.6 OR Magento EE >= 1.12
 
 ### BE CAREFUL
 This extension writes a lot of data into the database and we exclude only a few core classes. If you have many writes in the backend, please have a look into this to avoid a full hard disk!
