@@ -156,14 +156,19 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $newContent = $this->decodeContent($newContent);
 
         if (is_array($oldContent) && is_array($newContent)) {
-            foreach ($oldContent as $key => $value ) {
+            if (count($oldContent) > 0) {
+                $showContent = $oldContent;
+            } else {
+                $showContent = $newContent;
+            }
+            foreach ($showContent as $key => $value ) {
                 if (array_key_exists($key, $newContent)) {
                     $cell .= $this->formatCellContent($key, $newContent[$key]);
                 }
             }
         }
 
-        return $cell;
+        return $this->wrapColor($cell, '#00ff00');
     }
 
 
@@ -172,10 +177,23 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $oldContent = $this->decodeContent($oldContent);
 
         if (is_array($oldContent)) {
-           foreach ($oldContent as $key => $value ) {
-               $cell .= $this->formatCellContent($key, $value);
+           if (count($oldContent) > 0) {
+               foreach ($oldContent as $key => $value ) {
+                   $cell .= $this->formatCellContent($key, $value);
+               }
+           } else {
+               return $this->__('not available');
            }
         }
-        return $cell;
+        return $this->wrapColor($cell, '#ff0000');
+    }
+
+    /**
+     * @param string $string
+     * @param string $color
+     * @return string
+     */
+    private function wrapColor($string, $color) {
+        return '<span style="font-weight: bold; color: ' . $color . '">' . $string . '</span>';
     }
 }
