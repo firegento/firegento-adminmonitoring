@@ -170,7 +170,10 @@ class Firegento_AdminLogger_Model_Observer {
          * @var $savedModel Mage_Core_Model_Abstract
          */
         $savedModel = $observer->getObject();
-        if (!$this->isExcludedClass($savedModel)) {
+        if (
+            !$this->isExcludedClass($savedModel)
+            AND $this->hasChanged($savedModel)
+        ) {
             $this->createHistoryForModelAction($savedModel);
         }
     }
@@ -189,5 +192,27 @@ class Firegento_AdminLogger_Model_Observer {
             }
         );
         return (count($objectTypeExcludesFiltered) > 0);
+    }
+
+    /**
+     * @param Mage_Core_Model_Abstract $savedModel
+     * @return bool
+     */
+    private function hasChanged(Mage_Core_Model_Abstract $savedModel) {
+        if ($this->getAction($savedModel) == Firegento_AdminLogger_Helper_Data::ACTION_UPDATE) {
+            /**
+             * @var $collection Firegento_AdminLogger_Model_Resource_History_Collection
+             */
+            $collection = Mage::getModel('firegento_adminlogger/history')->getCollection();
+            $collection->addFieldToFilter('object_type', $this->getModelType($savedModel));
+            $collection->addFieldToFilter('object_id', $this->getModelId($savedModel));
+            $collection->addOrder('created_at', 'DESC');
+            $collection->setPageSize(1);
+            $history = $collection->fetchItem();
+            if ($history AND $history->getData('data') == $this->getSerializedModelData($savedModel)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
