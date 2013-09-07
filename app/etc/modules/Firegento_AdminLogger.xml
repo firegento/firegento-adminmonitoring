@@ -4,5 +4,9 @@
             <active>true</active>
             <codePool>community</codePool>
         </Firegento_AdminLogger>
+        <depends>
+            <Mage_Core />
+            <Mage_Admin />
+        </depends>
     </modules>
 </config>
