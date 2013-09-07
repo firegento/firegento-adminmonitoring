@@ -1,6 +1,6 @@
 # Firegento AdminLogger
 
-The admin logger logs nearly every save and delete call in the backend. The first idea was to generate an overview of the changes in the backend to know who changed certain things. This is still the actual goal.
+The admin logger logs nearly every save and delete call in the backend. The idea is to generate an overview of the changes in the backend to know who changed certain things.
 
 ##Vision
 If we know all the changes in the backend, we can provide versioning.
