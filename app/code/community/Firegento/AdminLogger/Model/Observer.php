@@ -83,7 +83,7 @@ class Firegento_AdminLogger_Model_Observer {
      * @return string
      */
     private function getUserAgent() {
-        return (string)$_SERVER['HTTP_USER_AGENT'];
+        return (isset($_SERVER['HTTP_USER_AGENT']) ? (string)$_SERVER['HTTP_USER_AGENT'] : '');
     }
 
     /**
