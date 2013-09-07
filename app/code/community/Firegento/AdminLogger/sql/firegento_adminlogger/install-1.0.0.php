@@ -78,6 +78,17 @@ $logTable = $installer->getConnection()->newTable($installer->getTable('firegent
         255,
         array(),
         'class name of the changed type'
-    );
+    )
+    ->addColumn(
+        'object_id',
+        Varien_Db_Ddl_Table::TYPE_INTEGER,
+        null,
+        array(
+             'unsigned' => true,
+             'nullable' => false,
+        ),
+        'id of the changed type'
+    )
+;
 
 $installer->getConnection()->createTable($logTable);
