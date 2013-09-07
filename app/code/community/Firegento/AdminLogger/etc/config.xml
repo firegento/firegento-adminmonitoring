@@ -61,4 +61,11 @@
             </model_delete_after>
         </events>
     </adminhtml>
+    <phpunit>
+        <suite>
+            <modules>
+                <Firegento_AdminLogger />
+            </modules>
+        </suite>
+    </phpunit>
 </config>
