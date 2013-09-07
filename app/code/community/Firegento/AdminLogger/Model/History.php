@@ -1,8 +1,7 @@
 <?php
 class Firegento_AdminLogger_Model_History extends Mage_Core_Model_Abstract
 {
-    protected function _construct()
-    {
+    protected function _construct() {
         $this->_init('firegento_adminlogger/history');
     }
 
@@ -15,6 +14,13 @@ class Firegento_AdminLogger_Model_History extends Mage_Core_Model_Abstract
         $model = new $objectType;
         $model->load($this->getObjectId());
         return $model;
+    }
+
+    /**
+     * @return stdObject
+     */
+    public function getDecodedContentDiff() {
+        return json_decode($this->getContentDiff());
     }
 
 }

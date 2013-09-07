@@ -70,7 +70,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         ));
 
         $this->addColumn('content_diff', array(
-            'header' => Mage::helper('firegento_adminlogger')->__('Content Old'),
+            'header' => Mage::helper('firegento_adminlogger')->__('Diff to getOrigData()'),
             'index' => 'content_diff',
             'frame_callback' => array($this, 'showOldContent'),
         ));
