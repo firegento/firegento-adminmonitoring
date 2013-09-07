@@ -43,6 +43,22 @@
                     </firegento_adminlogger>
                 </observers>
             </model_save_after>
+            <model_save_before>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer</class>
+                        <method>modelSaveBefore</method>
+                    </firegento_adminlogger>
+                </observers>
+            </model_save_before>
+            <model_delete_after>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer</class>
+                        <method>modelDeleteAfter</method>
+                    </firegento_adminlogger>
+                </observers>
+            </model_delete_after>
         </events>
     </adminhtml>
 </config>

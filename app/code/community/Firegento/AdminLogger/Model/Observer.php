@@ -1,34 +1,74 @@
 <?php
 class Firegento_AdminLogger_Model_Observer {
+    const ACTION_SAVE = 'save';
+    const ACTION_DELETE = 'delete';
+    /**
+     * @var string is either self::ACTION_SAVE or self::ACTION_DELETE;
+     */
+    private $modelAction = '';
     /**
      * @param Varien_Event_Observer $observer
      */
     public function modelSaveAfter(Varien_Event_Observer $observer) {
+        $this->modelAction = self::ACTION_SAVE;
+        $this->storeByObserver($observer);
+    }
+
+    private $modelSaveBeforeIds = array();
+    /**
+     * @param Varien_Event_Observer $observer
+     */
+    public function modelSaveBefore(Varien_Event_Observer $observer) {
         /**
          * @var $savedObject Mage_Core_Model_Abstract
          */
         $savedObject = $observer->getObject();
-        if (!($savedObject instanceof Firegento_Adminlogger_Model_History)) {
-            $this->createHistoryForSavedModel($savedObject);
-        }
+        $this->modelSaveBeforeIds[sql_object_hash($savedObject)] = $savedObject->getId();
     }
 
     /**
-     * @return int|NULL
+     * @param Varien_Event_Observer $observer
+     */
+    public function modelDeleteAfter(Varien_Event_Observer $observer) {
+        $this->modelAction = self::ACTION_DELETE;
+        $this->storeByObserver($observer);
+    }
+
+    /**
+     * @return int
      */
     private function getUserId() {
+        if ($this->getUser()) {
+            $userId = $this->getUser()
+                ->getUserId();
+        } else {
+            $userId = 0;
+        }
+        return $userId;
+    }
+
+    /**
+     * @return string
+     */
+    private function getUserName() {
+        if ($this->getUser()) {
+            $userId = $this->getUser()
+                ->getUserName();
+        } else {
+            $userId = '';
+        }
+        return $userId;
+    }
+
+    /**
+     * @return Mage_Admin_Model_User|NULL
+     */
+    private function getUser() {
         /**
          * @var $session Mage_Admin_Model_Session
          */
         $session = Mage::getSingleton('admin/session');
-        if ($session->getUser()) {
-            $userId = $session
-                ->getUser()
-                ->getUserId();
-        } else {
-            $userId = NULL;
-        }
-        return $userId;
+        return $session->getUser();
     }
 
     /**
@@ -72,8 +112,24 @@ class Firegento_AdminLogger_Model_Observer {
 
     /**
      * @param Mage_Core_Model_Abstract $savedModel
+     * @return string
      */
-    private function createHistoryForSavedModel(Mage_Core_Model_Abstract $savedModel) {
+    private function getAction(Mage_Core_Model_Abstract $savedModel) {
+        if ($this->modelAction == self::ACTION_DELETE) {
+            return 'delete';
+        }
+        if ($this->modelSaveBeforeIds[sql_object_hash($savedModel)]) {
+            return 'update';
+        } else {
+            return 'insert';
+        }
+    }
+
+    /**
+     * @param Mage_Core_Model_Abstract $savedModel
+     */
+    private function createHistoryForModelAction(Mage_Core_Model_Abstract $savedModel) {
+        $this->getUser();
         /**
          * @var $history Firegento_AdminLogger_Model_History
          */
@@ -81,13 +137,30 @@ class Firegento_AdminLogger_Model_Observer {
         $history->setData(
             array(
                  'entity_id'   => $this->getModelId($savedModel),
-                 'entity_type' => $this->getModelType($savedModel),
+                 'object_type' => $this->getModelType($savedModel),
                  'data'        => $this->getSerializedModelData($savedModel),
                  'user_agent'  => $this->getUserAgent(),
                  'ip'          => $this->getRemoteAddr(),
                  'user_id'     => $this->getUserId(),
+                 'user_name'   => $this->getUserName(),
+                 'action'      => $this->getAction($savedModel),
+                 'created_at'  => mktime(),
             )
         );
         $history->save();
+    }
+
+    /**
+     * @param Varien_Event_Observer $observer
+     */
+    private function storeByObserver (Varien_Event_Observer $observer) {
+        /**
+         * @var $savedObject Mage_Core_Model_Abstract
+         */
+        $savedObject = $observer->getObject();
+        // omit infinite loop
+        if (!($savedObject instanceof Firegento_Adminlogger_Model_History)) {
+            $this->createHistoryForModelAction($savedObject);
+        }
     }
 }
