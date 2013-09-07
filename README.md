@@ -30,7 +30,12 @@ To exclude a class, add it into the node `config/default/firegento_adminlogger_c
             </firegento_adminlogger_config>
         </default>
     </config>
-    
+
+### Third party integration
+All models will be logged per default if not excluded as described above.
+So even third party models will be logged and can be even better integrated by link to their adminhtml edit form.
+To do this observe the firegento_adminlogger_rowurl event and see Firegento_AdminLogger_Model_RowUrl_Product for an catalog_product implementation which can be adapted.
+
 ## Core Team
 * Tobias Zander (@airbone42)
 * Ralf Siepker (@mageconsult)
