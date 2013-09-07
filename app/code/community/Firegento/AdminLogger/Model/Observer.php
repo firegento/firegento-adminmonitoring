@@ -164,13 +164,14 @@ class Firegento_AdminLogger_Model_Observer {
     /**
      * @param Varien_Event_Observer $observer
      */
-    private function storeByObserver (Varien_Event_Observer $observer) {
+    private function storeByObserver(Varien_Event_Observer $observer) {
         /**
          * @var $savedObject Mage_Core_Model_Abstract
          */
         $savedObject = $observer->getObject();
-        // omit infinite loop
-        if (!($savedObject instanceof Firegento_Adminlogger_Model_History)) {
+        // skip logging for some classes
+        $objectTypeExcludes = Mage::getStoreConfig('firegento_adminlogger_config/exclude/object_types');
+        if (!(isset($objectTypeExcludes[get_class($savedObject)]))) {
             $this->createHistoryForModelAction($savedObject);
         }
     }

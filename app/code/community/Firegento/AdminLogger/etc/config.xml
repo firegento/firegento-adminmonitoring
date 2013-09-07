@@ -4,6 +4,17 @@
             <version>1.0.0</version>
         </Firegento_AdminLogger>
     </modules>
+    <default>
+        <firegento_adminlogger_config>
+            <exclude>
+                <object_types>
+                    <Mage_Index_Model_Event />
+                    <!-- omit infinite loops -->
+                    <Firegento_AdminLogger_Model_History />
+                </object_types>
+            </exclude>
+        </firegento_adminlogger_config>
+    </default>
     <global>
         <models>
             <firegento_adminlogger>
