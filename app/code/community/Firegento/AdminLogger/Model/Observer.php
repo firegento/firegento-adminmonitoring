@@ -2,6 +2,17 @@
 class Firegento_AdminLogger_Model_Observer {
     const ACTION_SAVE = 'save';
     const ACTION_DELETE = 'delete';
+
+    /**
+     * @var Firegento_AdminLogger_Model_History_Diff
+     */
+    private $diffModel;
+
+    /**
+     * @var Firegento_AdminLogger_Model_History_Data
+     */
+    private $dataModel;
+
     /**
      * @var string is either self::ACTION_SAVE or self::ACTION_DELETE;
      */
@@ -96,40 +107,6 @@ class Firegento_AdminLogger_Model_Observer {
 
     /**
      * @param Mage_Core_Model_Abstract $savedModel
-     * @return string
-     */
-    private function getModelType(Mage_Core_Model_Abstract $savedModel) {
-        return get_class($savedModel);
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return string
-     */
-    private function getSerializedModelData(Mage_Core_Model_Abstract $savedModel) {
-        return json_encode($this->getModelData($savedModel));
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return mixed
-     */
-    private function getModelData(Mage_Core_Model_Abstract $savedModel) {
-        $data = $savedModel->getData();
-        unset($data['updated_at']);
-        return $data;
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return int
-     */
-    private function getModelId(Mage_Core_Model_Abstract $savedModel) {
-        return $savedModel->getId();
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
      * @return int
      */
     private function getAction(Mage_Core_Model_Abstract $savedModel) {
@@ -156,10 +133,10 @@ class Firegento_AdminLogger_Model_Observer {
         $history = Mage::getModel('firegento_adminlogger/history');
         $history->setData(
             array(
-                 'object_id'    => $this->getModelId($savedModel),
-                 'object_type'  => $this->getModelType($savedModel),
-                 'content'      => $this->getSerializedModelData($savedModel),
-                 'content_diff' => $this->getSerializedDiff($savedModel),
+                 'object_id'    => $this->dataModel->getObjectId(),
+                 'object_type'  => $this->dataModel->getObjectType(),
+                 'content'      => $this->dataModel->getSerializedContent(),
+                 'content_diff' => $this->diffModel->getSerializedDiff(),
                  'user_agent'   => $this->getUserAgent(),
                  'ip'           => $this->getRemoteAddr(),
                  'user_id'      => $this->getUserId(),
@@ -181,9 +158,12 @@ class Firegento_AdminLogger_Model_Observer {
         $savedModel = $observer->getObject();
         if (
             !$this->isExcludedClass($savedModel)
-            AND $this->hasChanged($savedModel)
         ) {
-            $this->createHistoryForModelAction($savedModel);
+            $this->dataModel = Mage::getModel('firegento_adminlogger/history_data', $savedModel);
+            $this->diffModel = Mage::getModel('firegento_adminlogger/history_diff', $this->dataModel);
+            if ($this->isUpdate($savedModel) AND $this->diffModel->hasChanged()) {
+                $this->createHistoryForModelAction($savedModel);
+            }
         }
     }
 
@@ -201,62 +181,6 @@ class Firegento_AdminLogger_Model_Observer {
             }
         );
         return (count($objectTypeExcludesFiltered) > 0);
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return bool
-     */
-    private function hasChanged(Mage_Core_Model_Abstract $savedModel) {
-        if ($this->isUpdate($savedModel)) {
-            $history = $this->getPreviousHistory($savedModel);
-
-            if ($history AND $history->getData('content') == $this->getSerializedModelData($savedModel)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return string
-     */
-    private function getSerializedDiff(Mage_Core_Model_Abstract $savedModel) {
-        if ($this->isUpdate($savedModel)) {
-            $history = $this->getPreviousHistory($savedModel);
-
-            if ($history) {
-                return json_encode(
-                    array_diff(
-                        json_decode($history->getData('content')),
-                        $this->getModelData($savedModel)
-                    )
-                );
-            }
-        }
-        return '';
-    }
-
-    private $previousHistory = array();
-    /**
-     * @param Mage_Core_Model_Abstract $savedModel
-     * @return bool|Varien_Object
-     */
-    private function getPreviousHistory(Mage_Core_Model_Abstract $savedModel) {
-        if (!isset($this->previousHistory[$this->getObjectHash($savedModel)])) {
-            /**
-             * @var $collection Firegento_AdminLogger_Model_Resource_History_Collection
-             */
-            $collection = Mage::getModel('firegento_adminlogger/history')
-                ->getCollection();
-            $collection->addFieldToFilter('object_type', $this->getModelType($savedModel));
-            $collection->addFieldToFilter('object_id', $this->getModelId($savedModel));
-            $collection->addOrder('created_at', 'DESC');
-            $collection->setPageSize(1);
-            $this->previousHistory[$this->getObjectHash($savedModel)] = $collection->fetchItem();
-        }
-        return $this->previousHistory[$this->getObjectHash($savedModel)];
     }
 
     /**
