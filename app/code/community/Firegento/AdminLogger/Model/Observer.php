@@ -140,7 +140,6 @@ class Firegento_AdminLogger_Model_Observer {
      * @param Mage_Core_Model_Abstract $savedModel
      */
     private function createHistoryForModelAction(Mage_Core_Model_Abstract $savedModel) {
-        $this->getUser();
         /**
          * @var $history Firegento_AdminLogger_Model_History
          */
