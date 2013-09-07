@@ -1,0 +1,9 @@
+test@example.com-Johnny-Doels-1234567890:
+      object_id: NULL
+      object_type: Mage_Customer_Model_Customer
+      content: "{"email":"test@example.com","firstname":"Johnny","lastname":"Doels","password":"1234567890","password_hash":"1234567890\u00df"}"
+      user_agent: ""
+      ip: false
+      user_id: 0
+      user_name: ""
+      action: 1
