@@ -34,15 +34,20 @@ class Firegento_AdminLogger_Model_History_Diff {
      * @return array
      */
     private function getObjectDiff (Firegento_AdminLogger_Model_History $history) {
-        $dataOld = json_decode($history->getContent());
-        $dataNew = $this->dataModel->getContent();
-        $dataDiff = array();
-        foreach ($dataOld as $key => $oldValue) {
-            if (json_encode($oldValue) != json_encode($dataNew[$key])) {
-                $dataDiff[$key] = $oldValue;
+        if ($history->getContent()) {
+            $dataOld = json_decode($history->getContent());
+            $dataNew = $this->dataModel->getContent();
+            $dataDiff = array();
+            foreach ($dataOld as $key => $oldValue) {
+                // compare objects serialized
+                if (json_encode($oldValue) != json_encode($dataNew[$key])) {
+                    $dataDiff[$key] = $oldValue;
+                }
             }
+            return $dataDiff;
+        } else {
+            return array();
         }
-        return $dataDiff;
     }
 
     /**
