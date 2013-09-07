@@ -1,5 +1,9 @@
 <config>
-    <modules>Firegento_AdminLogger</modules>
+    <modules>
+        <Firegento_AdminLogger>
+            <version>1.0.0</version>
+        </Firegento_AdminLogger>
+    </modules>
     <global>
         <models>
             <firegento_adminlogger>
@@ -15,6 +19,14 @@
                 </entities>
             </firegento_adminlogger_resource>
         </models>
+        <resources>
+            <firegento_adminlogger>
+                <setup>
+                    <module>Firegento_AdminLogger</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </firegento_adminlogger>
+        </resources>
         <helpers>
             <firegento_adminlogger>
                 <class>Firegento_AdminLogger_Helper</class>
