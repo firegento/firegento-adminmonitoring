@@ -23,7 +23,7 @@ class Firegento_AdminLogger_Model_Observer {
          * @var $savedObject Mage_Core_Model_Abstract
          */
         $savedObject = $observer->getObject();
-        $this->modelSaveBeforeIds[spl_object_hash($savedObject)] = $savedObject->getId();
+        $this->modelSaveBeforeIds[$this->getObjectHash($savedObject)] = $savedObject->getId();
     }
 
     /**
@@ -32,6 +32,14 @@ class Firegento_AdminLogger_Model_Observer {
     public function modelDeleteAfter(Varien_Event_Observer $observer) {
         $this->modelAction = self::ACTION_DELETE;
         $this->storeByObserver($observer);
+    }
+
+    /**
+     * @param object $savedObject
+     * @return string
+     */
+    protected function getObjectHash ($savedObject) {
+        return spl_object_hash($savedObject);
     }
 
     /**
@@ -118,7 +126,10 @@ class Firegento_AdminLogger_Model_Observer {
         if ($this->modelAction == self::ACTION_DELETE) {
             return Firegento_AdminLogger_Helper_Data::ACTION_DELETE;
         }
-        if (isset($this->modelSaveBeforeIds[spl_object_hash($savedModel)]) AND $this->modelSaveBeforeIds[spl_object_hash($savedModel)]) {
+        if (
+            isset($this->modelSaveBeforeIds[$this->getObjectHash($savedModel)])
+            AND $this->modelSaveBeforeIds[$this->getObjectHash($savedModel)]
+        ) {
             return Firegento_AdminLogger_Helper_Data::ACTION_UPDATE;
         } else {
             return Firegento_AdminLogger_Helper_Data::ACTION_INSERT;
