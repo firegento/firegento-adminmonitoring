@@ -23,4 +23,18 @@ class Firegento_AdminLogger_Model_History extends Mage_Core_Model_Abstract
         return json_decode($this->getContentDiff(), true);
     }
 
+    /**
+     * @return bool
+     */
+    public function isUpdate() {
+        return ($this->getAction() == Firegento_AdminLogger_Helper_Data::ACTION_UPDATE);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDelete() {
+        return ($this->getAction() == Firegento_AdminLogger_Helper_Data::ACTION_DELETE);
+    }
+
 }

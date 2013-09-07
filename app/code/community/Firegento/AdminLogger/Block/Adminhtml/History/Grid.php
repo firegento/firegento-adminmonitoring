@@ -146,28 +146,35 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         return json_decode($content, true);
     }
 
-
-    public function showNewContent($newContent, $row) {
+    /**
+     * @param string $newContent
+     * @param Firegento_AdminLogger_Model_History $row
+     * @return string
+     */
+    public function showNewContent($newContent, Firegento_AdminLogger_Model_History $row) {
         $cell = '';
 
-        $oldContent = $row->getData('content_diff');
-        $oldContent = $this->decodeContent($oldContent);
+        if ($row->isDelete()) {
+            $cell = '';
+        } else {
+            $oldContent = $row->getContentDiff();
+            $oldContent = $this->decodeContent($oldContent);
 
-        $newContent = $this->decodeContent($newContent);
+            $newContent = $this->decodeContent($newContent);
 
-        if (is_array($oldContent) && is_array($newContent)) {
-            if (count($oldContent) > 0) {
-                $showContent = $oldContent;
-            } else {
-                $showContent = $newContent;
-            }
-            foreach ($showContent as $key => $value ) {
-                if (array_key_exists($key, $newContent)) {
-                    $cell .= $this->formatCellContent($key, $newContent[$key]);
+            if (is_array($oldContent) && is_array($newContent)) {
+                if (count($oldContent) > 0) {
+                    $showContent = $oldContent;
+                } else {
+                    $showContent = $newContent;
+                }
+                foreach ($showContent as $key => $value ) {
+                    if (array_key_exists($key, $newContent)) {
+                        $cell .= $this->formatCellContent($key, $newContent[$key]);
+                    }
                 }
             }
         }
-
         return $this->wrapColor($cell, '#00ff00');
     }
 

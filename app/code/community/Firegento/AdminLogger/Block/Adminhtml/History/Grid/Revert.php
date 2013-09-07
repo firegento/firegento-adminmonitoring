@@ -7,7 +7,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid_Revert extends Mage_Adm
      */
     public function render(Varien_Object $row) {
         if ($row instanceof Firegento_AdminLogger_Model_History) {
-            if ($row->getDecodedContentDiff()) {
+            if ($row->isUpdate() AND $row->getDecodedContentDiff()) {
                 return '<a href="' . $this->getUrl('*/*/revert', array('id' => $row->getId())) . '">Revert</a>';
             }
         } else {
