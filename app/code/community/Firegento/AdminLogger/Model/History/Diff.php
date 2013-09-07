@@ -21,6 +21,7 @@ class Firegento_AdminLogger_Model_History_Diff {
         if ($history AND $history->getContent() == $this->dataModel->getSerializedContent()) {
             return false;
         }
+        return true;
     }
 
     /**
@@ -40,9 +41,9 @@ class Firegento_AdminLogger_Model_History_Diff {
                 ->getCollection();
             $collection->addFieldToFilter('object_type', $this->dataModel->getObjectType());
             $collection->addFieldToFilter('object_id', $this->dataModel->getObjectId());
-            $collection->addOrder('created_at', 'DESC');
+            $collection->setOrder('created_at');
             $collection->setPageSize(1);
-            $this->previousHistory = $collection->fetchItem();
+            $this->previousHistory = $collection->getFirstItem();
         }
         return $this->previousHistory;
     }
@@ -54,12 +55,25 @@ class Firegento_AdminLogger_Model_History_Diff {
         $history = $this->getPreviousHistory();
 
         if ($history) {
-            return json_encode(
-                array_diff(
-                    json_decode($history->getContent()),
-                    $this->dataModel->getContent()
+            $dataOld = json_decode($history->getContent(), true);
+            $dataNew = $this->dataModel->getContent();
+            $dataDiff = array();
+            foreach ($dataOld as $key => $oldValue) {
+                if (json_encode($oldValue) != json_encode($dataNew[$key])) {
+                    $dataDiff[$key] = $oldValue;
+                }
+            }
+            return json_encode($dataDiff);
+/*            return json_encode(
+                array_udiff(
+                    $dataOld,
+                    $dataNew,
+                    function ($a, $b) {
+                        // compare objects serialized
+                        return (json_encode($a) != json_encode($b));
+                    }
                 )
-            );
+            );*/
         }
         return '';
     }
