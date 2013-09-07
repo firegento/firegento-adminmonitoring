@@ -10,6 +10,8 @@
                 <object_types>
                     <Mage_Index_Model_Event />
                     <Mage_Admin_Model_User />
+                    <Enterprise_Logging_Model_Event_Changes />
+                    <Enterprise_Logging_Model_Event />
                     <!-- omit infinite loops -->
                     <Firegento_AdminLogger_Model_History />
                 </object_types>
