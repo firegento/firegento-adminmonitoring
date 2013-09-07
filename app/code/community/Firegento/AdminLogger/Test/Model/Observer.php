@@ -59,14 +59,29 @@ class Firegento_AdminLogger_Test_Model_Observer extends EcomDev_PHPUnit_Test_Cas
     /**
      * @dataProvider dataProvider
      * @loadExpectation
+     * @loadFixture
      */
-    public function testHistorySavesWithCustomer($mail, $firstname, $lastname, $password)
-    {
-        $customer = new Mage_Customer_Model_Customer();
-        $customer->setEmail($mail);
-        $customer->setFirstname($firstname);
-        $customer->setLastname($lastname);
-        $customer->setPasswordHash($password);
+    public function testHistorySavesWithCustomer(
+        $id, $mail = null, $firstname = null, $lastname = null, $password = null
+    ) {
+        $customer = Mage::getModel('customer/customer');
+        if ($id !== null) {
+            $customer->load($id);
+        }
+
+        if (!empty($mail)) {
+            $customer->setEmail($mail);
+        }
+        if (!empty($firstname)) {
+            $customer->setFirstname($firstname);
+        }
+        if (!empty($lastname)) {
+            $customer->setLastname($lastname);
+        }
+        if (!empty($password)) {
+            $customer->setPasswordHash($password);
+        }
+
 
         $data = array('object' => $customer);
         $observer = $this->_createObserver($data);
@@ -84,7 +99,7 @@ class Firegento_AdminLogger_Test_Model_Observer extends EcomDev_PHPUnit_Test_Cas
         );
         unset($data['created_at'], $data['history_id']); // remove changing attributes
         $this->assertEquals(
-            $this->expected("$mail-$firstname-$lastname-$password")->getData(),
+            $this->expected("$id-$mail-$firstname-$lastname-$password")->getData(),
             $data
         );
 

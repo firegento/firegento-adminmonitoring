@@ -1,0 +1,16 @@
+tables:
+  firegento_adminlogger/history:
+    # truncate the table
+eav:
+  customer:
+    - entity_id: 1
+      entity_type_id: 1
+      attribute_set_id: 0
+      website_id: 1
+      email: test@example.com
+      group_id: 1
+      store_id: 1
+      is_active: 1
+      firstname: Johnny
+      lastname: Doels
+      password_hash: 1234567890
