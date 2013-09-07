@@ -85,8 +85,15 @@
                     </firegento_adminlogger>
                 </observers>
             </model_delete_after>
+            <firegento_adminlogger_rowurl>
+                <observers>
+                    <catalog_product>
+                        <class>firegento_adminlogger/rowUrl_product</class>
+                        <method>setRowUrl</method>
+                    </catalog_product>
+                </observers>
+            </firegento_adminlogger_rowurl>
         </events>
-
     </adminhtml>
     <admin>
         <routers>

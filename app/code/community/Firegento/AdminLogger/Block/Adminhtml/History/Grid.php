@@ -134,7 +134,9 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
      */
     public function getRowUrl($row)
     {
-        return false;
+        $transport = new Varien_Object();
+        Mage::dispatchEvent('firegento_adminlogger_rowurl', array('history' => $row, 'transport' => $transport));
+        return $transport->getRowUrl();
     }
 
     /**
