@@ -16,6 +16,11 @@
         </firegento_adminlogger_config>
     </default>
     <global>
+        <blocks>
+            <firegento_adminlogger>
+                <class>Firegento_AdminLogger_Block</class>
+            </firegento_adminlogger>
+        </blocks>
         <models>
             <firegento_adminlogger>
                 <class>Firegento_AdminLogger_Model</class>
@@ -45,6 +50,13 @@
         </helpers>
     </global>
     <adminhtml>
+        <layout>
+            <updates>
+                <firegento_adminlogger>
+                    <file>firegento_adminlogger.xml</file>
+                </firegento_adminlogger>
+            </updates>
+        </layout>
         <events>
             <model_save_after>
                 <observers>
@@ -71,7 +83,20 @@
                 </observers>
             </model_delete_after>
         </events>
+
     </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <firegento_adminlogger before="Mage_Adminhtml">Firegento_AdminLogger_Adminhtml</firegento_adminlogger>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
     <phpunit>
         <suite>
             <modules>
