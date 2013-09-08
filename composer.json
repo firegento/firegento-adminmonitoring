@@ -5,5 +5,11 @@
     "description": "The admin logger logs nearly every save and delete call in the backend. The is to generate an overview of the changes in the backend to know who changed certain things.",
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.firegento.com"
+        }
+    ]
 }
