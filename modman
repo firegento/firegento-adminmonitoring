@@ -1,3 +1,4 @@
 /app/code/community/Firegento/AdminLogger /app/code/community/Firegento/AdminLogger
 /app/etc/modules/Firegento_AdminLogger.xml /app/etc/modules/Firegento_AdminLogger.xml
 /app/design/adminhtml/default/default/layout/firegento_adminlogger.xml /app/design/adminhtml/default/default/layout/firegento_adminlogger.xml
+/app/locale/de_DE/Firegento_AdminLogger.csv /app/locale/de_DE/Firegento_AdminLogger.csv
