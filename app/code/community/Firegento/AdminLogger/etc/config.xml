@@ -68,18 +68,16 @@
             <model_save_after>
                 <observers>
                     <firegento_adminlogger>
-                        <type>model</type>
                         <class>firegento_adminlogger/observer_model_save</class>
-                        <method>modelSaveAfter</method>
+                        <method>modelAfter</method>
                     </firegento_adminlogger>
                 </observers>
             </model_save_after>
             <model_save_before>
                 <observers>
                     <firegento_adminlogger>
-                        <type>model</type>
                         <class>firegento_adminlogger/observer_model_save</class>
-                        <method>modelSaveBefore</method>
+                        <method>modelBefore</method>
                     </firegento_adminlogger>
                 </observers>
             </model_save_before>
@@ -87,18 +85,18 @@
                 <observers>
                     <firegento_adminlogger>
                         <class>firegento_adminlogger/observer_model_delete</class>
-                        <method>modelDeleteAfter</method>
+                        <method>modelAfter</method>
                     </firegento_adminlogger>
                 </observers>
             </model_delete_after>
             <firegento_adminlogger_rowurl>
                 <observers>
                     <catalog_product>
-                        <class>firegento_adminlogger/rowUrl_product</class>
+                        <class>firegento_adminlogger/rowUrl_model_product</class>
                         <method>setRowUrl</method>
                     </catalog_product>
                     <cms_page>
-                        <class>firegento_adminlogger/rowUrl_page</class>
+                        <class>firegento_adminlogger/rowUrl_model_page</class>
                         <method>setRowUrl</method>
                     </cms_page>
                 </observers>
