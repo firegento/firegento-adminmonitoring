@@ -6,6 +6,12 @@
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
     },
+    "require-dev": {
+        "ecomdev/mage-ci": "master-dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
     "repositories": [
         {
             "type": "composer",
