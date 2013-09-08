@@ -11,7 +11,10 @@ class Firegento_AdminLogger_Model_RowUrl_Product {
             $observer->getTransport()->setRowUrl(
                 Mage::getModel('adminhtml/url')->getUrl(
                     'adminhtml/catalog_product/edit',
-                    array('id' => $model->getId())
+                    array(
+                        'id'    => $model->getId(),
+                        'store' => $model->getStoreId(),
+                    )
                 )
             );
         }
