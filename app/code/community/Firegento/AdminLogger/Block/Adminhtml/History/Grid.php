@@ -24,7 +24,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         if (is_array($value)) {
             $value = print_r($value, true);
         }
-        return  $key . ': ' . $value . '<br />';
+        return  $this->entities($key . ': ' . $value) . '<br />';
     }
 
     /**
@@ -185,7 +185,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
                 }
             }
         }
-        return $this->wrapColor($this->entities($cell), '#00ff00');
+        return $this->wrapColor($cell, '#00ff00');
     }
 
 
@@ -202,7 +202,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
                return $this->__('not available');
            }
         }
-        return $this->wrapColor($this->entities($cell), '#ff0000');
+        return $this->wrapColor($cell, '#ff0000');
     }
 
     /**
