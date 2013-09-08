@@ -31,6 +31,21 @@ To exclude a class, add it into the node `config/default/firegento_adminlogger_c
         </default>
     </config>
 
+You can also exclude fields like updated_at ...
+
+    <config>
+        <default>
+            <firegento_adminlogger_config>
+                <exclude>
+                    <fields>
+                        <updated_at />
+                        <update_time />
+                    </fields>
+                </exclude>
+            </firegento_adminlogger_config>
+        </default>
+    </config>
+
 ### Third party integration
 model_save_after and model_delete_after are observed and changes automatically logged if not excluded as described above.
 So even third party models will be logged and can be even better integrated by link to their adminhtml edit form.
