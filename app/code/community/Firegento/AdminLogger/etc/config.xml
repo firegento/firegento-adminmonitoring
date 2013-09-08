@@ -104,7 +104,7 @@
             <firegento_adminlogger_log>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
+                        <class>firegento_adminlogger/observer_log</class>
                         <method>log</method>
                     </firegento_adminlogger>
                 </observers>
