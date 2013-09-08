@@ -21,6 +21,13 @@ abstract class Firegento_AdminLogger_Model_Observer_Model_Abstract {
     abstract protected function getAction();
 
     /**
+     * @param Varien_Event_Observer $observer
+     */
+    public function modelAfter(Varien_Event_Observer $observer) {
+        $this->storeByObserver($observer);
+    }
+
+    /**
      * @return bool
      */
     protected function hasChanged() {
