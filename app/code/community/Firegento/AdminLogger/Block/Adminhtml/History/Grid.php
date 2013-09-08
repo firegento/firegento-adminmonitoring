@@ -24,7 +24,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         if (is_array($value)) {
             $value = print_r($value, true);
         }
-        return  $key . ': ' . strip_tags($value) . '<br />';
+        return  $key . ': ' . htmlspecialchars($value, ENT_QUOTES|ENT_COMPAT, 'UTF-8') . '<br />';
     }
 
     protected function _prepareCollection()
