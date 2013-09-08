@@ -93,6 +93,15 @@
                     </catalog_product>
                 </observers>
             </firegento_adminlogger_rowurl>
+            <firegento_adminlogger_log>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer</class>
+                        <method>log</method>
+                    </firegento_adminlogger>
+                </observers>
+            </firegento_adminlogger_log>
+
         </events>
     </adminhtml>
     <admin>
