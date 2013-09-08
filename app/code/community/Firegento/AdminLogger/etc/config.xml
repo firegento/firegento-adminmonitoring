@@ -18,6 +18,7 @@
                 <fields>
                     <updated_at />
                     <update_time />
+                    <low_stock_date />
                 </fields>
             </exclude>
         </firegento_adminlogger_config>

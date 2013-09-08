@@ -67,11 +67,37 @@ class Firegento_AdminLogger_Model_Observer_Model_Save extends Firegento_AdminLog
      * @return int
      */
     protected function getAction() {
-        if (isset($this->beforeIds[$this->currentHash]) AND $this->beforeIds[$this->currentHash]) {
+        if (
+            // for models which call model_save_before
+            $this->hadIdAtBefore()
+            OR
+            // for models with origData but without model_save_before like Mage_CatalogInventory_Model_Stock_Item
+            $this->hasOrigData()
+         ) {
             return Firegento_AdminLogger_Helper_Data::ACTION_UPDATE;
         } else {
             return Firegento_AdminLogger_Helper_Data::ACTION_INSERT;
         }
+    }
+
+    /**
+     * @return bool
+     */
+    private function hadIdAtBefore() {
+        return (
+            isset($this->beforeIds[$this->currentHash])
+            AND $this->beforeIds[$this->currentHash]
+        );
+    }
+
+    /**
+     * @return bool
+     */
+    private function hasOrigData() {
+        $data = $this->savedModel->getOrigData();
+        // unset website_ids as this is even on new entities set for catalog_product models
+        unset($data['website_ids']);
+        return (bool)$data;
     }
 
 }
