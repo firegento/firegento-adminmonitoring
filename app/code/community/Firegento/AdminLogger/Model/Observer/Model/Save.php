@@ -7,14 +7,14 @@ class Firegento_AdminLogger_Model_Observer_Model_Save extends Firegento_AdminLog
      * @param Varien_Event_Observer $observer
      */
     public function modelAfter(Varien_Event_Observer $observer) {
-        $this->storeCurrentHash($observer->getObject());
+        $this->setCurrentHash($observer->getObject());
         parent::modelAfter($observer);
     }
 
     /**
      * @param Mage_Core_Model_Abstract $model
      */
-    private function storeCurrentHash(Mage_Core_Model_Abstract $model) {
+    private function setCurrentHash(Mage_Core_Model_Abstract $model) {
         $this->currentHash = $this->getObjectHash($model);
     }
 
@@ -41,10 +41,6 @@ class Firegento_AdminLogger_Model_Observer_Model_Save extends Firegento_AdminLog
     }
 
     /**
-     * @var ont
-     */
-    private $modelBeforeId;
-    /**
      * @param Varien_Event_Observer $observer
      */
     public function modelBefore(Varien_Event_Observer $observer) {
@@ -52,7 +48,7 @@ class Firegento_AdminLogger_Model_Observer_Model_Save extends Firegento_AdminLog
          * @var $savedObject Mage_Core_Model_Abstract
          */
         $savedObject = $observer->getObject();
-        $this->storeCurrentHash($savedObject);
+        $this->setCurrentHash($savedObject);
         $this->storeBeforeId($savedObject->getId());
     }
 
