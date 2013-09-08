@@ -26,6 +26,7 @@ class Firegento_AdminLogger_Model_History_Data {
         // have to re-load the model as based on database datatypes the format of values changes
         $className = get_class($this->savedModel);
         $model = new $className;
+        $model->setStoreId($this->savedModel->getStoreId());
         $model->load($this->savedModel->getId());
         return $this->filterObligatoryFields($model->getData());
    }

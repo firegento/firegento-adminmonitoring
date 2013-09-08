@@ -12,15 +12,26 @@ class Firegento_AdminLogger_Model_History extends Mage_Core_Model_Abstract
         $objectType = $this->getObjectType();
         /* @var Mage_Core_Model_Abstract $model */
         $model = new $objectType;
+        $content = $this->getDecodedContent();
+        if (isset($content['store_id'])) {
+            $model->setStoreId($content['store_id']);
+        }
         $model->load($this->getObjectId());
         return $model;
     }
 
     /**
-     * @return stdObject
+     * @return array
      */
     public function getDecodedContentDiff() {
         return json_decode($this->getContentDiff(), true);
+    }
+
+    /**
+     * @return array
+     */
+    private function getDecodedContent() {
+        return json_decode($this->getContent(), true);
     }
 
     /**
