@@ -95,6 +95,10 @@
                         <class>firegento_adminlogger/rowUrl_product</class>
                         <method>setRowUrl</method>
                     </catalog_product>
+                    <cms_page>
+                        <class>firegento_adminlogger/rowUrl_page</class>
+                        <method>setRowUrl</method>
+                    </cms_page>
                 </observers>
             </firegento_adminlogger_rowurl>
             <firegento_adminlogger_log>
