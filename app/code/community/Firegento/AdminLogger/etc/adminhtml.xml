@@ -3,7 +3,7 @@
     <menu>
         <system>
             <children>
-                <history module="firegento_adminlogger">
+                <history module="firegento_adminlogger" translate="title">
                     <title>Admin Logger</title>
                     <sort_order>10</sort_order>
                     <action>adminhtml/history</action>

@@ -94,6 +94,15 @@
                 </observers>
             </firegento_adminlogger_rowurl>
         </events>
+        <translate>
+            <modules>
+                <Firegento_AdminLogger>
+                    <files>
+                        <default>Firegento_AdminLogger.csv</default>
+                    </files>
+                </Firegento_AdminLogger>
+            </modules>
+        </translate>
     </adminhtml>
     <admin>
         <routers>
@@ -106,6 +115,19 @@
             </adminhtml>
         </routers>
     </admin>
+
+    <crontab>
+        <jobs>
+            <neoshops_adminlogger>
+                <schedule>
+                    <cron_expr>0 3 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>firegento_adminlogger/observer::scheduledCleanAdminLogger</model>
+                </run>
+            </neoshops_adminlogger>
+        </jobs>
+    </crontab>
 
     <phpunit>
         <suite>

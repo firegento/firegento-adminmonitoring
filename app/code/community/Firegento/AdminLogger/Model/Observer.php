@@ -2,6 +2,7 @@
 class Firegento_AdminLogger_Model_Observer {
     const ACTION_SAVE = 'save';
     const ACTION_DELETE = 'delete';
+    const XML_PATH_ADMINLOGGER_CLEAN_ENABLED = 'admin/firegento_adminlogger/enable_cleaning';
 
     /**
      * @var Firegento_AdminLogger_Model_History_Diff
@@ -189,5 +190,24 @@ class Firegento_AdminLogger_Model_Observer {
      */
     private function isUpdate (Mage_Core_Model_Abstract $savedModel) {
         return $this->getAction($savedModel) == Firegento_AdminLogger_Helper_Data::ACTION_UPDATE;
+    }
+
+    /**
+     * Cleaning Database Entries
+     *
+     * @param Mage_Cron_Model_Schedule $schedule
+     */
+    public function scheduledCleanAdminLogger (Mage_Cron_Model_Schedule $schedule) {
+
+        if (!Mage::getStoreConfigFlag(self::XML_PATH_ADMINLOGGER_CLEAN_ENABLED)) {
+            return $this;
+        }
+
+        try {
+            Mage::getModel('firegento_adminlogger/clean')->clean();
+        }
+        catch (Exception $e) {
+            Mage::logException($e);
+        }
     }
 }
