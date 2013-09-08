@@ -24,7 +24,15 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         if (is_array($value)) {
             $value = print_r($value, true);
         }
-        return  $key . ': ' . $value . '<br />';
+        return  $this->entities($key . ': ' . $value) . '<br />';
+    }
+
+    /**
+     * @param $string
+     * @return string
+     */
+    private function entities($string) {
+        return htmlspecialchars($string, ENT_QUOTES|ENT_COMPAT, 'UTF-8');
     }
 
     protected function _prepareCollection()
@@ -91,7 +99,7 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
         $model = Mage::getModel('admin/user');
         $adminUsers = $model->getCollection();
         foreach($adminUsers as $adminUser){
-            $optionArray[$adminUser->getId()] = $adminUser->getUsername();
+            $optionArray[$adminUser->getId()] = $this->entities($adminUser->getUsername());
         }
 
         $this->addColumn('user_id', array(

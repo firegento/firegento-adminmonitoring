@@ -128,25 +128,42 @@ class Firegento_AdminLogger_Model_Observer {
      * @param Mage_Core_Model_Abstract $savedModel
      */
     private function createHistoryForModelAction(Mage_Core_Model_Abstract $savedModel) {
+        Mage::dispatchEvent(
+            'firegento_adminlogger_log',
+            array(
+                 'object_id'    => $this->dataModel->getObjectId(),
+                 'object_type'  => $this->dataModel->getObjectType(),
+                 'content'      => $this->dataModel->getSerializedContent(),
+                 'content_diff' => $this->diffModel->getSerializedDiff(),
+                 'action'       => $this->getAction($savedModel),
+            )
+        );
+    }
+
+    /**
+     * @param Varien_Event_Observer $observer
+     */
+    public function log(Varien_Event_Observer $observer) {
         /**
          * @var $history Firegento_AdminLogger_Model_History
          */
         $history = Mage::getModel('firegento_adminlogger/history');
         $history->setData(
             array(
-                 'object_id'    => $this->dataModel->getObjectId(),
-                 'object_type'  => $this->dataModel->getObjectType(),
-                 'content'      => $this->dataModel->getSerializedContent(),
-                 'content_diff' => $this->diffModel->getSerializedDiff(),
+                 'object_id'    => $observer->getObjectId(),
+                 'object_type'  => $observer->getObjectType(),
+                 'content'      => $observer->getContent(),
+                 'content_diff' => $observer->getContentDiff(),
                  'user_agent'   => $this->getUserAgent(),
                  'ip'           => $this->getRemoteAddr(),
                  'user_id'      => $this->getUserId(),
                  'user_name'    => $this->getUserName(),
-                 'action'       => $this->getAction($savedModel),
+                 'action'       => $observer->getAction(),
                  'created_at'   => now(),
             )
         );
         $history->save();
+
     }
 
     /**

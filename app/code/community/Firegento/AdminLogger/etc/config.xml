@@ -15,6 +15,10 @@
                     <!-- omit infinite loops -->
                     <Firegento_AdminLogger_Model_History />
                 </object_types>
+                <fields>
+                    <updated_at />
+                    <update_time />
+                </fields>
             </exclude>
         </firegento_adminlogger_config>
     </default>
@@ -91,8 +95,21 @@
                         <class>firegento_adminlogger/rowUrl_product</class>
                         <method>setRowUrl</method>
                     </catalog_product>
+                    <cms_page>
+                        <class>firegento_adminlogger/rowUrl_page</class>
+                        <method>setRowUrl</method>
+                    </cms_page>
                 </observers>
             </firegento_adminlogger_rowurl>
+            <firegento_adminlogger_log>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer</class>
+                        <method>log</method>
+                    </firegento_adminlogger>
+                </observers>
+            </firegento_adminlogger_log>
+
         </events>
         <translate>
             <modules>

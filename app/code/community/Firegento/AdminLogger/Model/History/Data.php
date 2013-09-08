@@ -26,6 +26,7 @@ class Firegento_AdminLogger_Model_History_Data {
         // have to re-load the model as based on database datatypes the format of values changes
         $className = get_class($this->savedModel);
         $model = new $className;
+        $model->setStoreId($this->savedModel->getStoreId());
         $model->load($this->savedModel->getId());
         return $this->filterObligatoryFields($model->getData());
    }
@@ -35,8 +36,10 @@ class Firegento_AdminLogger_Model_History_Data {
      * @return array
      */
     protected function filterObligatoryFields($data) {
-        // TODO make configurable in config.xml
-        unset($data['updated_at']);
+        $fields = array_keys(Mage::getStoreConfig('firegento_adminlogger_config/exclude/fields'));
+        foreach ($fields as $field) {
+            unset($data[$field]);
+        }
         return $data;
     }
 
