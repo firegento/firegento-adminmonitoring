@@ -68,7 +68,8 @@
             <model_save_after>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
+                        <type>model</type>
+                        <class>firegento_adminlogger/observer_model_save</class>
                         <method>modelSaveAfter</method>
                     </firegento_adminlogger>
                 </observers>
@@ -76,7 +77,8 @@
             <model_save_before>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
+                        <type>model</type>
+                        <class>firegento_adminlogger/observer_model_save</class>
                         <method>modelSaveBefore</method>
                     </firegento_adminlogger>
                 </observers>
@@ -84,7 +86,7 @@
             <model_delete_after>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
+                        <class>firegento_adminlogger/observer_model_delete</class>
                         <method>modelDeleteAfter</method>
                     </firegento_adminlogger>
                 </observers>
