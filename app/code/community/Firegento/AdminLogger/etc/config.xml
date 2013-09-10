@@ -135,14 +135,14 @@
 
     <crontab>
         <jobs>
-            <neoshops_adminlogger>
+            <firegento_adminlogger>
                 <schedule>
                     <cron_expr>0 3 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>firegento_adminlogger/observer::scheduledCleanAdminLogger</model>
                 </run>
-            </neoshops_adminlogger>
+            </firegento_adminlogger>
         </jobs>
     </crontab>
 
