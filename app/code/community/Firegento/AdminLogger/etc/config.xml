@@ -18,6 +18,7 @@
                 <fields>
                     <updated_at />
                     <update_time />
+                    <low_stock_date />
                 </fields>
             </exclude>
         </firegento_adminlogger_config>
@@ -68,35 +69,35 @@
             <model_save_after>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
-                        <method>modelSaveAfter</method>
+                        <class>firegento_adminlogger/observer_model_save</class>
+                        <method>modelAfter</method>
                     </firegento_adminlogger>
                 </observers>
             </model_save_after>
             <model_save_before>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
-                        <method>modelSaveBefore</method>
+                        <class>firegento_adminlogger/observer_model_save</class>
+                        <method>modelBefore</method>
                     </firegento_adminlogger>
                 </observers>
             </model_save_before>
             <model_delete_after>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
-                        <method>modelDeleteAfter</method>
+                        <class>firegento_adminlogger/observer_model_delete</class>
+                        <method>modelAfter</method>
                     </firegento_adminlogger>
                 </observers>
             </model_delete_after>
             <firegento_adminlogger_rowurl>
                 <observers>
                     <catalog_product>
-                        <class>firegento_adminlogger/rowUrl_product</class>
+                        <class>firegento_adminlogger/rowUrl_model_product</class>
                         <method>setRowUrl</method>
                     </catalog_product>
                     <cms_page>
-                        <class>firegento_adminlogger/rowUrl_page</class>
+                        <class>firegento_adminlogger/rowUrl_model_page</class>
                         <method>setRowUrl</method>
                     </cms_page>
                 </observers>
@@ -104,7 +105,7 @@
             <firegento_adminlogger_log>
                 <observers>
                     <firegento_adminlogger>
-                        <class>firegento_adminlogger/observer</class>
+                        <class>firegento_adminlogger/observer_log</class>
                         <method>log</method>
                     </firegento_adminlogger>
                 </observers>

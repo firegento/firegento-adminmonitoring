@@ -211,6 +211,6 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
      * @return string
      */
     private function wrapColor($string, $color) {
-        return '<span style="font-weight: bold; color: ' . $color . '">' . $string . '</span>';
+        return '<div style="font-weight: bold; color: ' . $color . '; overflow: auto; max-height: 100px; max-width: 400px;">' . $string . '</div>';
     }
 }
