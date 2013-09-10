@@ -22,7 +22,7 @@ class Firegento_AdminLogger_Model_Clean {
             $adminLoggerCollection = Mage::getModel('firegento_adminlogger/history')
                 ->getCollection()
                 ->addFieldToFilter('created_at', array(
-                'lt' => new Zend_Db_Expr("DATE_SUB('" . now() . "', INTERVAL $interval DAY)")));
+                'lt' => new Zend_Db_Expr("DATE_SUB('" . now() . "', INTERVAL " . (int)$interval . " DAY)")));
 
             foreach ($adminLoggerCollection as $history) {
                 $history->delete();
