@@ -180,7 +180,8 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
                 }
                 foreach ($showContent as $key => $value ) {
                     if (array_key_exists($key, $newContent)) {
-                        $cell .= $this->formatCellContent($key, $newContent[$key]);
+                        $attributeName = Mage::helper('firegento_adminlogger')->getAttributeNameByTypeAndCode($row->getObjectType(), $key);
+                        $cell .= $this->formatCellContent($attributeName, $newContent[$key]);
                     }
                 }
             }
@@ -189,14 +190,20 @@ class Firegento_AdminLogger_Block_Adminhtml_History_Grid extends Mage_Adminhtml_
     }
 
 
-    public function showOldContent($oldContent) {
+    /**
+     * @param string $oldContent
+     * @param Firegento_AdminLogger_Model_History $row
+     * @return string
+     */
+    public function showOldContent($oldContent, Firegento_AdminLogger_Model_History $row) {
         $cell = '';
         $oldContent = $this->decodeContent($oldContent);
 
         if (is_array($oldContent)) {
            if (count($oldContent) > 0) {
                foreach ($oldContent as $key => $value ) {
-                   $cell .= $this->formatCellContent($key, $value);
+                   $attributeName = Mage::helper('firegento_adminlogger')->getAttributeNameByTypeAndCode($row->getObjectType(), $key);
+                   $cell .= $this->formatCellContent($attributeName, $value);
                }
            } else {
                return $this->__('not available');
