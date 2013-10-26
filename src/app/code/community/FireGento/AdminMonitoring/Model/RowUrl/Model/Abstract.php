@@ -1,4 +1,30 @@
 <?php
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_AdminMonitoring
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+/**
+ * Abstract Model for RowUrl
+ *
+ * @category FireGento
+ * @package  FireGento_AdminMonitoring
+ * @author   FireGento Team <team@firegento.com>
+ */
 abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
 {
     /**
@@ -16,6 +42,7 @@ abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
      * @return array
      */
     abstract protected function getRouteParams(Mage_Core_Model_Abstract $model);
+
     /**
      * sets the row url in the transport object for a cms_page model
      *
@@ -36,7 +63,7 @@ abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
         if ($rowUrl) {
             $observer->getTransport()->setRowUrl($rowUrl);
         }
-   }
+    }
 
     /**
      * @param  FireGento_AdminMonitoring_Model_History $history

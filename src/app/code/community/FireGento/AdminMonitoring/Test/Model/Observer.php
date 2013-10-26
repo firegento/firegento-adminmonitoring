@@ -1,4 +1,30 @@
 <?php
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_AdminMonitoring
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+/**
+ * PHPUnit Test
+ *
+ * @category FireGento
+ * @package  FireGento_AdminMonitoring
+ * @author   FireGento Team <team@firegento.com>
+ */
 class FireGento_AdminMonitoring_Test_Model_Observer extends EcomDev_PHPUnit_Test_Case
 {
     /**
@@ -6,6 +32,9 @@ class FireGento_AdminMonitoring_Test_Model_Observer extends EcomDev_PHPUnit_Test
      */
     protected $_object;
 
+    /**
+     * Init model
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -30,7 +59,8 @@ class FireGento_AdminMonitoring_Test_Model_Observer extends EcomDev_PHPUnit_Test
     /**
      * Create event to pass into observer method
      *
-     * @param array $data
+     * @param array $data Observer Data
+     * @return Varien_Event_Observer Observer Model
      */
     protected function _createObserver(array $data)
     {
@@ -102,7 +132,5 @@ class FireGento_AdminMonitoring_Test_Model_Observer extends EcomDev_PHPUnit_Test
             $this->expected("$id-$mail-$firstname-$lastname-$password")->getData(),
             $data
         );
-
-
     }
 }
