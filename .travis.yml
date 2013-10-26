@@ -7,7 +7,7 @@ before_install:
 before_script:
   - CURR_DIR=$(pwd)
   - bin/mage-ci install test 1.7.0.2 magento_test -c -t -r http://mage-ci.ecomdev.org
-  - bin/mage-ci install-module test $CURR_DIR
+  - bin/mage-ci install-module test $CURR_DIR/src/
   - git clone git://github.com/IvanChepurnyi/EcomDev_PHPUnit.git -b dev ./phpunit/
   - bin/mage-ci install-module $CURR_DIR/test $CURR_DIR/phpunit/
 script:
