@@ -30,13 +30,19 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update
 {
     const XML_PATH_ADMINMONITORING_LOG_PRODUCT_MASS_UPDATE = 'admin/firegento_adminmonitoring/product_mass_update_logging';
 
+    /**
+     * Observe the catalog product attribute update before
+     *
+     * @param  Varien_Event_Observer $observer Observer Instance
+     * @return void
+     */
     public function catalogProductAttributeUpdateBefore(Varien_Event_Observer $observer)
     {
-        if (!Mage::getStoreConfig(self::XML_PATH_ADMINMONITORING_LOG_PRODUCT_MASS_UPDATE)) {
+        if (!Mage::getStoreConfigFlag(self::XML_PATH_ADMINMONITORING_LOG_PRODUCT_MASS_UPDATE)) {
             return;
         }
 
-        /** @var FireGento_AdminMonitoring_Model_History $history */
+        /* @var FireGento_AdminMonitoring_Model_History $history */
         $history = Mage::getModel('firegento_adminmonitoring/history');
 
         $objectType = get_class(Mage::getModel('catalog/product'));
@@ -47,20 +53,19 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update
         $userName = $this->getUserName();
 
         foreach ($observer->getEvent()->getProductIds() as $productId) {
-            $history->setData(
-                array(
-                'object_id'    => $productId,
-                'object_type'  => $objectType,
-                'content'      => $content,
-                'content_diff' => '{}',
-                'user_agent'   => $userAgent,
-                'ip'           => $ip,
-                'user_id'      => $userId,
-                'user_name'    => $userName,
-                'action'       => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
-                'created_at'   => now(),
-                )
-            );
+            $history->setData(array(
+                    'object_id' => $productId,
+                    'object_type' => $objectType,
+                    'content' => $content,
+                    'content_diff' => '{}',
+                    'user_agent' => $userAgent,
+                    'ip' => $ip,
+                    'user_id' => $userId,
+                    'user_name' => $userName,
+                    'action' => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
+                    'created_at' => now(),
+            ));
+
             $history->save();
             $history->clearInstance();
         }

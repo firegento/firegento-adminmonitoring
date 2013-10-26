@@ -28,18 +28,23 @@
 class FireGento_AdminMonitoring_Model_Observer_Product_Import
     extends FireGento_AdminMonitoring_Model_Observer_Log
 {
-
     const XML_PATH_ADMINMONITORING_LOG_PRODUCT_IMPORT = 'admin/firegento_adminmonitoring/product_import_logging';
 
+    /**
+     * Observe the product import before
+     *
+     * @param  Varien_Event_Observer $observer Observer Instance
+     * @return void
+     */
     public function catalogProductImportFinishBefore(Varien_Event_Observer $observer)
     {
-        if (!Mage::getStoreConfig(self::XML_PATH_ADMINMONITORING_LOG_PRODUCT_IMPORT)) {
+        if (!Mage::getStoreConfigFlag(self::XML_PATH_ADMINMONITORING_LOG_PRODUCT_IMPORT)) {
             return;
         }
 
         $productIds = $observer->getEvent()->getAdapter()->getAffectedEntityIds();
 
-        /** @var FireGento_AdminMonitoring_Model_History $history */
+        /* @var FireGento_AdminMonitoring_Model_History $history */
         $history = Mage::getModel('firegento_adminmonitoring/history');
 
         $objectType = get_class(Mage::getModel('catalog/product'));
@@ -50,20 +55,19 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Import
         $userName = $this->getUserName();
 
         foreach ($productIds as $productId) {
-            $history->setData(
-                array(
-                    'object_id'    => $productId,
-                    'object_type'  => $objectType,
-                    'content'      => $content,
+            $history->setData(array(
+                    'object_id' => $productId,
+                    'object_type' => $objectType,
+                    'content' => $content,
                     'content_diff' => '{}',
-                    'user_agent'   => $userAgent,
-                    'ip'           => $ip,
-                    'user_id'      => $userId,
-                    'user_name'    => $userName,
-                    'action'       => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
-                    'created_at'   => now(),
-                )
-            );
+                    'user_agent' => $userAgent,
+                    'ip' => $ip,
+                    'user_id' => $userId,
+                    'user_name' => $userName,
+                    'action' => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
+                    'created_at' => now(),
+            ));
+
             $history->save();
         }
     }

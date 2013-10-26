@@ -33,6 +33,8 @@ class FireGento_AdminMonitoring_Model_History_Data
     private $savedModel;
 
     /**
+     * Init the saved model
+     *
      * @param Mage_Core_Model_Abstract $savedModel
      */
     public function __construct(Mage_Core_Model_Abstract $savedModel)
@@ -41,7 +43,9 @@ class FireGento_AdminMonitoring_Model_History_Data
     }
 
     /**
-     * @return string
+     * Retrieve the serialized content
+     *
+     * @return string Serialized Content
      */
     public function getSerializedContent()
     {
@@ -49,7 +53,9 @@ class FireGento_AdminMonitoring_Model_History_Data
     }
 
     /**
-     * @return array
+     * Retrieve the content of the saved model
+     *
+     * @return array Content
      */
     public function getContent()
     {
@@ -58,12 +64,15 @@ class FireGento_AdminMonitoring_Model_History_Data
         $model = new $className;
         $model->setStoreId($this->savedModel->getStoreId());
         $model->load($this->savedModel->getId());
+
         return $this->filterObligatoryFields($model->getData());
-   }
+    }
 
     /**
-     * @param  array $data
-     * @return array
+     * Remove the obligatory fields from the data
+     *
+     * @param  array $data Data
+     * @return array Filtered Data
      */
     protected function filterObligatoryFields($data)
     {
@@ -71,11 +80,14 @@ class FireGento_AdminMonitoring_Model_History_Data
         foreach ($fields as $field) {
             unset($data[$field]);
         }
+
         return $data;
     }
 
     /**
-     * @return array
+     * Retrieve the original content of the saved model
+     *
+     * @return array Data
      */
     public function getOrigContent()
     {
@@ -84,7 +96,9 @@ class FireGento_AdminMonitoring_Model_History_Data
     }
 
     /**
-     * @return string
+     * Retrieve the object type of the saved model
+     *
+     * @return string Object Type
      */
     public function getObjectType()
     {
@@ -92,7 +106,9 @@ class FireGento_AdminMonitoring_Model_History_Data
     }
 
     /**
-     * @return int
+     * Retrieve the object id of the saved model
+     *
+     * @return int Object ID
      */
     public function getObjectId()
     {

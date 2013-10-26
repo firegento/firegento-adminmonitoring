@@ -29,7 +29,9 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Delete
     extends FireGento_AdminMonitoring_Model_Observer_Model_Abstract
 {
     /**
-     * @return int
+     * Retrieve the current action id
+     *
+     * @return int Action ID
      */
     protected function getAction()
     {

@@ -25,11 +25,22 @@
  * @package  FireGento_AdminMonitoring
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_AdminMonitoring_Model_Observer_Model_Abstract
+class FireGento_AdminMonitoring_Model_Observer_Model_Save
+    extends FireGento_AdminMonitoring_Model_Observer_Model_Abstract
 {
+    /**
+     * @var string Object Hash
+     */
     private $currentHash;
 
     /**
+     * @var array
+     */
+    private $beforeIds = array();
+
+    /**
+     * Handle the model_save_after event.
+     *
      * @param Varien_Event_Observer $observer
      */
     public function modelAfter(Varien_Event_Observer $observer)
@@ -39,6 +50,8 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
+     * Set the current hash of the given model.
+     *
      * @param Mage_Core_Model_Abstract $model
      */
     private function setCurrentHash(Mage_Core_Model_Abstract $model)
@@ -47,8 +60,10 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @param  object $object
-     * @return string
+     * Retrieve the object hash for the given model.
+     *
+     * @param  object $object Object to hash
+     * @return string Hashed object
      */
     private function getObjectHash($object)
     {
@@ -56,40 +71,42 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @return bool
+     * Check if data has changed.
+     *
+     * @return bool Result
      */
     protected function hasChanged()
     {
-        return (!$this->isUpdate() OR parent::hasChanged());
+        return (!$this->isUpdate() || parent::hasChanged());
     }
 
     /**
+     * Check if the current action is an update.
+     *
      * @return bool
      */
-    private function isUpdate ()
+    private function isUpdate()
     {
         return $this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE;
     }
 
     /**
-     * @param Varien_Event_Observer $observer
+     * Handle the model_save_before event.
+     *
+     * @param Varien_Event_Observer $observer Observer Instance
      */
     public function modelBefore(Varien_Event_Observer $observer)
     {
-        /**
-         * @var $savedObject Mage_Core_Model_Abstract
-         */
+        /* @var $savedObject Mage_Core_Model_Abstract */
         $savedObject = $observer->getObject();
         $this->setCurrentHash($savedObject);
         $this->storeBeforeId($savedObject->getId());
     }
 
     /**
-     * @var array
-     */
-    private $beforeIds = array();
-    /**
-     * @param $id
+     * Store the before id for the current hash.
+     *
+     * @param int $id Object ID
      */
     private function storeBeforeId($id)
     {
@@ -97,17 +114,15 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @return int
+     * Retrieve the current monitoring action
+     *
+     * @return int Action ID
      */
     protected function getAction()
     {
-        if (
-            // for models which call model_save_before
-            $this->hadIdAtBefore()
-            OR
-            // for models with origData but without model_save_before like Mage_CatalogInventory_Model_Stock_Item
-            $this->hasOrigData()
-         ) {
+        if ($this->hadIdAtBefore() // for models which call model_save_before
+            || $this->hasOrigData() // for models with origData but without model_save_before like stock item
+        ) {
             return FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE;
         } else {
             return FireGento_AdminMonitoring_Helper_Data::ACTION_INSERT;
@@ -115,18 +130,19 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @return bool
+     * Check if the id was there before.
+     *
+     * @return bool Result
      */
     private function hadIdAtBefore()
     {
-        return (
-            isset($this->beforeIds[$this->currentHash])
-            AND $this->beforeIds[$this->currentHash]
-        );
+        return (isset($this->beforeIds[$this->currentHash]) && $this->beforeIds[$this->currentHash]);
     }
 
     /**
-     * @return bool
+     * Check if the saved model has original data.
+     *
+     * @return bool Result
      */
     private function hasOrigData()
     {
@@ -135,5 +151,4 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
         unset($data['website_ids']);
         return (bool) $data;
     }
-
 }

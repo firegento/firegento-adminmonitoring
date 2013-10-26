@@ -33,6 +33,8 @@ class FireGento_AdminMonitoring_Model_History_Diff
     private $dataModel;
 
     /**
+     * Init the data model
+     *
      * @param FireGento_AdminMonitoring_Model_History_Data $dataModel
      */
     public function __construct(FireGento_AdminMonitoring_Model_History_Data $dataModel)
@@ -41,6 +43,8 @@ class FireGento_AdminMonitoring_Model_History_Diff
     }
 
     /**
+     * Check if the data has changed.
+     *
      * @return bool
      */
     public function hasChanged()
@@ -49,7 +53,9 @@ class FireGento_AdminMonitoring_Model_History_Diff
     }
 
     /**
-     * @return array
+     * Generate an object diff of the original content and the actual content.
+     *
+     * @return array Diff Array
      */
     private function getObjectDiff ()
     {
@@ -59,13 +65,13 @@ class FireGento_AdminMonitoring_Model_History_Diff
             $dataDiff = array();
             foreach ($dataOld as $key => $oldValue) {
                 // compare objects serialized
-                if (
-                    isset($dataNew[$key])
-                    AND (json_encode($oldValue) != json_encode($dataNew[$key]))
+                if (isset($dataNew[$key])
+                    && (json_encode($oldValue) != json_encode($dataNew[$key]))
                 ) {
                     $dataDiff[$key] = $oldValue;
                 }
             }
+
             return $dataDiff;
         } else {
             return array();
@@ -73,6 +79,8 @@ class FireGento_AdminMonitoring_Model_History_Diff
     }
 
     /**
+     * Retrieve the serialized diff for the current data model.
+     *
      * @return string
      */
     public function getSerializedDiff()
@@ -80,5 +88,4 @@ class FireGento_AdminMonitoring_Model_History_Diff
         $dataDiff = $this->getObjectDiff();
         return json_encode($dataDiff);
     }
-
 }

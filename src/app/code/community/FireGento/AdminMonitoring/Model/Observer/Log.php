@@ -28,16 +28,15 @@
 class FireGento_AdminMonitoring_Model_Observer_Log
 {
     /**
-     * @param Varien_Event_Observer $observer
+     * Log the data for the given observer model.
+     *
+     * @param Varien_Event_Observer $observer Observer Instance
      */
     public function log(Varien_Event_Observer $observer)
     {
-        /**
-         * @var $history FireGento_AdminMonitoring_Model_History
-         */
+        /* @var $history FireGento_AdminMonitoring_Model_History */
         $history = Mage::getModel('firegento_adminmonitoring/history');
-        $history->setData(
-            array(
+        $history->setData(array(
                  'object_id'    => $observer->getObjectId(),
                  'object_type'  => $observer->getObjectType(),
                  'content'      => $observer->getContent(),
@@ -48,66 +47,72 @@ class FireGento_AdminMonitoring_Model_Observer_Log
                  'user_name'    => $this->getUserName(),
                  'action'       => $observer->getAction(),
                  'created_at'   => now(),
-            )
-        );
+        ));
+
         $history->save();
     }
 
     /**
-     * @return int
+     * Retrieve the current admin user id
+     *
+     * @return int User ID
      */
-    protected function getUserId()
+    public function getUserId()
     {
         if ($this->getUser()) {
-            $userId = $this->getUser()
-                ->getUserId();
+            $userId = $this->getUser()->getUserId();
         } else {
             $userId = 0;
         }
+
         return $userId;
     }
 
     /**
-     * @return string
+     * Retrieve the current admin user name
+     *
+     * @return string User Name
      */
-    protected function getUserName()
+    public function getUserName()
     {
         if ($this->getUser()) {
-            $userName = $this->getUser()
-                ->getUsername();
+            $userName = $this->getUser()->getUsername();
         } else {
             $userName = '';
         }
+
         return $userName;
     }
 
     /**
-     * @return Mage_Admin_Model_User|NULL
+     * Retrieve the current admin user
+     *
+     * @return Mage_Admin_Model_User
      */
-    protected function getUser()
+    public function getUser()
     {
-        /**
-         * @var $session Mage_Admin_Model_Session
-         */
+        /* @var $session Mage_Admin_Model_Session */
         $session = Mage::getSingleton('admin/session');
         return $session->getUser();
     }
 
     /**
-     * @return string
+     * Retrieve the user agent of the current user.
+     *
+     * @return string User Agent
      */
-    protected function getUserAgent()
+    public function getUserAgent()
     {
         return (isset($_SERVER['HTTP_USER_AGENT']) ? (string) $_SERVER['HTTP_USER_AGENT'] : '');
     }
 
     /**
-     * @return MageTest_Core_Helper_Http
+     * Retrieve the remote address of the current user.
+     *
+     * @return string IPv4|long
      */
-    protected function getRemoteAddr()
+    public function getRemoteAddr()
     {
-        return Mage::helper('core/http')
-            ->getRemoteAddr();
+        return Mage::helper('core/http')->getRemoteAddr();
     }
-
 }

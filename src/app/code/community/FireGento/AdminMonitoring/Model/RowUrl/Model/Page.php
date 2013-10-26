@@ -29,7 +29,9 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Page
     extends FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
 {
     /**
-     * @return string
+     * Retrieve the class name for the current implementation.
+     *
+     * @return string Class Name
      */
     protected function getClassName()
     {
@@ -37,7 +39,9 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Page
     }
 
     /**
-     * @return string
+     * Retrieve the route path for the current implementation
+     *
+     * @return string Route Path
      */
     protected function getRoutePath()
     {
@@ -45,8 +49,10 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Page
     }
 
     /**
-     * @param  Mage_Core_Model_Abstract $model
-     * @return array
+     * Retrieve the route params for the current implementation and given model
+     *
+     * @param  Mage_Core_Model_Abstract $model Model
+     * @return array Route Params
      */
     protected function getRouteParams(Mage_Core_Model_Abstract $model)
     {

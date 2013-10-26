@@ -25,16 +25,17 @@
  * @package  FireGento_AdminMonitoring
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_AdminMonitoring_Block_Adminhtml_History extends Mage_Adminhtml_Block_Widget_Grid_Container
+class FireGento_AdminMonitoring_Block_Adminhtml_History
+    extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
+    /**
+     * Constructor of the grid container
+     */
     public function __construct()
     {
         $this->_blockGroup = 'firegento_adminmonitoring';
         $this->_controller = 'adminhtml_history';
-
         $this->_headerText = Mage::helper('firegento_adminmonitoring')->__('History');
-        #$this->_addButtonLabel = Mage::helper('firegento_adminmonitoring')->__('Log hinzufügen');
-
         parent::__construct();
         $this->removeButton('add');
     }

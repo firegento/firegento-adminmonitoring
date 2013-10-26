@@ -21,23 +21,37 @@
 /**
  * History Model
  *
+ * @method FireGento_AdminMonitoring_Model_Resource_History getResource()
+ * @method FireGento_AdminMonitoring_Model_Resource_History _getResource()
+ * @method int getObjectId()
+ * @method string getObjectType()
+ * @method string getContent()
+ * @method string getContentDiff()
+ * @method int getAction()
+ *
  * @category FireGento
  * @package  FireGento_AdminMonitoring
  * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
 {
+    /**
+     * Inits the resource model and resource collection model
+     */
     protected function _construct()
     {
         $this->_init('firegento_adminmonitoring/history');
     }
 
     /**
+     * Retrieve the original model
+     *
      * @return Mage_Core_Model_Abstract
      */
     public function getOriginalModel()
     {
         $objectType = $this->getObjectType();
+
         /* @var Mage_Core_Model_Abstract $model */
         $model = new $objectType;
         $content = $this->getDecodedContent();
@@ -45,11 +59,14 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
             $model->setStoreId($content['store_id']);
         }
         $model->load($this->getObjectId());
+
         return $model;
     }
 
     /**
-     * @return array
+     * Retrieve the decoded content diff
+     *
+     * @return array Decoded Content Diff
      */
     public function getDecodedContentDiff()
     {
@@ -57,7 +74,9 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
     }
 
     /**
-     * @return array
+     * Retrieve the decoded content
+     *
+     * @return array Decoded Content
      */
     private function getDecodedContent()
     {
@@ -65,7 +84,9 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
     }
 
     /**
-     * @return bool
+     * Check if the history action is an update action.
+     *
+     * @return bool Result
      */
     public function isUpdate()
     {
@@ -73,11 +94,12 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
     }
 
     /**
+     * Check if the history action is an delete action.
+     *
      * @return bool
      */
     public function isDelete()
     {
         return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_DELETE);
     }
-
 }

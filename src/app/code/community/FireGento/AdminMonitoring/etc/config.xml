@@ -146,7 +146,6 @@
                     </firegento_adminmonitoring>
                 </observers>
             </firegento_adminmonitoring_log>
-
         </events>
         <translate>
             <modules>
@@ -169,7 +168,6 @@
             </adminhtml>
         </routers>
     </admin>
-
     <crontab>
         <jobs>
             <firegento_adminmonitoring>
@@ -177,12 +175,11 @@
                     <cron_expr>0 3 * * *</cron_expr>
                 </schedule>
                 <run>
-                    <model>firegento_adminmonitoring/observer::scheduledCleanAdminMonitoring</model>
+                    <model>firegento_adminmonitoring/clean::scheduledCleanAdminMonitoring</model>
                 </run>
             </firegento_adminmonitoring>
         </jobs>
     </crontab>
-
     <phpunit>
         <suite>
             <modules>
