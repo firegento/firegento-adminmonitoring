@@ -15,11 +15,11 @@ Install via modman or copy the files into your magento installation.
 ### BE CAREFUL
 This extension writes a lot of data into the database and we exclude only a few core classes. If you have many writes in the backend, please have a look into this to avoid a full hard disk!
 
-To exclude a class, add it into the node `config/default/firegento_AdminMonitoring_config/exclude/object_types`
+To exclude a class, add it into the node `config/default/firegento_adminmonitoring_config/exclude/object_types`
 
     <config>
         <default>
-            <firegento_AdminMonitoring_config>
+            <firegento_adminmonitoring_config>
                 <exclude>
                     <object_types>
                         <Mage_Index_Model_Event />
@@ -27,7 +27,7 @@ To exclude a class, add it into the node `config/default/firegento_AdminMonitori
                         <Firegento_AdminMonitoring_Model_History />
                     </object_types>
                 </exclude>
-            </firegento_AdminMonitoring_config>
+            </firegento_adminmonitoring_config>
         </default>
     </config>
 
@@ -35,14 +35,14 @@ You can also exclude fields like updated_at ...
 
     <config>
         <default>
-            <firegento_AdminMonitoring_config>
+            <firegento_adminmonitoring_config>
                 <exclude>
                     <fields>
                         <updated_at />
                         <update_time />
                     </fields>
                 </exclude>
-            </firegento_AdminMonitoring_config>
+            </firegento_adminmonitoring_config>
         </default>
     </config>
 
@@ -54,7 +54,7 @@ To do this observe the firegento_AdminMonitoring_rowurl event and see Firegento_
 If you want to log your own events just dispatch the firegento_AdminMonitoring_log event:
 
     Mage::dispatchEvent(
-        'firegento_AdminMonitoring_log',
+        'firegento_adminmonitoring_log',
         array(
              'object_id'    => $objectId,
              'object_type'  => $objectType,
