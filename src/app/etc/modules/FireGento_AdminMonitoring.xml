@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <!--
 /**
  * This file is part of a FireGento e.V. module.
@@ -19,13 +20,13 @@
 -->
 <config>
     <modules>
-        <Firegento_AdminMonitoring>
+        <FireGento_AdminMonitoring>
             <active>true</active>
             <codePool>community</codePool>
-        </Firegento_AdminMonitoring>
-        <depends>
-            <Mage_Core />
-            <Mage_Admin />
-        </depends>
+            <depends>
+                <Mage_Core />
+                <Mage_Admin />
+            </depends>
+        </FireGento_AdminMonitoring>
     </modules>
 </config>

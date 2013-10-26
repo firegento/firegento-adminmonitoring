@@ -28,6 +28,7 @@
 
 /* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
+$installer->startSetup();
 
 $installer->getConnection()->addIndex(
     $installer->getTable('firegento_adminmonitoring/history'),
@@ -64,3 +65,5 @@ $installer->getConnection()->addColumn(
          'comment' => 'changed data of entity'
     )
 );
+
+$installer->endSetup();

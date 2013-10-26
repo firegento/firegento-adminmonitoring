@@ -28,6 +28,7 @@
 
 /* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
+$installer->startSetup();
 
 $logTable = $installer->getConnection()->newTable($installer->getTable('firegento_adminmonitoring/history'))
     ->addColumn(
@@ -118,3 +119,5 @@ $logTable = $installer->getConnection()->newTable($installer->getTable('firegent
 ;
 
 $installer->getConnection()->createTable($logTable);
+
+$installer->endSetup();
