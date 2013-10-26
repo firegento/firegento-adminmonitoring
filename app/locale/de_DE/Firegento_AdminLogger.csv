@@ -3,3 +3,5 @@
 "Frequency","Häufigkeit"
 "Log-Cleaning","Log Bereinigung"
 "Admin Logger","Admin Benutzer-Aktionen"
+"Enable logging on product imports","Log für Produkt-Importe aktivieren"
+"Enable logging on product mass updates","Log für Updates der Produktattribute aktivieren"

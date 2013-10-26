@@ -2,9 +2,14 @@
 class Firegento_AdminLogger_Model_Observer_Product_Attribute_Update
     extends Firegento_AdminLogger_Model_Observer_Log
 {
+    const XML_PATH_ADMINLOGGER_LOG_PRODUCT_MASS_UPDATE = 'admin/firegento_adminlogger/product_mass_update_logging';
 
     public function catalogProductAttributeUpdateBefore(Varien_Event_Observer $observer)
     {
+        if (!Mage::getStoreConfig(self::XML_PATH_ADMINLOGGER_LOG_PRODUCT_MASS_UPDATE)) {
+            return;
+        }
+
         /** @var Firegento_AdminLogger_Model_History $history */
         $history = Mage::getModel('firegento_adminlogger/history');
 

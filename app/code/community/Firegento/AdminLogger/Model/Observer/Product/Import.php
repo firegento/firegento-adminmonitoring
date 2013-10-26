@@ -3,8 +3,14 @@ class Firegento_AdminLogger_Model_Observer_Product_Import
     extends Firegento_AdminLogger_Model_Observer_Log
 {
 
+    const XML_PATH_ADMINLOGGER_LOG_PRODUCT_IMPORT = 'admin/firegento_adminlogger/product_import_logging';
+
     public function catalogProductImportFinishBefore(Varien_Event_Observer $observer)
     {
+        if (!Mage::getStoreConfig(self::XML_PATH_ADMINLOGGER_LOG_PRODUCT_IMPORT)) {
+            return;
+        }
+
         $productIds = $observer->getEvent()->getAdapter()->getAffectedEntityIds();
 
         /** @var Firegento_AdminLogger_Model_History $history */
