@@ -27,28 +27,43 @@
  */
 class FireGento_AdminMonitoring_Test_Config_Setup extends EcomDev_PHPUnit_Test_Case_Config
 {
+    /**
+     * Test setup scripts
+     */
     public function testSetupScripts()
     {
         $this->assertSetupResourceDefined();
         $this->assertSetupResourceExists();
     }
 
+    /**
+     * Test module version and code pool
+     */
     public function testModuleVersion()
     {
         $this->assertModuleCodePool('community');
         $this->assertModuleVersionGreaterThanOrEquals('1.0.0');
     }
 
+    /**
+     * Test model names
+     */
     public function testModelNames()
     {
         $this->assertModelAlias('firegento_adminmonitoring/history', 'FireGento_AdminMonitoring_Model_History');
     }
 
+    /**
+     * Test helper names
+     */
     public function testHelperNames()
     {
         $this->assertHelperAlias('firegento_adminmonitoring', 'FireGento_AdminMonitoring_Helper_Data');
     }
 
+    /**
+     * Test resource names
+     */
     public function testResourceName()
     {
         $this->assertResourceModelAlias(
@@ -59,6 +74,9 @@ class FireGento_AdminMonitoring_Test_Config_Setup extends EcomDev_PHPUnit_Test_C
         );
     }
 
+    /**
+     * Test if database table exists
+     */
     public function testTableExists()
     {
         $this->assertTableAlias('firegento_adminmonitoring/history', 'firegento_adminmonitoring_history');
