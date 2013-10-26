@@ -28,7 +28,7 @@ class Firegento_AdminLogger_Model_Observer_Log {
     /**
      * @return int
      */
-    private function getUserId() {
+    protected function getUserId() {
         if ($this->getUser()) {
             $userId = $this->getUser()
                 ->getUserId();
@@ -41,7 +41,7 @@ class Firegento_AdminLogger_Model_Observer_Log {
     /**
      * @return string
      */
-    private function getUserName() {
+    protected function getUserName() {
         if ($this->getUser()) {
             $userName = $this->getUser()
                 ->getUsername();
@@ -54,7 +54,7 @@ class Firegento_AdminLogger_Model_Observer_Log {
     /**
      * @return Mage_Admin_Model_User|NULL
      */
-    private function getUser() {
+    protected function getUser() {
         /**
          * @var $session Mage_Admin_Model_Session
          */
@@ -65,14 +65,14 @@ class Firegento_AdminLogger_Model_Observer_Log {
     /**
      * @return string
      */
-    private function getUserAgent() {
+    protected function getUserAgent() {
         return (isset($_SERVER['HTTP_USER_AGENT']) ? (string)$_SERVER['HTTP_USER_AGENT'] : '');
     }
 
     /**
      * @return MageTest_Core_Helper_Http
      */
-    private function getRemoteAddr() {
+    protected function getRemoteAddr() {
         return Mage::helper('core/http')
             ->getRemoteAddr();
     }
