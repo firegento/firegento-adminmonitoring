@@ -90,22 +90,22 @@
                     </firegento_adminlogger>
                 </observers>
             </model_delete_after>
-			<catalog_product_attribute_update_before>
-				<observers>
-					<firegento_adminlogger>
-						<class>firegento_adminlogger/observer_product_attribute_update</class>
-						<method>catalogProductAttributeUpdateBefore</method>
-					</firegento_adminlogger>
-				</observers>
-			</catalog_product_attribute_update_before>
-			<catalog_product_import_finish_before>
-				<observers>
-					<firegento_adminlogger>
-						<class>firegento_adminlogger/observer_product_import</class>
-						<method>catalogProductImportFinishBefore</method>
-					</firegento_adminlogger>
-				</observers>
-			</catalog_product_import_finish_before>
+            <catalog_product_attribute_update_before>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer_product_attribute_update</class>
+                        <method>catalogProductAttributeUpdateBefore</method>
+                    </firegento_adminlogger>
+                </observers>
+            </catalog_product_attribute_update_before>
+            <catalog_product_import_finish_before>
+                <observers>
+                    <firegento_adminlogger>
+                        <class>firegento_adminlogger/observer_product_import</class>
+                        <method>catalogProductImportFinishBefore</method>
+                    </firegento_adminlogger>
+                </observers>
+            </catalog_product_import_finish_before>
             <firegento_adminlogger_rowurl>
                 <observers>
                     <catalog_product>
