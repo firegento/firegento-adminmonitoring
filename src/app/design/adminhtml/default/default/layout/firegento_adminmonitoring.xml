@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_history_index>
+        <reference name="content">
+            <block type="firegento_adminmonitoring/adminhtml_history" name="adminmonitoring" />
+        </reference>
+    </adminhtml_history_index>
+</layout>

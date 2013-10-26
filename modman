@@ -1,4 +1,4 @@
-/app/code/community/Firegento/AdminMonitoring /app/code/community/Firegento/AdminMonitoring
-/app/etc/modules/Firegento_AdminMonitoring.xml /app/etc/modules/Firegento_AdminMonitoring.xml
-/app/design/adminhtml/default/default/layout/firegento_adminmonitoring.xml /app/design/adminhtml/default/default/layout/firegento_adminmonitoring.xml
-/app/locale/de_DE/Firegento_AdminMonitoring.csv /app/locale/de_DE/Firegento_AdminMonitoring.csv
+src/app/code/community/FireGento/AdminMonitoring/                               app/code/community/FireGento/AdminMonitoring/
+src/app/etc/modules/FireGento_AdminMonitoring.xml                               app/etc/modules/FireGento_AdminMonitoring.xml
+src/app/design/adminhtml/default/default/layout/firegento_adminmonitoring.xml   app/design/adminhtml/default/default/layout/firegento_adminmonitoring.xml
+src/app/locale/de_DE/FireGento_AdminMonitoring.csv                              app/locale/de_DE/FireGento_AdminMonitoring.csv

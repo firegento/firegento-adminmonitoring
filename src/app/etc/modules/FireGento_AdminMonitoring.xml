@@ -1,0 +1,12 @@
+<config>
+    <modules>
+        <Firegento_AdminMonitoring>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Firegento_AdminMonitoring>
+        <depends>
+            <Mage_Core />
+            <Mage_Admin />
+        </depends>
+    </modules>
+</config>

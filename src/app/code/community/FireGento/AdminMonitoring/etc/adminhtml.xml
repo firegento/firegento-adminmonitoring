@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <system>
+            <children>
+                <history module="firegento_adminmonitoring" translate="title">
+                    <title>Admin Monitoring</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/history</action>
+                </history>
+            </children>
+        </system>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <firegento_adminmonitoring translate="title" module="firegento_adminmonitoring">
+                                        <title>Firegento AdminMonitoring</title>
+                                    </firegento_adminmonitoring>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
