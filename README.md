@@ -8,6 +8,11 @@ Facts
 - Version: check [config.xml](https://github.com/firegento/firegento-adminmonitoring/blob/master/src/app/code/community/FireGento/AdminMonitoring/etc/config.xml)
 - [Extension on GitHub](https://github.com/firegento/firegento-adminmonitoring/)
 
+Builds
+------
+- Branch: master [![Build Status](https://travis-ci.org/firegento/firegento-adminmonitoring.png?branch=master)](https://travis-ci.org/firegento/firegento-adminmonitoring)
+- Branch: develop [![Build Status](https://travis-ci.org/firegento/firegento-adminmonitoring.png?branch=develop)](https://travis-ci.org/firegento/firegento-adminmonitoring)
+
 Description
 -----------
 The admin monitoring logs nearly every save and delete call in the backend. The idea is to generate an overview of the changes in the backend to know who changed certain things.
