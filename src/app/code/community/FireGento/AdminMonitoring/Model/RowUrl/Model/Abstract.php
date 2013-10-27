@@ -28,17 +28,23 @@
 abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
 {
     /**
+     * Abstract method for retrieving the class name.
+     *
      * @return string
      */
     abstract protected function getClassName();
 
     /**
+     * Abstract method for retrieving the route path.
+     *
      * @return string
      */
     abstract protected function getRoutePath();
 
     /**
-     * @param  Mage_Core_Model_Abstract $model
+     * Abstract method for retrieving the route params.
+     *
+     * @param  Mage_Core_Model_Abstract $model Object
      * @return array
      */
     abstract protected function getRouteParams(Mage_Core_Model_Abstract $model);

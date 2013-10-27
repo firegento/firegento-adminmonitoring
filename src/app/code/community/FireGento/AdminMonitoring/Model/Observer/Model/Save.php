@@ -41,7 +41,7 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
     /**
      * Handle the model_save_after event.
      *
-     * @param Varien_Event_Observer $observer
+     * @param Varien_Event_Observer $observer Observer Instance
      */
     public function modelAfter(Varien_Event_Observer $observer)
     {
@@ -52,7 +52,7 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
     /**
      * Set the current hash of the given model.
      *
-     * @param Mage_Core_Model_Abstract $model
+     * @param Mage_Core_Model_Abstract $model Object
      */
     private function setCurrentHash(Mage_Core_Model_Abstract $model)
     {

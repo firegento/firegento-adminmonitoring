@@ -28,7 +28,7 @@
 class FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update
     extends FireGento_AdminMonitoring_Model_Observer_Log
 {
-    const XML_PATH_ADMINMONITORING_LOG_PRODUCT_MASS_UPDATE = 'admin/firegento_adminmonitoring/product_mass_update_logging';
+    const XML_PATH_ADMINMONITORING_PROD_ATTR_UPDATE = 'admin/firegento_adminmonitoring/product_mass_update_logging';
 
     /**
      * Observe the catalog product attribute update before
@@ -38,7 +38,7 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update
      */
     public function catalogProductAttributeUpdateBefore(Varien_Event_Observer $observer)
     {
-        if (!Mage::getStoreConfigFlag(self::XML_PATH_ADMINMONITORING_LOG_PRODUCT_MASS_UPDATE)) {
+        if (!Mage::getStoreConfigFlag(self::XML_PATH_ADMINMONITORING_PROD_ATTR_UPDATE)) {
             return;
         }
 

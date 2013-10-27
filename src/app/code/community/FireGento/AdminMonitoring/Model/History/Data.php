@@ -35,7 +35,7 @@ class FireGento_AdminMonitoring_Model_History_Data
     /**
      * Init the saved model
      *
-     * @param Mage_Core_Model_Abstract $savedModel
+     * @param Mage_Core_Model_Abstract $savedModel Model which is to be saved
      */
     public function __construct(Mage_Core_Model_Abstract $savedModel)
     {

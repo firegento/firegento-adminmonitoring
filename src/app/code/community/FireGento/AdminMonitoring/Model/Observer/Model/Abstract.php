@@ -43,6 +43,8 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
     private $dataModel;
 
     /**
+     * Abstract method for retrieving the history action.
+     *
      * @return int
      */
     abstract protected function getAction();

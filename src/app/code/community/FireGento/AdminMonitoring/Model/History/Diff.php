@@ -35,7 +35,7 @@ class FireGento_AdminMonitoring_Model_History_Diff
     /**
      * Init the data model
      *
-     * @param FireGento_AdminMonitoring_Model_History_Data $dataModel
+     * @param FireGento_AdminMonitoring_Model_History_Data $dataModel History Data Model
      */
     public function __construct(FireGento_AdminMonitoring_Model_History_Data $dataModel)
     {

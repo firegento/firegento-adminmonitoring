@@ -39,7 +39,7 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Retrieve the attribute type by provided class name
      *
-     * @param  string      $className Class Name
+     * @param  string $className Class Name
      * @return string|bool Attribute Type or false
      */
     public function getAttributeTypeByClassName($className)

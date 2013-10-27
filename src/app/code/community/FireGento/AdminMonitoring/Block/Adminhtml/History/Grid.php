@@ -219,15 +219,15 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid
         $oldContent = $this->decodeContent($oldContent);
 
         if (is_array($oldContent)) {
-           if (count($oldContent) > 0) {
-               foreach ($oldContent as $key => $value) {
-                   $attributeName = $this->getMonitoringHelper()
-                       ->getAttributeNameByTypeAndCode($row->getObjectType(), $key);
-                   $cell .= $this->formatCellContent($attributeName, $value);
-               }
-           } else {
-               return $this->__('not available');
-           }
+            if (count($oldContent) > 0) {
+                foreach ($oldContent as $key => $value) {
+                    $attributeName = $this->getMonitoringHelper()
+                        ->getAttributeNameByTypeAndCode($row->getObjectType(), $key);
+                    $cell .= $this->formatCellContent($attributeName, $value);
+                }
+            } else {
+                return $this->__('not available');
+            }
         }
 
         return $this->wrapColor($cell, '#ff0000');
@@ -236,7 +236,7 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid
     /**
      * Decode the given content string.
      *
-     * @param  string $content
+     * @param  string $content Content to decode
      * @return mixed
      */
     private function decodeContent($content)
@@ -259,8 +259,8 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid
     /**
      * Format the cell content
      *
-     * @param  array|string $value Value
      * @param  string       $key   Key
+     * @param  array|string $value Value
      * @return string Formatted string
      */
     private function formatCellContent($key, $value)
