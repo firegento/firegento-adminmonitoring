@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_RowUrl_Model_Page" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Page" abstract="false" final="false" start="28" end="63">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Page.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Page.php" size="1861" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="f85006d75c5d3a705a26981643484799fa33a73f"/>
+  <docblock>
+    <description compact="RowUrl Implementation for CMS pages"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract"/>
+  <method name="getClassName" start="36" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the class name for the current implementation."/>
+      <return description="Class Name" type="string"/>
+    </docblock>
+  </method>
+  <method name="getRoutePath" start="46" end="49" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the route path for the current implementation"/>
+      <return description="Route Path" type="string"/>
+    </docblock>
+  </method>
+  <method name="getRouteParams" start="57" end="62" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the route params for the current implementation and given model"/>
+      <param description="Model" type="object" variable="$model">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </param>
+      <return description="Route Params" type="array"/>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="\\Mage_Core_Model_Abstract" namespace="\" name="Mage_Core_Model_Abstract"/>
+    </parameter>
+  </method>
+  <parent full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namepsace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract">
+    <method name="getClassName" start="35" end="35" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Abstract method for retrieving the class name."/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getRoutePath" start="42" end="42" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Abstract method for retrieving the route path."/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getRouteParams" start="50" end="50" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Abstract method for retrieving the route params."/>
+        <param description="Object" type="object" variable="$model">
+          <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+        </param>
+        <return type="array"/>
+      </docblock>
+      <parameter name="model" byreference="false" type="object">
+        <type full="\\Mage_Core_Model_Abstract" namespace="\" name="Mage_Core_Model_Abstract"/>
+      </parameter>
+    </method>
+    <method name="setRowUrl" start="57" end="71" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Sets the row url in the transport object for a cms_page model"/>
+        <param description="Observer Instance" type="object" variable="$observer">
+          <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+        </param>
+      </docblock>
+      <parameter name="observer" byreference="false" type="object">
+        <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+      </parameter>
+    </method>
+    <method name="getRowUrl" start="82" end="93" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the row url with the given parameters."/>
+        <param description="History Model" type="object" variable="$history">
+          <type full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History"/>
+        </param>
+        <param description="Class Name" type="string" variable="$className"/>
+        <param description="Route Path" type="string" variable="$routePath"/>
+        <param description="Route Params" type="array" variable="$routeParams"/>
+        <return type="object">
+          <type full="Mage_Adminhtml_Model_Url" namespace="" name="Mage_Adminhtml_Model_Url"/>
+        </return>
+      </docblock>
+      <parameter name="history" byreference="false" type="object">
+        <type full="\\FireGento_AdminMonitoring_Model_History" namespace="\" name="FireGento_AdminMonitoring_Model_History"/>
+      </parameter>
+      <parameter name="className" byreference="false" type="{unknown}"/>
+      <parameter name="routePath" byreference="false" type="{unknown}"/>
+      <parameter name="routeParams" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

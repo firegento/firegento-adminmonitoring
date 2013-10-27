@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Test_Model_Observer" namespace="" name="FireGento_AdminMonitoring_Test_Model_Observer" abstract="false" final="false" start="28" end="144">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model" file="Observer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer.php" size="4666" time="2013-10-26T22:51:28+02:00" unixtime="1382820688" sha1="681b2315609bd0c66307a2c8395e0cd59a67944a"/>
+  <docblock>
+    <description compact="PHPUnit Test"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_object" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_Observer_Model_Save" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Save"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="38" end="45" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Init model"/>
+    </docblock>
+  </method>
+  <method name="_setAdminSession" start="50" end="57" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="set admin session with session"/>
+    </docblock>
+  </method>
+  <method name="_createObserver" start="65" end="71" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create event to pass into observer method"/>
+      <param description="Observer Data" type="array" variable="$data"/>
+      <return description="Observer Model" type="object">
+        <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="testNoHistorySaves" start="76" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="if FireGento_AdminMonitoring_Model_History is saved, don't do anything inside the observer"/>
+    </docblock>
+  </method>
+  <method name="testHistorySavesWithCustomer" start="96" end="143" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact=""/>
+      <dataProvider value="dataProvider"/>
+      <loadExpectation value=""/>
+      <loadFixture value=""/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="mail" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="firstname" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="lastname" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="password" byreference="false" type="{unknown}" default="null"/>
+  </method>
+</class>

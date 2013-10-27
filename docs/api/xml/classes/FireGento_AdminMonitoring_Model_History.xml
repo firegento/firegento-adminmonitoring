@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History" abstract="false" final="false" start="36" end="105">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="History.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History.php" size="2933" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="a4fe816bbee38e9262da8bdb58d17f2614a159c8"/>
+  <docblock>
+    <description compact="History Model"/>
+    <method value="FireGento_AdminMonitoring_Model_Resource_History getResource()"/>
+    <method value="FireGento_AdminMonitoring_Model_Resource_History _getResource()"/>
+    <method value="int getObjectId()"/>
+    <method value="string getObjectType()"/>
+    <method value="string getContent()"/>
+    <method value="string getContentDiff()"/>
+    <method value="int getAction()"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+  <method name="_construct" start="41" end="44" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Inits the resource model and resource collection model"/>
+    </docblock>
+  </method>
+  <method name="getOriginalModel" start="51" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the original model"/>
+      <return type="object">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getDecodedContentDiff" start="71" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the decoded content diff"/>
+      <return description="Decoded Content Diff" type="array"/>
+    </docblock>
+  </method>
+  <method name="getDecodedContent" start="81" end="84" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Retrieve the decoded content"/>
+      <return description="Decoded Content" type="array"/>
+    </docblock>
+  </method>
+  <method name="isUpdate" start="91" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the history action is an update action."/>
+      <return description="Result" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isDelete" start="101" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the history action is an delete action."/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+</class>

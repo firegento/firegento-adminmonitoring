@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data" abstract="false" final="false" start="28" end="117">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History/Data.php" size="3124" time="2013-10-27T13:21:53+01:00" unixtime="1382876513" sha1="80d2a23dc01bc4e73b4aaf76937805360451f6bc"/>
+  <docblock>
+    <description compact="History Data Model"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <member name="_savedModel" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Init the saved model"/>
+      <param description="Model which is to be saved" type="object" variable="$savedModel">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </param>
+    </docblock>
+    <parameter name="savedModel" byreference="false" type="object">
+      <type full="\\Mage_Core_Model_Abstract" namespace="\" name="Mage_Core_Model_Abstract"/>
+    </parameter>
+  </constructor>
+  <method name="getSerializedContent" start="50" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the serialized content"/>
+      <return description="Serialized Content" type="string"/>
+    </docblock>
+  </method>
+  <method name="getContent" start="60" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the content of the saved model"/>
+      <return description="Content" type="array"/>
+    </docblock>
+  </method>
+  <method name="filterObligatoryFields" start="77" end="85" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove the obligatory fields from the data"/>
+      <param description="Data" type="array" variable="$data"/>
+      <return description="Filtered Data" type="array"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOrigContent" start="92" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the original content of the saved model"/>
+      <return description="Data" type="array"/>
+    </docblock>
+  </method>
+  <method name="getObjectType" start="103" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the object type of the saved model"/>
+      <return description="Object Type" type="string"/>
+    </docblock>
+  </method>
+  <method name="getObjectId" start="113" end="116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the object id of the saved model"/>
+      <return description="Object ID" type="int"/>
+    </docblock>
+  </method>
+</class>
