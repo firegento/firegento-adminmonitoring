@@ -31,12 +31,12 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
     /**
      * @var string Object Hash
      */
-    private $currentHash;
+    protected $_currentHash;
 
     /**
      * @var array
      */
-    private $beforeIds = array();
+    protected $_beforeIds = array();
 
     /**
      * Handle the model_save_after event.
@@ -56,7 +56,7 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
      */
     private function setCurrentHash(Mage_Core_Model_Abstract $model)
     {
-        $this->currentHash = $this->getObjectHash($model);
+        $this->_currentHash = $this->getObjectHash($model);
     }
 
     /**
@@ -110,7 +110,7 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
      */
     private function storeBeforeId($id)
     {
-        $this->beforeIds[$this->currentHash] = $id;
+        $this->_beforeIds[$this->_currentHash] = $id;
     }
 
     /**
@@ -136,7 +136,7 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
      */
     private function hadIdAtBefore()
     {
-        return (isset($this->beforeIds[$this->currentHash]) && $this->beforeIds[$this->currentHash]);
+        return (isset($this->_beforeIds[$this->_currentHash]) && $this->_beforeIds[$this->_currentHash]);
     }
 
     /**
@@ -146,7 +146,8 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
      */
     private function hasOrigData()
     {
-        $data = $this->savedModel->getOrigData();
+        $data = $this->_savedModel->getOrigData();
+
         // unset website_ids as this is even on new entities set for catalog_product models
         unset($data['website_ids']);
         return (bool) $data;

@@ -30,17 +30,17 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
     /**
      * @var Mage_Core_Model_Abstract
      */
-    protected $savedModel;
+    protected $_savedModel;
 
     /**
      * @var FireGento_AdminMonitoring_Model_History_Diff
      */
-    private $diffModel;
+    protected $_diffModel;
 
     /**
      * @var FireGento_AdminMonitoring_Model_History_Data
      */
-    private $dataModel;
+    protected $_dataModel;
 
     /**
      * Abstract method for retrieving the history action.
@@ -66,7 +66,7 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
      */
     protected function hasChanged()
     {
-        return $this->diffModel->hasChanged();
+        return $this->_diffModel->hasChanged();
     }
 
     /**
@@ -76,15 +76,13 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
      */
     protected function storeByObserver(Varien_Event_Observer $observer)
     {
-        /**
-         * @var $savedModel Mage_Core_Model_Abstract
-         */
+        /* @var $savedModel Mage_Core_Model_Abstract */
         $savedModel = $observer->getObject();
-        $this->savedModel = $savedModel;
+        $this->_savedModel = $savedModel;
 
         if (!$this->isExcludedClass($savedModel)) {
-            $this->dataModel = Mage::getModel('firegento_adminmonitoring/history_data', $savedModel);
-            $this->diffModel = Mage::getModel('firegento_adminmonitoring/history_diff', $this->dataModel);
+            $this->_dataModel = Mage::getModel('firegento_adminmonitoring/history_data', $savedModel);
+            $this->_diffModel = Mage::getModel('firegento_adminmonitoring/history_diff', $this->_dataModel);
 
             if ($this->hasChanged()) {
                 $this->createHistoryForModelAction();
@@ -97,16 +95,15 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
      */
     private function createHistoryForModelAction()
     {
-        Mage::dispatchEvent(
-            'firegento_adminmonitoring_log',
-            array(
-                 'object_id' => $this->dataModel->getObjectId(),
-                 'object_type' => $this->dataModel->getObjectType(),
-                 'content' => $this->dataModel->getSerializedContent(),
-                 'content_diff' => $this->diffModel->getSerializedDiff(),
-                 'action' => $this->getAction(),
-            )
+        $eventData = array(
+             'object_id' => $this->_dataModel->getObjectId(),
+             'object_type' => $this->_dataModel->getObjectType(),
+             'content' => $this->_dataModel->getSerializedContent(),
+             'content_diff' => $this->_diffModel->getSerializedDiff(),
+             'action' => $this->getAction(),
         );
+
+        Mage::dispatchEvent('firegento_adminmonitoring_log', $eventData);
     }
 
     /**
@@ -116,7 +113,7 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
      */
     private function isExcludedClass()
     {
-        $savedModel = $this->savedModel;
+        $savedModel = $this->_savedModel;
 
         $objectTypeExcludes = array_keys(Mage::getStoreConfig('firegento_adminmonitoring_config/exclude/object_types'));
         $objectTypeExcludesFiltered = array_filter(

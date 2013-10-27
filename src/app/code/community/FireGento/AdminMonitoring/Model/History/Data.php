@@ -30,7 +30,7 @@ class FireGento_AdminMonitoring_Model_History_Data
     /**
      * @var Mage_Core_Model_Abstract
      */
-    private $savedModel;
+    protected $_savedModel;
 
     /**
      * Init the saved model
@@ -39,7 +39,7 @@ class FireGento_AdminMonitoring_Model_History_Data
      */
     public function __construct(Mage_Core_Model_Abstract $savedModel)
     {
-        $this->savedModel = $savedModel;
+        $this->_savedModel = $savedModel;
     }
 
     /**
@@ -60,10 +60,10 @@ class FireGento_AdminMonitoring_Model_History_Data
     public function getContent()
     {
         // have to re-load the model as based on database datatypes the format of values changes
-        $className = get_class($this->savedModel);
+        $className = get_class($this->_savedModel);
         $model = new $className;
-        $model->setStoreId($this->savedModel->getStoreId());
-        $model->load($this->savedModel->getId());
+        $model->setStoreId($this->_savedModel->getStoreId());
+        $model->load($this->_savedModel->getId());
 
         return $this->filterObligatoryFields($model->getData());
     }
@@ -91,7 +91,7 @@ class FireGento_AdminMonitoring_Model_History_Data
      */
     public function getOrigContent()
     {
-        $data = $this->savedModel->getOrigData();
+        $data = $this->_savedModel->getOrigData();
         return $this->filterObligatoryFields($data);
     }
 
@@ -102,7 +102,7 @@ class FireGento_AdminMonitoring_Model_History_Data
      */
     public function getObjectType()
     {
-        return get_class($this->savedModel);
+        return get_class($this->_savedModel);
     }
 
     /**
@@ -112,6 +112,6 @@ class FireGento_AdminMonitoring_Model_History_Data
      */
     public function getObjectId()
     {
-        return $this->savedModel->getId();
+        return $this->_savedModel->getId();
     }
 }

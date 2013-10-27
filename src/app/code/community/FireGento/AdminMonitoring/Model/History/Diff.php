@@ -30,7 +30,7 @@ class FireGento_AdminMonitoring_Model_History_Diff
     /**
      * @var FireGento_AdminMonitoring_Model_History_Data
      */
-    private $dataModel;
+    protected $_dataModel;
 
     /**
      * Init the data model
@@ -39,17 +39,17 @@ class FireGento_AdminMonitoring_Model_History_Diff
      */
     public function __construct(FireGento_AdminMonitoring_Model_History_Data $dataModel)
     {
-        $this->dataModel = $dataModel;
+        $this->_dataModel = $dataModel;
     }
 
     /**
      * Check if the data has changed.
      *
-     * @return bool
+     * @return bool Result
      */
     public function hasChanged()
     {
-        return ($this->dataModel->getContent() != $this->dataModel->getOrigContent());
+        return ($this->_dataModel->getContent() != $this->_dataModel->getOrigContent());
     }
 
     /**
@@ -57,11 +57,11 @@ class FireGento_AdminMonitoring_Model_History_Diff
      *
      * @return array Diff Array
      */
-    private function getObjectDiff ()
+    private function getObjectDiff()
     {
-        $dataOld = $this->dataModel->getOrigContent();
+        $dataOld = $this->_dataModel->getOrigContent();
         if (is_array($dataOld)) {
-            $dataNew = $this->dataModel->getContent();
+            $dataNew = $this->_dataModel->getContent();
             $dataDiff = array();
             foreach ($dataOld as $key => $oldValue) {
                 // compare objects serialized
@@ -81,7 +81,7 @@ class FireGento_AdminMonitoring_Model_History_Diff
     /**
      * Retrieve the serialized diff for the current data model.
      *
-     * @return string
+     * @return string Serialized Diff
      */
     public function getSerializedDiff()
     {
