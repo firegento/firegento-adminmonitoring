@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_AdminMonitoring - FireGento_AdminMonitoring_Block_Adminhtml_History_Grid - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_AdminMonitoring - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_prepareCollection">_prepareCollection</a>
+          </li>
+          <li>
+            <a href="#_prepareColumns">_prepareColumns</a>
+          </li>
+          <li>
+            <a href="#decodeContent">decodeContent</a>
+          </li>
+          <li>
+            <a href="#entities">entities</a>
+          </li>
+          <li>
+            <a href="#formatCellContent">formatCellContent</a>
+          </li>
+          <li>
+            <a href="#getMonitoringHelper">getMonitoringHelper</a>
+          </li>
+          <li>
+            <a href="#getRowUrl">getRowUrl</a>
+          </li>
+          <li>
+            <a href="#showNewContent">showNewContent</a>
+          </li>
+          <li>
+            <a href="#showOldContent">showOldContent</a>
+          </li>
+          <li>
+            <a href="#wrapColor">wrapColor</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_AdminMonitoring_Block_Adminhtml_History_Grid</h2>
+        <div class="file-notice">
+          <p>Displays the logging history grid</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Grid constructor</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getMonitoringHelper"/>
+            <h4><span class="label public">public</span>getMonitoringHelper<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve helper class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Helper Instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRowUrl"/>
+            <h4><span class="label public">public</span>getRowUrl<span style="font-size:90%;">( <span class="param-type"><a href="../classes/FireGento_AdminMonitoring_Model_History.xhtml">FireGento_AdminMonitoring_Model_History</a></span><strong> $row</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the row url for the given history entry</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$row</code> - History Model</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="showNewContent"/>
+            <h4><span class="label public">public</span>showNewContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $newContent</strong>, <span class="param-type"><span title="\\FireGento_AdminMonitoring_Model_History">FireGento_AdminMonitoring_Model_History</span></span><strong> $row</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Show the new content after the changes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$newContent</code> - New Content</li>
+                <li><code>$row</code> - History Model</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="showOldContent"/>
+            <h4><span class="label public">public</span>showOldContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $oldContent</strong>, <span class="param-type"><span title="\\FireGento_AdminMonitoring_Model_History">FireGento_AdminMonitoring_Model_History</span></span><strong> $row</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Show the old content before the changes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oldContent</code> - Old Content</li>
+                <li><code>$row</code> - History Model</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_prepareCollection"/>
+            <h4><span class="label protected">protected</span>_prepareCollection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare the grid collection</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Self.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_prepareColumns"/>
+            <h4><span class="label protected">protected</span>_prepareColumns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare the grid columns</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Self.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="decodeContent"/>
+            <h4><span class="label private">private</span>decodeContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $content</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Decode the given content string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$content</code> - Content to decode</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="entities"/>
+            <h4><span class="label private">private</span>entities<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Convert special characters to HTML entities</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - Input string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="formatCellContent"/>
+            <h4><span class="label private">private</span>formatCellContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type"><span title="array|string">array|string</span></span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Format the cell content</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - Key</li>
+                <li><code>$value</code> - Value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Formatted string</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="wrapColor"/>
+            <h4><span class="label private">private</span>wrapColor<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong>, <span class="param-type">string</span><strong> $color</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wrap the given string in a box with a given border color.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - String to format</li>
+                <li><code>$color</code> - Border color</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Formatted string</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

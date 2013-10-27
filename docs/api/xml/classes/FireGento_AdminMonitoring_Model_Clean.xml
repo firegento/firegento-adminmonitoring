@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Clean" namespace="" name="FireGento_AdminMonitoring_Model_Clean" abstract="false" final="false" start="28" end="84">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="Clean.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Clean.php" size="2741" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="51b448875e3f2677b964a38625bd22d6fef28448"/>
+  <docblock>
+    <description compact="Cleans the history after a configurable amount of time."/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <constant name="XML_PATH_ADMINMONITORING_INTERVAL" value="'admin/firegento_adminmonitoring/interval'"/>
+  <constant name="XML_PATH_ADMINMONITORING_CLEAN_ENABLED" value="'admin/firegento_adminmonitoring/enable_cleaning'"/>
+  <method name="scheduledCleanAdminMonitoring" start="38" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Cronjob method for cleaning the database table."/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Model_Clean" namespace="" name="FireGento_AdminMonitoring_Model_Clean"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="clean" start="58" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Clean the database table for the given interval."/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Model_Clean" namespace="" name="FireGento_AdminMonitoring_Model_Clean"/>
+      </return>
+    </docblock>
+  </method>
+</class>

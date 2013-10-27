@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Model_History_Diff" abstract="false" final="false" start="28" end="91">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History" file="Diff.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History/Diff.php" size="2643" time="2013-10-27T13:21:34+01:00" unixtime="1382876494" sha1="22ffefdb86553bb8fdc7e7e12081789848d1597d"/>
+  <docblock>
+    <description compact="History Diff Model"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <member name="_dataModel" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Init the data model"/>
+      <param description="History Data Model" type="object" variable="$dataModel">
+        <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
+      </param>
+    </docblock>
+    <parameter name="dataModel" byreference="false" type="object">
+      <type full="\\FireGento_AdminMonitoring_Model_History_Data" namespace="\" name="FireGento_AdminMonitoring_Model_History_Data"/>
+    </parameter>
+  </constructor>
+  <method name="hasChanged" start="50" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the data has changed."/>
+      <return description="Result" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getObjectDiff" start="60" end="79" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Generate an object diff of the original content and the actual content."/>
+      <return description="Diff Array" type="array"/>
+    </docblock>
+  </method>
+  <method name="getSerializedDiff" start="86" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the serialized diff for the current data model."/>
+      <return description="Serialized Diff" type="string"/>
+    </docblock>
+  </method>
+</class>

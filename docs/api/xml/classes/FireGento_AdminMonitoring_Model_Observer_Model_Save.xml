@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Observer_Model_Save" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Save" abstract="false" final="false" start="28" end="155">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Save.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Save.php" size="4220" time="2013-10-27T13:15:24+01:00" unixtime="1382876124" sha1="08a58ddecf0cb9a794e6eb226be13751dac1170d"/>
+  <docblock>
+    <description compact="Observes Model Save"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract"/>
+  <member name="_currentHash" type="{unknown}" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var description="Object Hash" type="string"/>
+    </docblock>
+  </member>
+  <member name="_beforeIds" type="array" visibility="protected">
+    <docblock>
+      <description compact=""/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="modelAfter" start="46" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle the model_save_after event."/>
+      <param description="Observer Instance" type="object" variable="$observer">
+        <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+      </param>
+    </docblock>
+    <parameter name="observer" byreference="false" type="object">
+      <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+    </parameter>
+  </method>
+  <method name="setCurrentHash" start="57" end="60" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Set the current hash of the given model."/>
+      <param description="Object" type="object" variable="$model">
+        <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+      </param>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="\\Mage_Core_Model_Abstract" namespace="\" name="Mage_Core_Model_Abstract"/>
+    </parameter>
+  </method>
+  <method name="getObjectHash" start="68" end="71" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Retrieve the object hash for the given model."/>
+      <param description="Object to hash" type="object" variable="$object"/>
+      <return description="Hashed object" type="string"/>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasChanged" start="78" end="81" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if data has changed."/>
+      <return description="Result" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isUpdate" start="88" end="91" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Check if the current action is an update."/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="modelBefore" start="98" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle the model_save_before event."/>
+      <param description="Observer Instance" type="object" variable="$observer">
+        <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+      </param>
+    </docblock>
+    <parameter name="observer" byreference="false" type="object">
+      <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+    </parameter>
+  </method>
+  <method name="storeBeforeId" start="111" end="114" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Store the before id for the current hash."/>
+      <param description="Object ID" type="int" variable="$id"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAction" start="121" end="130" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the current monitoring action"/>
+      <return description="Action ID" type="int"/>
+    </docblock>
+  </method>
+  <method name="hadIdAtBefore" start="137" end="140" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Check if the id was there before."/>
+      <return description="Result" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="hasOrigData" start="147" end="154" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Check if the saved model has original data."/>
+      <return description="Result" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <parent full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namepsace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract">
+    <member name="_savedModel" type="{unknown}" visibility="protected">
+      <docblock>
+        <description compact=""/>
+        <var type="object">
+          <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_diffModel" type="{unknown}" visibility="protected">
+      <docblock>
+        <description compact=""/>
+        <var type="object">
+          <type full="FireGento_AdminMonitoring_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Model_History_Diff"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_dataModel" type="{unknown}" visibility="protected">
+      <docblock>
+        <description compact=""/>
+        <var type="object">
+          <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="getAction" start="50" end="50" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Abstract method for retrieving the history action."/>
+        <return type="int"/>
+      </docblock>
+    </method>
+    <method name="modelAfter" start="57" end="60" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Handle the model_save_after and model_delete_after events"/>
+        <param description="Observer Instance" type="object" variable="$observer">
+          <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+        </param>
+      </docblock>
+      <parameter name="observer" byreference="false" type="object">
+        <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+      </parameter>
+    </method>
+    <method name="hasChanged" start="67" end="70" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Check if the data has changed."/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="storeByObserver" start="77" end="91" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Check if the data has changed and create a history entry if there are changes."/>
+        <param description="Observer Instance" type="object" variable="$observer">
+          <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+        </param>
+      </docblock>
+      <parameter name="observer" byreference="false" type="object">
+        <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+      </parameter>
+    </method>
+  </parent>
+</class>

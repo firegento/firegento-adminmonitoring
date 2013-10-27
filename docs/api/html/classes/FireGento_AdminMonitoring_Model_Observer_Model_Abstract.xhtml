@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FireGento_AdminMonitoring - FireGento_AdminMonitoring_Model_Observer_Model_Abstract - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">FireGento_AdminMonitoring - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_savedModel">$_savedModel</a>
+          </li>
+          <li>
+            <a href="#_diffModel">$_diffModel</a>
+          </li>
+          <li>
+            <a href="#_dataModel">$_dataModel</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#createHistoryForModelAction">createHistoryForModelAction</a>
+          </li>
+          <li>
+            <a href="#getAction">getAction</a>
+          </li>
+          <li>
+            <a href="#hasChanged">hasChanged</a>
+          </li>
+          <li>
+            <a href="#isExcludedClass">isExcludedClass</a>
+          </li>
+          <li>
+            <a href="#modelAfter">modelAfter</a>
+          </li>
+          <li>
+            <a href="#storeByObserver">storeByObserver</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>FireGento_AdminMonitoring_Model_Observer_Model_Abstract</h2>
+        <div class="file-notice">
+          <p>Abstract observer class; provides some common functions for subclasses</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_savedModel"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_savedModel</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="_diffModel"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_diffModel</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="_dataModel"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_dataModel</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="modelAfter"/>
+            <h4><span class="label public">public</span>modelAfter<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Handle the model_save_after and model_delete_after events</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer Instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAction"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>getAction<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Abstract method for retrieving the history action.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasChanged"/>
+            <h4><span class="label protected">protected</span>hasChanged<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if the data has changed.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="storeByObserver"/>
+            <h4><span class="label protected">protected</span>storeByObserver<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if the data has changed and create a history entry if there are changes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$observer</code> - Observer Instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createHistoryForModelAction"/>
+            <h4><span class="label private">private</span>createHistoryForModelAction<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dispatch event for creating a history entry</li>
+            </p>
+          </li>
+          <li>
+            <a name="isExcludedClass"/>
+            <h4><span class="label private">private</span>isExcludedClass<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if the dispatched model has to be excluded from the logging.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Result</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
