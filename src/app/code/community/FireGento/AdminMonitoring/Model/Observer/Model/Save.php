@@ -1,10 +1,47 @@
 <?php
-class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_AdminMonitoring_Model_Observer_Model_Abstract
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_AdminMonitoring
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+/**
+ * Observes Model Save
+ *
+ * @category FireGento
+ * @package  FireGento_AdminMonitoring
+ * @author   FireGento Team <team@firegento.com>
+ */
+class FireGento_AdminMonitoring_Model_Observer_Model_Save
+    extends FireGento_AdminMonitoring_Model_Observer_Model_Abstract
 {
-    private $currentHash;
+    /**
+     * @var string Object Hash
+     */
+    protected $_currentHash;
 
     /**
-     * @param Varien_Event_Observer $observer
+     * @var array
+     */
+    protected $_beforeIds = array();
+
+    /**
+     * Handle the model_save_after event.
+     *
+     * @param Varien_Event_Observer $observer Observer Instance
      */
     public function modelAfter(Varien_Event_Observer $observer)
     {
@@ -13,16 +50,20 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @param Mage_Core_Model_Abstract $model
+     * Set the current hash of the given model.
+     *
+     * @param Mage_Core_Model_Abstract $model Object
      */
     private function setCurrentHash(Mage_Core_Model_Abstract $model)
     {
-        $this->currentHash = $this->getObjectHash($model);
+        $this->_currentHash = $this->getObjectHash($model);
     }
 
     /**
-     * @param  object $object
-     * @return string
+     * Retrieve the object hash for the given model.
+     *
+     * @param  object $object Object to hash
+     * @return string Hashed object
      */
     private function getObjectHash($object)
     {
@@ -30,58 +71,58 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @return bool
+     * Check if data has changed.
+     *
+     * @return bool Result
      */
     protected function hasChanged()
     {
-        return (!$this->isUpdate() OR parent::hasChanged());
+        return (!$this->isUpdate() || parent::hasChanged());
     }
 
     /**
+     * Check if the current action is an update.
+     *
      * @return bool
      */
-    private function isUpdate ()
+    private function isUpdate()
     {
         return $this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE;
     }
 
     /**
-     * @param Varien_Event_Observer $observer
+     * Handle the model_save_before event.
+     *
+     * @param Varien_Event_Observer $observer Observer Instance
      */
     public function modelBefore(Varien_Event_Observer $observer)
     {
-        /**
-         * @var $savedObject Mage_Core_Model_Abstract
-         */
+        /* @var $savedObject Mage_Core_Model_Abstract */
         $savedObject = $observer->getObject();
         $this->setCurrentHash($savedObject);
         $this->storeBeforeId($savedObject->getId());
     }
 
     /**
-     * @var array
-     */
-    private $beforeIds = array();
-    /**
-     * @param $id
+     * Store the before id for the current hash.
+     *
+     * @param int $id Object ID
      */
     private function storeBeforeId($id)
     {
-        $this->beforeIds[$this->currentHash] = $id;
+        $this->_beforeIds[$this->_currentHash] = $id;
     }
 
     /**
-     * @return int
+     * Retrieve the current monitoring action
+     *
+     * @return int Action ID
      */
     protected function getAction()
     {
-        if (
-            // for models which call model_save_before
-            $this->hadIdAtBefore()
-            OR
-            // for models with origData but without model_save_before like Mage_CatalogInventory_Model_Stock_Item
-            $this->hasOrigData()
-         ) {
+        if ($this->hadIdAtBefore() // for models which call model_save_before
+            || $this->hasOrigData() // for models with origData but without model_save_before like stock item
+        ) {
             return FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE;
         } else {
             return FireGento_AdminMonitoring_Helper_Data::ACTION_INSERT;
@@ -89,25 +130,26 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save extends FireGento_Admi
     }
 
     /**
-     * @return bool
+     * Check if the id was there before.
+     *
+     * @return bool Result
      */
     private function hadIdAtBefore()
     {
-        return (
-            isset($this->beforeIds[$this->currentHash])
-            AND $this->beforeIds[$this->currentHash]
-        );
+        return (isset($this->_beforeIds[$this->_currentHash]) && $this->_beforeIds[$this->_currentHash]);
     }
 
     /**
-     * @return bool
+     * Check if the saved model has original data.
+     *
+     * @return bool Result
      */
     private function hasOrigData()
     {
-        $data = $this->savedModel->getOrigData();
+        $data = $this->_savedModel->getOrigData();
+
         // unset website_ids as this is even on new entities set for catalog_product models
         unset($data['website_ids']);
         return (bool) $data;
     }
-
 }

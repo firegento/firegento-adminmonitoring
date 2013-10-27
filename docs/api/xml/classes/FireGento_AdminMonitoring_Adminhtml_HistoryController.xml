@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Adminhtml_HistoryController" namespace="" name="FireGento_AdminMonitoring_Adminhtml_HistoryController" abstract="false" final="false" start="28" end="79">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml" file="HistoryController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml/HistoryController.php" size="2511" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="cdc7137014c487fe2df602d008367f529a452a1d"/>
+  <docblock>
+    <description compact="History controller"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="Mage_Adminhtml_Controller_Action" namespace="" name="Mage_Adminhtml_Controller_Action"/>
+  <method name="_initAction" start="35" end="45" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Inits the layout, the active menu tab and the breadcrumbs"/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Adminhtml_HistoryController" namespace="" name="FireGento_AdminMonitoring_Adminhtml_HistoryController"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="indexAction" start="50" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Shows the history grid"/>
+    </docblock>
+  </method>
+  <method name="revertAction" start="59" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reverts a history entry"/>
+    </docblock>
+  </method>
+</class>

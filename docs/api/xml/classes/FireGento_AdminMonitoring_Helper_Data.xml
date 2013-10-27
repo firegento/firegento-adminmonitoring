@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Helper_Data" namespace="" name="FireGento_AdminMonitoring_Helper_Data" abstract="false" final="false" start="28" end="81">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Helper" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Helper/Data.php" size="2756" time="2013-10-27T13:07:49+01:00" unixtime="1382875669" sha1="b5650c2b0e7c3c69c88bde6df82abcd2aed59ccc"/>
+  <docblock>
+    <description compact="Helper class"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="Mage_Core_Helper_Abstract" namespace="" name="Mage_Core_Helper_Abstract"/>
+  <constant name="SCOPE_GLOBAL" value="0"/>
+  <constant name="SCOPE_WEBSITE" value="1"/>
+  <constant name="SCOPE_STORE" value="2"/>
+  <constant name="SCOPE_STORE_VIEW" value="3"/>
+  <constant name="ACTION_INSERT" value="1"/>
+  <constant name="ACTION_UPDATE" value="2"/>
+  <constant name="ACTION_DELETE" value="3"/>
+  <method name="getAttributeTypeByClassName" start="45" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the attribute type by provided class name"/>
+      <param description="Class Name" type="string" variable="$className"/>
+      <return description="Attribute Type or false" type="object">
+        <type full="string|bool" namespace="" name="string|bool"/>
+      </return>
+    </docblock>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAttributeNameByTypeAndCode" start="66" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the attribute name by provided class name and attribute code"/>
+      <param description="Class Name" type="string" variable="$className"/>
+      <param description="Attribute Code" type="string" variable="$attributeCode"/>
+      <return description="Attribute Name" type="string"/>
+    </docblock>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+    <parameter name="attributeCode" byreference="false" type="{unknown}"/>
+  </method>
+</class>

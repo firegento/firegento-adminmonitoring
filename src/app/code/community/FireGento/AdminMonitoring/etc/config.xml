@@ -1,3 +1,23 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @category  FireGento
+ * @package   FireGento_AdminMonitoring
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+-->
 <config>
     <modules>
         <FireGento_AdminMonitoring>
@@ -126,7 +146,6 @@
                     </firegento_adminmonitoring>
                 </observers>
             </firegento_adminmonitoring_log>
-
         </events>
         <translate>
             <modules>
@@ -149,7 +168,6 @@
             </adminhtml>
         </routers>
     </admin>
-
     <crontab>
         <jobs>
             <firegento_adminmonitoring>
@@ -157,12 +175,11 @@
                     <cron_expr>0 3 * * *</cron_expr>
                 </schedule>
                 <run>
-                    <model>firegento_adminmonitoring/observer::scheduledCleanAdminMonitoring</model>
+                    <model>firegento_adminmonitoring/clean::scheduledCleanAdminMonitoring</model>
                 </run>
             </firegento_adminmonitoring>
         </jobs>
     </crontab>
-
     <phpunit>
         <suite>
             <modules>

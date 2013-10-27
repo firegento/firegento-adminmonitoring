@@ -1,21 +1,51 @@
 <?php
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * PHP version 5
+ *
+ * @category  FireGento
+ * @package   FireGento_AdminMonitoring
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+/**
+ * History Data Model
+ *
+ * @category FireGento
+ * @package  FireGento_AdminMonitoring
+ * @author   FireGento Team <team@firegento.com>
+ */
 class FireGento_AdminMonitoring_Model_History_Data
 {
     /**
      * @var Mage_Core_Model_Abstract
      */
-    private $savedModel;
+    protected $_savedModel;
 
     /**
-     * @param Mage_Core_Model_Abstract $savedModel
+     * Init the saved model
+     *
+     * @param Mage_Core_Model_Abstract $savedModel Model which is to be saved
      */
     public function __construct(Mage_Core_Model_Abstract $savedModel)
     {
-        $this->savedModel = $savedModel;
+        $this->_savedModel = $savedModel;
     }
 
     /**
-     * @return string
+     * Retrieve the serialized content
+     *
+     * @return string Serialized Content
      */
     public function getSerializedContent()
     {
@@ -23,21 +53,26 @@ class FireGento_AdminMonitoring_Model_History_Data
     }
 
     /**
-     * @return array
+     * Retrieve the content of the saved model
+     *
+     * @return array Content
      */
     public function getContent()
     {
         // have to re-load the model as based on database datatypes the format of values changes
-        $className = get_class($this->savedModel);
+        $className = get_class($this->_savedModel);
         $model = new $className;
-        $model->setStoreId($this->savedModel->getStoreId());
-        $model->load($this->savedModel->getId());
+        $model->setStoreId($this->_savedModel->getStoreId());
+        $model->load($this->_savedModel->getId());
+
         return $this->filterObligatoryFields($model->getData());
-   }
+    }
 
     /**
-     * @param  array $data
-     * @return array
+     * Remove the obligatory fields from the data
+     *
+     * @param  array $data Data
+     * @return array Filtered Data
      */
     protected function filterObligatoryFields($data)
     {
@@ -45,31 +80,38 @@ class FireGento_AdminMonitoring_Model_History_Data
         foreach ($fields as $field) {
             unset($data[$field]);
         }
+
         return $data;
     }
 
     /**
-     * @return array
+     * Retrieve the original content of the saved model
+     *
+     * @return array Data
      */
     public function getOrigContent()
     {
-        $data = $this->savedModel->getOrigData();
+        $data = $this->_savedModel->getOrigData();
         return $this->filterObligatoryFields($data);
     }
 
     /**
-     * @return string
+     * Retrieve the object type of the saved model
+     *
+     * @return string Object Type
      */
     public function getObjectType()
     {
-        return get_class($this->savedModel);
+        return get_class($this->_savedModel);
     }
 
     /**
-     * @return int
+     * Retrieve the object id of the saved model
+     *
+     * @return int Object ID
      */
     public function getObjectId()
     {
-        return $this->savedModel->getId();
+        return $this->_savedModel->getId();
     }
 }

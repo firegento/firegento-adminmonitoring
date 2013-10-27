@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Resource_History_Collection" namespace="" name="FireGento_AdminMonitoring_Model_Resource_History_Collection" abstract="false" final="false" start="28" end="38">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History" file="Collection.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History/Collection.php" size="1289" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="52db37892c657e5f4ff367810806c96d28f2b3fb"/>
+  <docblock>
+    <description compact="History Collection Resource Model"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="Mage_Core_Model_Resource_Db_Collection_Abstract" namespace="" name="Mage_Core_Model_Resource_Db_Collection_Abstract"/>
+  <method name="_construct" start="34" end="37" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Inits the model and resource model for the current collection"/>
+    </docblock>
+  </method>
+</class>

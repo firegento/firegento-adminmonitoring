@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Observer_Product_Import" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Product_Import" abstract="false" final="false" start="28" end="74">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product" file="Import.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php" size="2717" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="85868d9e0f23c91d991d535231b1f3ccf8d05ab6"/>
+  <docblock>
+    <description compact="Observes the product import"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="FireGento_AdminMonitoring_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Log"/>
+  <constant name="XML_PATH_ADMINMONITORING_LOG_PRODUCT_IMPORT" value="'admin/firegento_adminmonitoring/product_import_logging'"/>
+  <method name="catalogProductImportFinishBefore" start="39" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Observe the product import before"/>
+      <param description="Observer Instance" type="object" variable="$observer">
+        <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="observer" byreference="false" type="object">
+      <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+    </parameter>
+  </method>
+  <parent full="FireGento_AdminMonitoring_Model_Observer_Log" namepsace="" name="FireGento_AdminMonitoring_Model_Observer_Log">
+    <method name="log" start="35" end="53" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Log the data for the given observer model."/>
+        <param description="Observer Instance" type="object" variable="$observer">
+          <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+        </param>
+      </docblock>
+      <parameter name="observer" byreference="false" type="object">
+        <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+      </parameter>
+    </method>
+    <method name="getUserId" start="60" end="69" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the current admin user id"/>
+        <return description="User ID" type="int"/>
+      </docblock>
+    </method>
+    <method name="getUserName" start="76" end="85" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the current admin user name"/>
+        <return description="User Name" type="string"/>
+      </docblock>
+    </method>
+    <method name="getUser" start="92" end="97" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the current admin user"/>
+        <return type="object">
+          <type full="Mage_Admin_Model_User" namespace="" name="Mage_Admin_Model_User"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getUserAgent" start="104" end="107" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the user agent of the current user."/>
+        <return description="User Agent" type="string"/>
+      </docblock>
+    </method>
+    <method name="getRemoteAddr" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the remote address of the current user."/>
+        <return description="IPv4|long" type="string"/>
+      </docblock>
+    </method>
+  </parent>
+</class>
