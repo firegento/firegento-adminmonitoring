@@ -117,6 +117,10 @@
                         <class>firegento_adminmonitoring/rowUrl_model_page</class>
                         <method>setRowUrl</method>
                     </cms_page>
+                    <sales_order>
+                        <class>firegento_adminmonitoring/rowUrl_model_order</class>
+                        <method>setRowUrl</method>
+                    </sales_order>
                 </observers>
             </firegento_adminmonitoring_rowurl>
             <firegento_adminmonitoring_log>
