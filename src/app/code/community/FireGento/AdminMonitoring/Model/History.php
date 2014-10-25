@@ -103,4 +103,14 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
     {
         return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_DELETE);
     }
+
+    /**
+     * Check if the history action is an login action
+     *
+     * @return bool
+     */
+    public function isLogin()
+    {
+        return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_LOGIN);
+    }
 }

@@ -42,6 +42,7 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
     const ACTION_INSERT = 1;
     const ACTION_UPDATE = 2;
     const ACTION_DELETE = 3;
+    const ACTION_LOGIN  = 4;
 
     /**
      * STATUS

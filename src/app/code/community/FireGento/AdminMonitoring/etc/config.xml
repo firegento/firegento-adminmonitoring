@@ -146,6 +146,22 @@
                     </firegento_adminmonitoring>
                 </observers>
             </firegento_adminmonitoring_log>
+            <admin_session_user_login_success>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>firegento_adminmonitoring/observer_login</class>
+                        <method>logSuccess</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </admin_session_user_login_success>
+            <admin_session_user_login_failed>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>firegento_adminmonitoring/observer_login</class>
+                        <method>logFailure</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </admin_session_user_login_failed>
         </events>
         <translate>
             <modules>

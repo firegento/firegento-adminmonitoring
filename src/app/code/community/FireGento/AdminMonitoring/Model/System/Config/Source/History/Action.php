@@ -53,6 +53,10 @@ class FireGento_AdminMonitoring_Model_System_Config_Source_History_Action
                 array(
                     'value' => FireGento_AdminMonitoring_Helper_Data::ACTION_DELETE,
                     'label' => 'DELETE',
+                ),
+                array(
+                    'value' => FireGento_AdminMonitoring_Helper_Data::ACTION_LOGIN,
+                    'label' => 'LOGIN',
                 )
             );
         }
