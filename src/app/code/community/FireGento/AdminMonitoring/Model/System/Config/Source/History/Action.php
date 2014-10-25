@@ -27,12 +27,8 @@
  * @author   FireGento Team <team@firegento.com>
  */
 class FireGento_AdminMonitoring_Model_System_Config_Source_History_Action
+    extends FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract
 {
-    /**
-     * @var null
-     */
-    protected $_options = null;
-
     /**
      * Retrieve the option array
      *
@@ -62,22 +58,5 @@ class FireGento_AdminMonitoring_Model_System_Config_Source_History_Action
         }
 
         return $this->_options;
-    }
-
-    /**
-     * Retrieve the option hash
-     *
-     * @return array
-     */
-    public function toOptionHash()
-    {
-        $options = $this->toOptionArray();
-        $optionHash = array();
-
-        foreach ($options as $option) {
-            $optionHash[$option['value']] = $option['label'];
-        }
-
-        return $optionHash;
     }
 }

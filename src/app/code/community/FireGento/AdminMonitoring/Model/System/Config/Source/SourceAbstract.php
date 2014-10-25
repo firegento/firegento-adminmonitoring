@@ -20,35 +20,40 @@
  */
 
 /**
- * Source model for history status
+ * Abstract source model
  *
  * @category FireGento
  * @package  FireGento_AdminMonitoring
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_AdminMonitoring_Model_System_Config_Source_History_Status
-    extends FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract
+abstract class FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract
 {
+    /**
+     * @var array
+     */
+    protected $_options = null;
+
     /**
      * Retrieve the option array
      *
      * @return array
      */
-    public function toOptionArray()
+    abstract public function toOptionArray();
+
+    /**
+     * Retrieve the option hash
+     *
+     * @return array
+     */
+    public function toOptionHash()
     {
-        if (null === $this->_options) {
-            $this->_options = array(
-                array(
-                    'value' => FireGento_AdminMonitoring_Helper_Data::STATUS_SUCCESS,
-                    'label' => Mage::helper('firegento_adminmonitoring')->__('Success'),
-                ),
-                array(
-                    'value' => FireGento_AdminMonitoring_Helper_Data::STATUS_FAILURE,
-                    'label' => Mage::helper('firegento_adminmonitoring')->__('Failure'),
-                )
-            );
+        $options = $this->toOptionArray();
+        $optionHash = array();
+
+        foreach ($options as $option) {
+            $optionHash[$option['value']] = $option['label'];
         }
 
-        return $this->_options;
+        return $optionHash;
     }
 }
