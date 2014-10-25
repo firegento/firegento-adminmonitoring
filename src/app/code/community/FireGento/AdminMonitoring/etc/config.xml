@@ -36,7 +36,9 @@
                     <FireGento_AdminMonitoring_Model_History />
                 </object_types>
                 <fields>
+                    <created_at />
                     <updated_at />
+                    <create_time />
                     <update_time />
                     <low_stock_date />
                 </fields>
@@ -196,6 +198,16 @@
             </firegento_adminmonitoring>
         </jobs>
     </crontab>
+    <default>
+        <admin>
+            <firegento_adminmonitoring>
+                <enable_cleaning>1</enable_cleaning>
+                <interval>30</interval>
+                <product_import_logging>0</product_import_logging>
+                <product_mass_update_logging>0</product_mass_update_logging>
+            </firegento_adminmonitoring>
+        </admin>
+    </default>
     <phpunit>
         <suite>
             <modules>

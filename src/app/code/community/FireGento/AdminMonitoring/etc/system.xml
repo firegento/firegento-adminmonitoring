@@ -47,6 +47,9 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                             <validate>validate-number</validate>
+                            <depends>
+                                <enable_cleaning>1</enable_cleaning>
+                            </depends>
                         </interval>
                         <product_import_logging translate="label">
                             <label>Enable logging on product imports</label>
