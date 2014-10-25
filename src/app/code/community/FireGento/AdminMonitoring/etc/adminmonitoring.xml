@@ -20,6 +20,11 @@
             <admin_routes>
                 <admin_sales_order_create_index/>
                 <admin_sales_order_create_loadBlock/>
+                <admin_sales_order_create_save/>
+                <admin_sales_order_invoice_save/>
+                <admin_sales_order_shipment_save/>
+                <admin_sales_order_creditmemo_save/>
+                <admin_sales_order_create_reorder/>
             </admin_routes>
         </excludes>
     </adminmonitoring>
