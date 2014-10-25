@@ -106,4 +106,21 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
 
         return $transport->getRowUrl();
     }
+
+    /**
+     * Retrieve the full action name of the current request
+     *
+     * @param  string $separator Separator
+     * @return string
+     */
+    public function getFullActionName($separator='_')
+    {
+        $request = array(
+            Mage::app()->getRequest()->getModuleName(),
+            Mage::app()->getRequest()->getControllerName(),
+            Mage::app()->getRequest()->getActionName()
+        );
+
+        return implode($separator, $request);
+    }
 }

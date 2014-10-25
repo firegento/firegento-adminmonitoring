@@ -24,27 +24,6 @@
             <version>1.0.3</version>
         </FireGento_AdminMonitoring>
     </modules>
-    <default>
-        <firegento_adminmonitoring_config>
-            <exclude>
-                <object_types>
-                    <Mage_Index_Model_Event />
-                    <Mage_Admin_Model_User />
-                    <Enterprise_Logging_Model_Event_Changes />
-                    <Enterprise_Logging_Model_Event />
-                    <!-- omit infinite loops -->
-                    <FireGento_AdminMonitoring_Model_History />
-                </object_types>
-                <fields>
-                    <created_at />
-                    <updated_at />
-                    <create_time />
-                    <update_time />
-                    <low_stock_date />
-                </fields>
-            </exclude>
-        </firegento_adminmonitoring_config>
-    </default>
     <global>
         <blocks>
             <firegento_adminmonitoring>

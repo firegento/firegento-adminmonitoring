@@ -76,7 +76,7 @@ class FireGento_AdminMonitoring_Model_History_Data
      */
     protected function filterObligatoryFields($data)
     {
-        $fields = array_keys(Mage::getStoreConfig('firegento_adminmonitoring_config/exclude/fields'));
+        $fields = Mage::getSingleton('firegento_adminmonitoring/config')->getFieldExcludes();
         foreach ($fields as $field) {
             unset($data[$field]);
         }

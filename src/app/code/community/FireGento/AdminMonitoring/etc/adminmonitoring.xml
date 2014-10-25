@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <adminmonitoring>
+        <excludes>
+            <object_types>
+                <Mage_Index_Model_Event/>
+                <Mage_Admin_Model_User/>
+                <Enterprise_Logging_Model_Event_Changes/>
+                <Enterprise_Logging_Model_Event/>
+                <!-- omit infinite loops -->
+                <FireGento_AdminMonitoring_Model_History/>
+            </object_types>
+            <fields>
+                <created_at/>
+                <updated_at/>
+                <create_time/>
+                <update_time/>
+                <low_stock_date/>
+            </fields>
+            <admin_routes>
+                <admin_sales_order_create_index/>
+                <admin_sales_order_create_loadBlock/>
+            </admin_routes>
+        </excludes>
+    </adminmonitoring>
+</config>
