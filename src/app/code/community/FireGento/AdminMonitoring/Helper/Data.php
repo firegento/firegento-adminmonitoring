@@ -18,6 +18,7 @@
  * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Helper class
  *
@@ -27,14 +28,26 @@
  */
 class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    /**
+     * SCOPES
+     */
     const SCOPE_GLOBAL = 0;
     const SCOPE_WEBSITE = 1;
     const SCOPE_STORE = 2;
     const SCOPE_STORE_VIEW = 3;
 
+    /**
+     * ACTIONS
+     */
     const ACTION_INSERT = 1;
     const ACTION_UPDATE = 2;
     const ACTION_DELETE = 3;
+
+    /**
+     * STATUS
+     */
+    const STATUS_SUCCESS = 1;
+    const STATUS_FAILURE = 2;
 
     /**
      * Retrieve the attribute type by provided class name
@@ -77,5 +90,19 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
         }
 
         return $attributeName;
+    }
+
+    /**
+     * Retrieve the row url for the given history row
+     *
+     * @param  FireGento_AdminMonitoring_Model_History $row
+     * @return string
+     */
+    public function getRowUrl(FireGento_AdminMonitoring_Model_History $row)
+    {
+        $transport = new Varien_Object();
+        Mage::dispatchEvent('firegento_adminmonitoring_rowurl', array('history' => $row, 'transport' => $transport));
+
+        return $transport->getRowUrl();
     }
 }

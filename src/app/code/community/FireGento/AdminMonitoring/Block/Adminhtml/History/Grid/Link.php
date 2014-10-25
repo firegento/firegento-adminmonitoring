@@ -18,14 +18,15 @@
  * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
- * Displays the revert link in the history if applicable
+ * Displays the link to the object in the history if applicable
  *
  * @category FireGento
  * @package  FireGento_AdminMonitoring
  * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid_Revert
+class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid_Link
     extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
     /**
@@ -38,11 +39,17 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid_Revert
     public function render(Varien_Object $row)
     {
         if ($row instanceof FireGento_AdminMonitoring_Model_History) {
-            if ($row->isUpdate() && $row->getDecodedContentDiff()) {
-                return '<a href="' . $this->getUrl('*/*/revert', array('id' => $row->getId())) . '">Revert</a>';
+            /* @var $helper FireGento_AdminMonitoring_Helper_Data */
+            $helper = Mage::helper('firegento_adminmonitoring');
+
+            $link = $helper->getRowUrl($row);
+            if ($link) {
+                return sprintf('<a href="%s">%s</a>', $link, $helper->__('Go To Object'));
+            } else {
+                return '-';
             }
         } else {
-            throw new Exception('block is only compatible to FireGento_AdminMonitoring_Model_History');
+            throw new Exception('Block is only compatible to FireGento_AdminMonitoring_Model_History');
         }
     }
 }

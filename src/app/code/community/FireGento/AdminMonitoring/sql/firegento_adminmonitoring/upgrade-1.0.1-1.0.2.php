@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--
+<?php
 /**
  * This file is part of a FireGento e.V. module.
  *
@@ -11,25 +10,34 @@
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
+ * PHP version 5
+ *
  * @category  FireGento
  * @package   FireGento_AdminMonitoring
  * @author    FireGento Team <team@firegento.com>
  * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
--->
-<layout version="0.1.0">
-    <adminhtml_history_index>
-        <reference name="content">
-            <block type="firegento_adminmonitoring/adminhtml_history" name="adminmonitoring.grid"/>
-        </reference>
-    </adminhtml_history_index>
+/**
+ * Displays the logging history
+ *
+ * @category FireGento
+ * @package  FireGento_AdminMonitoring
+ * @author   FireGento Team <team@firegento.com>
+ */
 
-    <adminhtml_history_view>
-        <reference name="content">
-            <block type="firegento_adminmonitoring/adminhtml_history_view" name="adminmonitoring.view">
-                <block type="firegento_adminmonitoring/adminhtml_history_view_detail" name="adminmonitoring.view.detail" as="grid" template="firegento/adminmonitoring/view.phtml"/>
-            </block>
-        </reference>
-    </adminhtml_history_view>
-</layout>
+/* @var $installer Mage_Core_Model_Resource_Setup */
+$installer = $this;
+$installer->startSetup();
+
+$installer->getConnection()->addColumn(
+    $installer->getTable('firegento_adminmonitoring/history'),
+    'history_message',
+    array(
+         'type'    => Varien_Db_Ddl_Table::TYPE_TEXT,
+         'size'    => null,
+         'comment' => 'History Message'
+    )
+);
+
+$installer->endSetup();

@@ -18,6 +18,7 @@
  * @copyright 2013 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * History controller
  *
@@ -37,9 +38,12 @@ class FireGento_AdminMonitoring_Adminhtml_HistoryController extends Mage_Adminht
         $this->loadLayout();
         $this->_setActiveMenu('firegento_adminmonitoring/history');
         $this->_addBreadcrumb(
-            Mage::helper('firegento_adminmonitoring')->__('Admin Monitoring'),
-            Mage::helper('firegento_adminmonitoring')->__('History')
+            $this->getMonitoringHelper()->__('Admin Monitoring'),
+            $this->getMonitoringHelper()->__('History')
         );
+
+        $this->_title($this->getMonitoringHelper()->__('Admin Monitoring'))
+            ->_title($this->getMonitoringHelper()->__('History'));
 
         return $this;
     }
@@ -54,19 +58,46 @@ class FireGento_AdminMonitoring_Adminhtml_HistoryController extends Mage_Adminht
     }
 
     /**
+     * Reload the adminhtml history grid, for
+     */
+    public function gridAction()
+    {
+        $block = $this->getLayout()->createBlock('firegento_adminmonitoring/adminhtml_history_grid');
+        $this->getResponse()->setBody($block->toHtml());
+    }
+
+    /**
+     * View a single history grid
+     */
+    public function viewAction()
+    {
+        /* @var $history FireGento_AdminMonitoring_Model_History */
+        $history = Mage::getModel('firegento_adminmonitoring/history')->load($this->getRequest()->getParam('id'));
+        if (!$history->getId()) {
+            $this->_redirect('*/*');
+
+            return;
+        }
+
+        Mage::register('current_history', $history, true);
+
+        $this->_initAction();
+        $this->renderLayout();
+    }
+
+    /**
      * Reverts a history entry
      */
     public function revertAction()
     {
         /* @var $history FireGento_AdminMonitoring_Model_History */
         $history = Mage::getModel('firegento_adminmonitoring/history')->load($this->getRequest()->getParam('id'));
-
-        if (!$history->getId()) {
+        if ($history->getId()) {
             $model = $history->getOriginalModel();
             $model->addData($history->getDecodedContentDiff());
             $model->save();
             Mage::getSingleton('adminhtml/session')->addSuccess(
-                $this->__(
+                $this->getMonitoringHelper()->__(
                     'Revert of %1$s with id %2$d successful',
                     $history->getObjectType(),
                     $history->getObjectId()
@@ -74,6 +105,16 @@ class FireGento_AdminMonitoring_Adminhtml_HistoryController extends Mage_Adminht
             );
         }
 
-        $this->_redirect('*/*/index');
+        $this->_redirect('*/*');
+    }
+
+    /**
+     * Retrieve the adminmonitoring helper
+     *
+     * @return FireGento_AdminMonitoring_Helper_Data
+     */
+    public function getMonitoringHelper()
+    {
+        return Mage::helper('firegento_adminmonitoring');
     }
 }

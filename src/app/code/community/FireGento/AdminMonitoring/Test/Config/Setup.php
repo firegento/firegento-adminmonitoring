@@ -42,7 +42,7 @@ class FireGento_AdminMonitoring_Test_Config_Setup extends EcomDev_PHPUnit_Test_C
     public function testModuleVersion()
     {
         $this->assertModuleCodePool('community');
-        $this->assertModuleVersionGreaterThanOrEquals('1.0.0');
+        $this->assertModuleVersion('1.0.3');
     }
 
     /**
