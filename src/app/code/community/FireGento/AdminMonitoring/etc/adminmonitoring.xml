@@ -13,7 +13,7 @@
             <fields>
                 <created_at/>
                 <updated_at/>
-                <create_time/>
+                <creation_time/>
                 <update_time/>
                 <low_stock_date/>
             </fields>
