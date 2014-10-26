@@ -79,9 +79,19 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
      *
      * @return array Decoded Content
      */
-    private function getDecodedContent()
+    public function getDecodedContent()
     {
         return json_decode($this->getContent(), true);
+    }
+
+    /**
+     * Check if the history action is an update action.
+     *
+     * @return bool Result
+     */
+    public function isInsert()
+    {
+        return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_INSERT);
     }
 
     /**
