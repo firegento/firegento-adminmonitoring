@@ -33,7 +33,7 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Customer
      *
      * @return string Class Name
      */
-    protected function getClassName()
+    protected function _getClassName()
     {
         return 'Mage_Customer_Model_Customer';
     }
@@ -43,7 +43,7 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Customer
      *
      * @return string Route Path
      */
-    protected function getRoutePath()
+    protected function _getRoutePath()
     {
         return 'adminhtml/customer/edit';
     }
@@ -54,7 +54,7 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Customer
      * @param  Mage_Core_Model_Abstract $model Model
      * @return array Route Params
      */
-    protected function getRouteParams(Mage_Core_Model_Abstract $model)
+    protected function _getRouteParams(Mage_Core_Model_Abstract $model)
     {
         return array(
             'id' => $model->getId()
