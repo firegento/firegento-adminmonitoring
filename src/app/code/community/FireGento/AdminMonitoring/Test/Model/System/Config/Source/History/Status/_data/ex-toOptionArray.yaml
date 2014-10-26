@@ -1,0 +1,6 @@
+options:
+  result:
+    - value: 1
+      label: Success
+    - value: 2
+      label: Failure

@@ -15,9 +15,10 @@
  * @category  FireGento
  * @package   FireGento_AdminMonitoring
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * History Model
  *
@@ -78,9 +79,19 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
      *
      * @return array Decoded Content
      */
-    private function getDecodedContent()
+    public function getDecodedContent()
     {
         return json_decode($this->getContent(), true);
+    }
+
+    /**
+     * Check if the history action is an update action.
+     *
+     * @return bool Result
+     */
+    public function isInsert()
+    {
+        return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_INSERT);
     }
 
     /**
@@ -101,5 +112,15 @@ class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
     public function isDelete()
     {
         return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_DELETE);
+    }
+
+    /**
+     * Check if the history action is an login action
+     *
+     * @return bool
+     */
+    public function isLogin()
+    {
+        return ($this->getAction() == FireGento_AdminMonitoring_Helper_Data::ACTION_LOGIN);
     }
 }

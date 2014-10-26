@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_AdminMonitoring
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 /**
@@ -115,7 +115,24 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
     {
         $savedModel = $this->_savedModel;
 
-        $objectTypeExcludes = array_keys(Mage::getStoreConfig('firegento_adminmonitoring_config/exclude/object_types'));
+        $fullActionName = Mage::helper('firegento_adminmonitoring')->getFullActionName();
+
+        // Check if full action name is restricted
+        $globalAdminRouteExcludes = $this->getConfig()->getGlobalAdminRouteExcludes();
+        if (in_array($fullActionName, $globalAdminRouteExcludes)) {
+            return true;
+        }
+
+        // Fetch all object type excludes
+
+        $objectTypeExcludes = $this->getConfig()->getObjectTypeExcludes();
+
+        // Add all object type excludes from the partial admin route excludes
+        $partialAdminRouteExcludes = $this->getConfig()->getPartialAdminRouteExcludes();
+        if (isset($partialAdminRouteExcludes[$fullActionName])) {
+            $objectTypeExcludes = array_merge($objectTypeExcludes, $partialAdminRouteExcludes[$fullActionName]);
+        }
+
         $objectTypeExcludesFiltered = array_filter(
             $objectTypeExcludes,
             function ($className) use ($savedModel) {
@@ -124,5 +141,13 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
         );
 
         return (count($objectTypeExcludesFiltered) > 0);
+    }
+
+    /**
+     * @return FireGento_AdminMonitoring_Model_Config
+     */
+    public function getConfig()
+    {
+        return Mage::getSingleton('firegento_adminmonitoring/config');
     }
 }
