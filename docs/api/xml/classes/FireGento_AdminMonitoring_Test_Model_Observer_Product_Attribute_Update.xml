@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_Observer_Product_Attribute_Update" namespace="" name="FireGento_AdminMonitoring_Test_Model_Observer_Product_Attribute_Update" abstract="false" final="false" start="25" end="51">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Product/Attribute" file="Update.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Product/Attribute/Update.php" size="1584" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="e67132ffca45acf344364dedd54a863225ebc520" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Product/Attribute/Update.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_Observer_Product_Attribute_Update"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+</class>

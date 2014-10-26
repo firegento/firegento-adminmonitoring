@@ -1,88 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>FireGento_AdminMonitoring - FireGento_AdminMonitoring_Model_Clean - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - FireGento_AdminMonitoring_Model_Clean</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">FireGento_AdminMonitoring - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">FireGento_AdminMonitoring_Model_Clean</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#XML_PATH_ADMINMONITORING_INTERVAL">XML_PATH_ADMINMONITORING_INTERVAL</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#XML_PATH_ADMINMONITORING_CLEAN_ENABLED">XML_PATH_ADMINMONITORING_CLEAN_ENABLED</a>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/app/code/community/FireGento/AdminMonitoring/Model/Clean.php.xhtml#line28">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>FireGento_AdminMonitoring_Model_Clean</h1>
+        <h4>Cleans the history after a configurable amount of time.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#clean">clean</a>
-          </li>
-          <li>
-            <a href="#scheduledCleanAdminMonitoring">scheduledCleanAdminMonitoring</a>
-          </li>
+          <li>Author: FireGento Team &lt;team@firegento.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>FireGento_AdminMonitoring_Model_Clean</h2>
-        <div class="file-notice">
-          <p>Cleans the history after a configurable amount of time.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class FireGento_AdminMonitoring_Model_Clean
+            {<br/><ul class="none"><li>// constants</li><li>const XML_PATH_ADMINMONITORING_INTERVAL = 'admin/firegento_adminmonitoring/interval';</li><li>const XML_PATH_ADMINMONITORING_CLEAN_ENABLED = 'admin/firegento_adminmonitoring/enable_cleaning';</li></ul><ul class="none"><li>// methods</li><li>public FireGento_AdminMonitoring_Model_Clean <a title="FireGento_AdminMonitoring_Model_Clean" href="../classes/FireGento_AdminMonitoring_Model_Clean/scheduledCleanAdminMonitoring.xhtml">scheduledCleanAdminMonitoring</a>()
+                    </li><li>public FireGento_AdminMonitoring_Model_Clean <a title="FireGento_AdminMonitoring_Model_Clean" href="../classes/FireGento_AdminMonitoring_Model_Clean/clean.xhtml">clean</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="XML_PATH_ADMINMONITORING_INTERVAL">XML_PATH_ADMINMONITORING_INTERVAL</td>
+              <td>'admin/firegento_adminmonitoring/interval'</td>
+            </tr>
+            <tr>
+              <td id="XML_PATH_ADMINMONITORING_CLEAN_ENABLED">XML_PATH_ADMINMONITORING_CLEAN_ENABLED</td>
+              <td>'admin/firegento_adminmonitoring/enable_cleaning'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="clean"><a title="FireGento_AdminMonitoring_Model_Clean" href="../classes/FireGento_AdminMonitoring_Model_Clean/clean.xhtml">clean()</a>
+                — Clean the database table for the given interval.</li>
+            <li id="scheduledCleanAdminMonitoring"><a title="FireGento_AdminMonitoring_Model_Clean" href="../classes/FireGento_AdminMonitoring_Model_Clean/scheduledCleanAdminMonitoring.xhtml">scheduledCleanAdminMonitoring()</a>
+                — Cronjob method for cleaning the database table.</li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="XML_PATH_ADMINMONITORING_INTERVAL"/>XML_PATH_ADMINMONITORING_INTERVAL = 'admin/firegento_adminmonitoring/interval'<hr/></li>
-          <li><a name="XML_PATH_ADMINMONITORING_CLEAN_ENABLED"/>XML_PATH_ADMINMONITORING_CLEAN_ENABLED = 'admin/firegento_adminmonitoring/enable_cleaning'<hr/></li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="clean"/>
-            <h4><span class="label public">public</span>clean<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Clean the database table for the given interval.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="scheduledCleanAdminMonitoring"/>
-            <h4><span class="label public">public</span>scheduledCleanAdminMonitoring<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Cronjob method for cleaning the database table.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

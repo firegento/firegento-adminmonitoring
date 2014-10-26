@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Page" namespace="" name="FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Page" abstract="false" final="false" start="25" end="78">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/RowUrl/Model" file="Page.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/RowUrl/Model/Page.php" size="2360" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="1d3083cc08df11bf30abc844f2d9fe42dd259eda" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/RowUrl/Model/Page.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Page"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case_Controller" namespace="" name="EcomDev_PHPUnit_Test_Case_Controller"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_RowUrl_Model_Page" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Page"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+  <method name="setRowUrl" start="60" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+</class>

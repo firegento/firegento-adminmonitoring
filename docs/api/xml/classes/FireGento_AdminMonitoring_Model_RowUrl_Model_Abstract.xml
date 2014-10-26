@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" abstract="true" final="false" start="28" end="94">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Abstract.php" size="3129" time="2013-10-27T12:55:43+01:00" unixtime="1382874943" sha1="2f3f234c3f9ca5f5a00975260bb51d4b9d5c10db"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" abstract="true" final="false" start="28" end="94">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Abstract.php" size="3140" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="471440b264fc71178f290845ea18225cfbb4d062" relative="app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Abstract.php"/>
   <docblock>
     <description compact="Abstract Model for RowUrl"/>
     <category value="FireGento"/>
     <package value="FireGento_AdminMonitoring"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
-  <method name="getClassName" start="35" end="35" abstract="true" final="false" static="false" visibility="protected">
+  <method name="_getClassName" start="35" end="35" abstract="true" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Abstract method for retrieving the class name."/>
       <return type="string"/>
     </docblock>
   </method>
-  <method name="getRoutePath" start="42" end="42" abstract="true" final="false" static="false" visibility="protected">
+  <method name="_getRoutePath" start="42" end="42" abstract="true" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Abstract method for retrieving the route path."/>
       <return type="string"/>
     </docblock>
   </method>
-  <method name="getRouteParams" start="50" end="50" abstract="true" final="false" static="false" visibility="protected">
+  <method name="_getRouteParams" start="50" end="50" abstract="true" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Abstract method for retrieving the route params."/>
       <param description="Object" type="object" variable="$model">
@@ -42,7 +42,7 @@
       <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
     </parameter>
   </method>
-  <method name="getRowUrl" start="82" end="93" abstract="false" final="false" static="false" visibility="public">
+  <method name="_getRowUrl" start="82" end="93" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Retrieve the row url with the given parameters."/>
       <param description="History Model" type="object" variable="$history">
@@ -62,6 +62,8 @@
     <parameter name="routePath" byreference="false" type="{unknown}"/>
     <parameter name="routeParams" byreference="false" type="{unknown}"/>
   </method>
+  <extender full="FireGento_AdminMonitoring_Model_RowUrl_Model_Customer" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Customer"/>
+  <extender full="FireGento_AdminMonitoring_Model_RowUrl_Model_Order" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Order"/>
   <extender full="FireGento_AdminMonitoring_Model_RowUrl_Model_Page" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Page"/>
   <extender full="FireGento_AdminMonitoring_Model_RowUrl_Model_Product" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Product"/>
 </class>

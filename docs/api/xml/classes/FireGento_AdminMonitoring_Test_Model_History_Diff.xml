@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Test_Model_History_Diff" abstract="false" final="false" start="25" end="89">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/History" file="Diff.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/History/Diff.php" size="2536" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="93736ada018dad55eeebb268883618bbf1363894" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/History/Diff.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_History_Diff"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Model_History_Diff"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="41" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="46" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+  <method name="hasChanged" start="58" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDiffCmsPage"/>
+    </docblock>
+  </method>
+  <method name="getSerializedDiff" start="68" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDiffCmsPage"/>
+    </docblock>
+  </method>
+  <method name="_getModel" start="79" end="88" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the changed model"/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Model_History_Diff"/>
+      </return>
+    </docblock>
+  </method>
+</class>

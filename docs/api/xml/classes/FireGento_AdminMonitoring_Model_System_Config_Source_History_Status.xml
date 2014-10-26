@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_System_Config_Source_History_Status" namespace="" name="FireGento_AdminMonitoring_Model_System_Config_Source_History_Status" abstract="false" final="false" start="29" end="54">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/System/Config/Source/History" file="Status.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/System/Config/Source/History/Status.php" size="1817" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="7ac1f16670bf4f5b1eb62e34dc8b485386db2f1a" relative="app/code/community/FireGento/AdminMonitoring/Model/System/Config/Source/History/Status.php"/>
+  <docblock>
+    <description compact="Source model for history status"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract" namespace="" name="FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract"/>
+  <method name="toOptionArray" start="37" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the option array"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <parent full="FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract" namespace="" name="FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract">
+    <member name="_options" type="{unknown}" default="null" visibility="protected" line="34">
+      <docblock>
+        <description/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="toOptionArray" start="41" end="41" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the option array"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="toOptionHash" start="48" end="58" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the option hash"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+  </parent>
+</class>

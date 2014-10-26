@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Test_Model_History_Data" abstract="false" final="false" start="25" end="120">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/History" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/History/Data.php" size="3280" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="fcc4d87bad5d7fde1d179dbdc8705c868d942227" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/History/Data.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_History_Data"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+  <method name="getSerializedContent" start="56" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDataCmsPage"/>
+    </docblock>
+  </method>
+  <method name="getContent" start="67" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDataCmsPage"/>
+    </docblock>
+  </method>
+  <method name="getOrigContent" start="80" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDataCmsPage"/>
+    </docblock>
+  </method>
+  <method name="getObjectType" start="93" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDataCmsPage"/>
+    </docblock>
+  </method>
+  <method name="getObjectId" start="103" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="historyDataCmsPage"/>
+    </docblock>
+  </method>
+  <method name="_getModel" start="114" end="119" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieve the changed model"/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
+      </return>
+    </docblock>
+  </method>
+</class>

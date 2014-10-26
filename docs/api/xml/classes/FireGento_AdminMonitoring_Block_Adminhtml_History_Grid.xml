@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Block_Adminhtml_History_Grid" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_Grid" abstract="false" final="false" start="28" end="288">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History" file="Grid.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/Grid.php" size="9497" time="2013-10-27T13:08:53+01:00" unixtime="1382875733" sha1="126ae2e440f5290250608c85a2ccd446527f68d4"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Block_Adminhtml_History_Grid" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_Grid" abstract="false" final="false" start="29" end="185">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History" file="Grid.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/Grid.php" size="6238" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="9bdfe5aa114db48b5c3e273490a04b9435d0c043" relative="app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/Grid.php"/>
   <docblock>
     <description compact="Displays the logging history grid"/>
     <category value="FireGento"/>
@@ -8,12 +8,12 @@
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
   <extends full="Mage_Adminhtml_Block_Widget_Grid" namespace="" name="Mage_Adminhtml_Block_Widget_Grid"/>
-  <constructor name="__construct" start="34" end="41" abstract="false" final="false" static="false" visibility="public">
+  <constructor name="__construct" start="35" end="43" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Grid constructor"/>
     </docblock>
   </constructor>
-  <method name="getMonitoringHelper" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+  <method name="getMonitoringHelper" start="50" end="53" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve helper class"/>
       <return description="Helper Instance" type="object">
@@ -21,7 +21,7 @@
       </return>
     </docblock>
   </method>
-  <method name="_prepareCollection" start="58" end="65" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_prepareCollection" start="60" end="67" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Prepare the grid collection"/>
       <return description="Self." type="object">
@@ -29,7 +29,7 @@
       </return>
     </docblock>
   </method>
-  <method name="_prepareColumns" start="72" end="158" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_prepareColumns" start="74" end="163" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Prepare the grid columns"/>
       <return description="Self." type="object">
@@ -37,7 +37,7 @@
       </return>
     </docblock>
   </method>
-  <method name="getRowUrl" start="166" end="171" abstract="false" final="false" static="false" visibility="public">
+  <method name="getRowUrl" start="171" end="174" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the row url for the given history entry"/>
       <param description="History Model" type="object" variable="$row">
@@ -49,70 +49,10 @@
     </docblock>
     <parameter name="row" byreference="false" type="{unknown}"/>
   </method>
-  <method name="showNewContent" start="180" end="207" abstract="false" final="false" static="false" visibility="public">
+  <method name="getGridUrl" start="181" end="184" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Show the new content after the changes."/>
-      <param description="New Content" type="string" variable="$newContent"/>
-      <param description="History Model" type="object" variable="$row">
-        <type full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History"/>
-      </param>
+      <description compact="Retrieve the grid url for the ajax calls in the grid"/>
       <return type="string"/>
     </docblock>
-    <parameter name="newContent" byreference="false" type="{unknown}"/>
-    <parameter name="row" byreference="false" type="object">
-      <type full="\\FireGento_AdminMonitoring_Model_History" namespace="\" name="FireGento_AdminMonitoring_Model_History"/>
-    </parameter>
-  </method>
-  <method name="showOldContent" start="216" end="234" abstract="false" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Show the old content before the changes."/>
-      <param description="Old Content" type="string" variable="$oldContent"/>
-      <param description="History Model" type="object" variable="$row">
-        <type full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History"/>
-      </param>
-      <return type="string"/>
-    </docblock>
-    <parameter name="oldContent" byreference="false" type="{unknown}"/>
-    <parameter name="row" byreference="false" type="object">
-      <type full="\\FireGento_AdminMonitoring_Model_History" namespace="\" name="FireGento_AdminMonitoring_Model_History"/>
-    </parameter>
-  </method>
-  <method name="decodeContent" start="242" end="246" abstract="false" final="false" static="false" visibility="private">
-    <docblock>
-      <description compact="Decode the given content string."/>
-      <param description="Content to decode" type="string" variable="$content"/>
-      <return type="mixed"/>
-    </docblock>
-    <parameter name="content" byreference="false" type="{unknown}"/>
-  </method>
-  <method name="entities" start="254" end="257" abstract="false" final="false" static="false" visibility="private">
-    <docblock>
-      <description compact="Convert special characters to HTML entities"/>
-      <param description="Input string" type="string" variable="$string"/>
-      <return type="string"/>
-    </docblock>
-    <parameter name="string" byreference="false" type="{unknown}"/>
-  </method>
-  <method name="formatCellContent" start="266" end="272" abstract="false" final="false" static="false" visibility="private">
-    <docblock>
-      <description compact="Format the cell content"/>
-      <param description="Key" type="string" variable="$key"/>
-      <param description="Value" type="object" variable="$value">
-        <type full="array|string" namespace="" name="array|string"/>
-      </param>
-      <return description="Formatted string" type="string"/>
-    </docblock>
-    <parameter name="key" byreference="false" type="{unknown}"/>
-    <parameter name="value" byreference="false" type="{unknown}"/>
-  </method>
-  <method name="wrapColor" start="281" end="287" abstract="false" final="false" static="false" visibility="private">
-    <docblock>
-      <description compact="Wrap the given string in a box with a given border color."/>
-      <param description="String to format" type="string" variable="$string"/>
-      <param description="Border color" type="string" variable="$color"/>
-      <return description="Formatted string" type="string"/>
-    </docblock>
-    <parameter name="string" byreference="false" type="{unknown}"/>
-    <parameter name="color" byreference="false" type="{unknown}"/>
   </method>
 </class>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Observer_Model_Delete" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Delete" abstract="false" final="false" start="28" end="40">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Delete.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php" size="1293" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="5dfda095d12896d5c3ecc04af6adac9e22c592e1"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Model_Delete" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Delete" abstract="false" final="false" start="28" end="40">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Delete.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php" size="1293" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="6193a1380d33bf066a40d114939af0c174be7b2a" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php"/>
   <docblock>
     <description compact="Observes Model Delete"/>
     <category value="FireGento"/>
@@ -14,26 +14,26 @@
       <return description="Action ID" type="int"/>
     </docblock>
   </method>
-  <parent full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namepsace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract">
-    <member name="_savedModel" type="{unknown}" visibility="protected">
+  <parent full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract">
+    <member name="_savedModel" type="{unknown}" visibility="protected" line="33">
       <docblock>
-        <description compact=""/>
+        <description/>
         <var type="object">
           <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
         </var>
       </docblock>
     </member>
-    <member name="_diffModel" type="{unknown}" visibility="protected">
+    <member name="_diffModel" type="{unknown}" visibility="protected" line="38">
       <docblock>
-        <description compact=""/>
+        <description/>
         <var type="object">
           <type full="FireGento_AdminMonitoring_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Model_History_Diff"/>
         </var>
       </docblock>
     </member>
-    <member name="_dataModel" type="{unknown}" visibility="protected">
+    <member name="_dataModel" type="{unknown}" visibility="protected" line="43">
       <docblock>
-        <description compact=""/>
+        <description/>
         <var type="object">
           <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
         </var>
@@ -74,6 +74,14 @@
       <parameter name="observer" byreference="false" type="object">
         <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
       </parameter>
+    </method>
+    <method name="getConfig" start="149" end="152" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <return type="object">
+          <type full="FireGento_AdminMonitoring_Model_Config" namespace="" name="FireGento_AdminMonitoring_Model_Config"/>
+        </return>
+      </docblock>
     </method>
   </parent>
 </class>

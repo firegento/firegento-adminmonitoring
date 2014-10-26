@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Helper_Data" namespace="" name="FireGento_AdminMonitoring_Helper_Data" abstract="false" final="false" start="28" end="81">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Helper" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Helper/Data.php" size="2756" time="2013-10-27T13:07:49+01:00" unixtime="1382875669" sha1="b5650c2b0e7c3c69c88bde6df82abcd2aed59ccc"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Helper_Data" namespace="" name="FireGento_AdminMonitoring_Helper_Data" abstract="false" final="false" start="29" end="126">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Helper" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Helper/Data.php" size="3857" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="8448979df689cbff94ed1c4600e3997fb08d616c" relative="app/code/community/FireGento/AdminMonitoring/Helper/Data.php"/>
   <docblock>
     <description compact="Helper class"/>
     <category value="FireGento"/>
@@ -8,14 +8,29 @@
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
   <extends full="Mage_Core_Helper_Abstract" namespace="" name="Mage_Core_Helper_Abstract"/>
-  <constant name="SCOPE_GLOBAL" value="0"/>
+  <constant name="SCOPE_GLOBAL" value="0">
+    <docblock>
+      <description compact="SCOPES"/>
+    </docblock>
+  </constant>
   <constant name="SCOPE_WEBSITE" value="1"/>
   <constant name="SCOPE_STORE" value="2"/>
   <constant name="SCOPE_STORE_VIEW" value="3"/>
-  <constant name="ACTION_INSERT" value="1"/>
+  <constant name="ACTION_INSERT" value="1">
+    <docblock>
+      <description compact="ACTIONS"/>
+    </docblock>
+  </constant>
   <constant name="ACTION_UPDATE" value="2"/>
   <constant name="ACTION_DELETE" value="3"/>
-  <method name="getAttributeTypeByClassName" start="45" end="57" abstract="false" final="false" static="false" visibility="public">
+  <constant name="ACTION_LOGIN" value="4"/>
+  <constant name="STATUS_SUCCESS" value="1">
+    <docblock>
+      <description compact="STATUS"/>
+    </docblock>
+  </constant>
+  <constant name="STATUS_FAILURE" value="2"/>
+  <method name="getAttributeTypeByClassName" start="59" end="71" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the attribute type by provided class name"/>
       <param description="Class Name" type="string" variable="$className"/>
@@ -25,7 +40,7 @@
     </docblock>
     <parameter name="className" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getAttributeNameByTypeAndCode" start="66" end="80" abstract="false" final="false" static="false" visibility="public">
+  <method name="getAttributeNameByTypeAndCode" start="80" end="94" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the attribute name by provided class name and attribute code"/>
       <param description="Class Name" type="string" variable="$className"/>
@@ -34,5 +49,25 @@
     </docblock>
     <parameter name="className" byreference="false" type="{unknown}"/>
     <parameter name="attributeCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getRowUrl" start="102" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the row url for the given history row"/>
+      <param type="object" variable="$row">
+        <type full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="row" byreference="false" type="object">
+      <type full="\\FireGento_AdminMonitoring_Model_History" namespace="\" name="FireGento_AdminMonitoring_Model_History"/>
+    </parameter>
+  </method>
+  <method name="getFullActionName" start="116" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the full action name of the current request"/>
+      <param description="Separator" type="string" variable="$separator"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="separator" byreference="false" type="string" default="'_'"/>
   </method>
 </class>
