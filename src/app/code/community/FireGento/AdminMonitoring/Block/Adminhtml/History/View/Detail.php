@@ -51,12 +51,12 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_View_Detail extends Mage
     /**
      * Retrieve the admin user model
      *
-     * @return string
+     * @return Mage_Admin_Model_User|bool
      */
     public function getAdminUser()
     {
         $user = Mage::getModel('admin/user')->load($this->getHistory()->getUserId());
-        if (!$user) {
+        if (!$user->getId()) {
             return false;
         }
 
