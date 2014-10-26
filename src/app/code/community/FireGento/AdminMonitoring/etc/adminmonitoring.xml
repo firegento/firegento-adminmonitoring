@@ -25,6 +25,9 @@
                 <admin_sales_order_shipment_save/>
                 <admin_sales_order_creditmemo_save/>
                 <admin_sales_order_create_reorder/>
+                <admin_promo_catalog_save>
+                    <Mage_CatalogRule_Model_Flag/>
+                </admin_promo_catalog_save>
             </admin_routes>
         </excludes>
     </adminmonitoring>
