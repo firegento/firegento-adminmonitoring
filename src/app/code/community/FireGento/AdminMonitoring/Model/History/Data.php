@@ -62,10 +62,14 @@ class FireGento_AdminMonitoring_Model_History_Data
         // have to re-load the model as based on database datatypes the format of values changes
         $className = get_class($this->_savedModel);
         $model = new $className;
-        $model->setStoreId($this->_savedModel->getStoreId());
+
+        // Add store id if given
+        if ($storeId = $this->_savedModel->getStoreId()) {
+            $model->setStoreId($storeId);
+        }
         $model->load($this->_savedModel->getId());
 
-        return $this->filterObligatoryFields($model->getData());
+        return $this->_filterObligatoryFields($model->getData());
     }
 
     /**
@@ -74,7 +78,7 @@ class FireGento_AdminMonitoring_Model_History_Data
      * @param  array $data Data
      * @return array Filtered Data
      */
-    protected function filterObligatoryFields($data)
+    protected function _filterObligatoryFields($data)
     {
         $fields = Mage::getSingleton('firegento_adminmonitoring/config')->getFieldExcludes();
         foreach ($fields as $field) {
@@ -92,7 +96,7 @@ class FireGento_AdminMonitoring_Model_History_Data
     public function getOrigContent()
     {
         $data = $this->_savedModel->getOrigData();
-        return $this->filterObligatoryFields($data);
+        return $this->_filterObligatoryFields($data);
     }
 
     /**
