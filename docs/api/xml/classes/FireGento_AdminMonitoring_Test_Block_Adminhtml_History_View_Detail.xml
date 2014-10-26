@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Block_Adminhtml_History_View_Detail" namespace="" name="FireGento_AdminMonitoring_Test_Block_Adminhtml_History_View_Detail" abstract="false" final="false" start="25" end="64">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Block/Adminhtml/History/View" file="Detail.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Block/Adminhtml/History/View/Detail.php" size="1935" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="d2d97b2c324cf1ec9ba60b542001e89f71363b89" relative="app/code/community/FireGento/AdminMonitoring/Test/Block/Adminhtml/History/View/Detail.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Block_Adminhtml_History_View_Detail"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case_Controller" namespace="" name="EcomDev_PHPUnit_Test_Case_Controller"/>
+  <member name="_block" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Block_Adminhtml_History_View_Detail" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_View_Detail"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="44" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="tearDown" start="49" end="52" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Tear down test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="57" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+</class>

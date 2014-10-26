@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Clean" namespace="" name="FireGento_AdminMonitoring_Model_Clean" abstract="false" final="false" start="28" end="84">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="Clean.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Clean.php" size="2741" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="51b448875e3f2677b964a38625bd22d6fef28448"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Clean" namespace="" name="FireGento_AdminMonitoring_Model_Clean" abstract="false" final="false" start="28" end="84">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="Clean.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Clean.php" size="2741" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="8b343adaf57f9764acd5f08c789bb0c7432de682" relative="app/code/community/FireGento/AdminMonitoring/Model/Clean.php"/>
   <docblock>
     <description compact="Cleans the history after a configurable amount of time."/>
     <category value="FireGento"/>

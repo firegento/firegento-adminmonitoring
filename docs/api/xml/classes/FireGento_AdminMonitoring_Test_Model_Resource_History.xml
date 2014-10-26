@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_Resource_History" namespace="" name="FireGento_AdminMonitoring_Test_Model_Resource_History" abstract="false" final="false" start="25" end="51">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Resource" file="History.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Resource/History.php" size="1498" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="d8c8a6be672929144f1be39586c7772f959a2294" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/Resource/History.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_Resource_History"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_Resource_History" namespace="" name="FireGento_AdminMonitoring_Model_Resource_History"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+</class>

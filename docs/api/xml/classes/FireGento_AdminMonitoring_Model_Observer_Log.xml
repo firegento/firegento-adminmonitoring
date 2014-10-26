@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Log" abstract="false" final="false" start="28" end="118">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer" file="Log.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Log.php" size="3373" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="2e86a4179307ef533b1f6651d200c9d2380e930e"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Log" abstract="false" final="false" start="28" end="118">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer" file="Log.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Log.php" size="3373" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="ec272b6ed93a900a9b3b9ea4a2269ab42a6414df" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Log.php"/>
   <docblock>
     <description compact="Logging model"/>
     <category value="FireGento"/>
@@ -50,6 +50,7 @@
       <return description="IPv4|long" type="string"/>
     </docblock>
   </method>
+  <extender full="FireGento_AdminMonitoring_Model_Observer_Login" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Login"/>
   <extender full="FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update"/>
   <extender full="FireGento_AdminMonitoring_Model_Observer_Product_Import" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Product_Import"/>
 </class>

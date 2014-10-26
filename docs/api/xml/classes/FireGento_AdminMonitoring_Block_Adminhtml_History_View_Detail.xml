@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Block_Adminhtml_History_View_Detail" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_View_Detail" abstract="false" final="false" start="29" end="224">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View" file="Detail.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View/Detail.php" size="6098" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="936d65127035cd3ad4858f081284b0c353d413b2" relative="app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View/Detail.php"/>
+  <docblock>
+    <description compact="Block for showing information on the history detail page"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="Mage_Adminhtml_Block_Template" namespace="" name="Mage_Adminhtml_Block_Template"/>
+  <method name="getHistory" start="36" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the history model"/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getMonitoringHelper" start="46" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the adminmonitoring helper"/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Helper_Data" namespace="" name="FireGento_AdminMonitoring_Helper_Data"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getAdminUser" start="56" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the admin user model"/>
+      <return type="object">
+        <type full="Mage_Admin_Model_User|bool" namespace="" name="Mage_Admin_Model_User|bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getAdminUserName" start="71" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the admin user name"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getObjectLink" start="85" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the link to the object"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getMessage" start="98" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the history message"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getNewContent" start="112" end="139" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Show the new content after the changes."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getOldContent" start="146" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Show the old content before the changes."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="decodeContent" start="173" end="178" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Decode the given content string."/>
+      <param description="Content to decode" type="string" variable="$content"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="entities" start="186" end="189" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Convert special characters to HTML entities"/>
+      <param description="Input string" type="string" variable="$string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatCellContent" start="198" end="205" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Format the cell content"/>
+      <param description="Key" type="string" variable="$key"/>
+      <param description="Value" type="object" variable="$value">
+        <type full="array|string" namespace="" name="array|string"/>
+      </param>
+      <return description="Formatted string" type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="wrapColor" start="214" end="223" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Wrap the given string in a box with a given border color."/>
+      <param description="String to format" type="string" variable="$string"/>
+      <param description="Border color" type="string" variable="$color"/>
+      <return description="Formatted string" type="string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="color" byreference="false" type="{unknown}"/>
+  </method>
+</class>

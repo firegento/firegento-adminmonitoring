@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Config" namespace="" name="FireGento_AdminMonitoring_Model_Config" abstract="false" final="false" start="25" end="195">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Config.php" size="4963" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="a985136f365354a324b6431cd2b76d94e7c759cb" relative="app/code/community/FireGento/AdminMonitoring/Model/Config.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Model_Config"/>
+  </docblock>
+  <extends full="Varien_Simplexml_Config" namespace="" name="Varien_Simplexml_Config"/>
+  <constant name="CACHE_ID" value="'firegento_adminmonitoring'">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <constant name="CACHE_TAG" value="'CACHE'">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <constructor name="__construct" start="42" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class Constructor"/>
+      <param description="Source Data" type="object" variable="$sourceData">
+        <type full="string|Varien_Simplexml_Element" namespace="" name="string|Varien_Simplexml_Element"/>
+      </param>
+    </docblock>
+    <parameter name="sourceData" byreference="false" type="{unknown}" default="null"/>
+  </constructor>
+  <method name="_construct" start="56" end="73" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Init the admin monitoring configuration"/>
+      <return type="object">
+        <type full="Mage_Api_Model_Config" namespace="" name="Mage_Api_Model_Config"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Load all MDI adapters from the configuration files" line="64"/>
+    </inline>
+  </method>
+  <method name="getObjectTypeExcludes" start="80" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve all object type excludes"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getGlobalAdminRouteExcludes" start="95" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve global admin route excludes (routes with no object types as children)"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getPartialAdminRouteExcludes" start="117" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve partial admin route excludes (routes with object types as children)"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getFieldExcludes" start="140" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve all field excludes"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getCache" start="155" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve cache model"/>
+      <return type="object">
+        <type full="Varien_Simplexml_Config_Cache_Abstract|Zend_Cache_Core" namespace="" name="Varien_Simplexml_Config_Cache_Abstract|Zend_Cache_Core"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_loadCache" start="166" end="169" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Load data from the cache"/>
+      <param description="Cache ID" type="string" variable="$id"/>
+      <return type="object">
+        <type full="bool|mixed" namespace="" name="bool|mixed"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_saveCache" start="180" end="183" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Save data in the cache"/>
+      <param description="Cache Data" type="string" variable="$data"/>
+      <param description="Cache ID" type="string" variable="$id"/>
+      <param description="Cache Tags" type="array" variable="$tags"/>
+      <param description="Cache Lifetime" type="object" variable="$lifetime">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="bool|Mage_Core_Model_App" namespace="" name="bool|Mage_Core_Model_App"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="tags" byreference="false" type="array"/>
+    <parameter name="lifetime" byreference="false" type="{unknown}" default="false"/>
+  </method>
+  <method name="_removeCache" start="191" end="194" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove date from the cache"/>
+      <param description="Cache ID" type="string" variable="$id"/>
+      <return type="object">
+        <type full="bool|Mage_Core_Model_App" namespace="" name="bool|Mage_Core_Model_App"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

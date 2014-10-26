@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Adminhtml_HistoryController" namespace="" name="FireGento_AdminMonitoring_Adminhtml_HistoryController" abstract="false" final="false" start="28" end="79">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml" file="HistoryController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml/HistoryController.php" size="2511" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="cdc7137014c487fe2df602d008367f529a452a1d"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Adminhtml_HistoryController" namespace="" name="FireGento_AdminMonitoring_Adminhtml_HistoryController" abstract="false" final="false" start="29" end="120">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml" file="HistoryController.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml/HistoryController.php" size="3647" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="36ec987ce6b131353b1e2e7281b83f528f51afc4" relative="app/code/community/FireGento/AdminMonitoring/controllers/Adminhtml/HistoryController.php"/>
   <docblock>
     <description compact="History controller"/>
     <category value="FireGento"/>
@@ -8,7 +8,7 @@
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
   <extends full="Mage_Adminhtml_Controller_Action" namespace="" name="Mage_Adminhtml_Controller_Action"/>
-  <method name="_initAction" start="35" end="45" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_initAction" start="36" end="49" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Inits the layout, the active menu tab and the breadcrumbs"/>
       <return type="object">
@@ -16,14 +16,32 @@
       </return>
     </docblock>
   </method>
-  <method name="indexAction" start="50" end="54" abstract="false" final="false" static="false" visibility="public">
+  <method name="indexAction" start="54" end="58" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Shows the history grid"/>
     </docblock>
   </method>
-  <method name="revertAction" start="59" end="78" abstract="false" final="false" static="false" visibility="public">
+  <method name="gridAction" start="63" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reload the adminhtml history grid, for"/>
+    </docblock>
+  </method>
+  <method name="viewAction" start="72" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="View a single history grid"/>
+    </docblock>
+  </method>
+  <method name="revertAction" start="91" end="109" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Reverts a history entry"/>
+    </docblock>
+  </method>
+  <method name="getMonitoringHelper" start="116" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the adminmonitoring helper"/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Helper_Data" namespace="" name="FireGento_AdminMonitoring_Helper_Data"/>
+      </return>
     </docblock>
   </method>
 </class>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_RowUrl_Model_Product" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Product" abstract="false" final="false" start="28" end="64">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Product.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php" size="1918" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="0fb014c4b3c6d573c590a8b4bad750e45351e734"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_RowUrl_Model_Product" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Product" abstract="false" final="false" start="28" end="64">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Product.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php" size="1921" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="2d2dd487f7cbb80fcb4bc09f5c7acff1ef2e39a6" relative="app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php"/>
   <docblock>
     <description compact="RowUrl Implementation for Products"/>
     <category value="FireGento"/>
@@ -8,19 +8,19 @@
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
   <extends full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract"/>
-  <method name="getClassName" start="36" end="39" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getClassName" start="36" end="39" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Retrieve the class name for the current implementation."/>
       <return description="Class Name" type="string"/>
     </docblock>
   </method>
-  <method name="getRoutePath" start="46" end="49" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getRoutePath" start="46" end="49" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Retrieve the route path for the current implementation"/>
       <return description="Route Path" type="string"/>
     </docblock>
   </method>
-  <method name="getRouteParams" start="57" end="63" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_getRouteParams" start="57" end="63" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Retrieve the route params for the current implementation and given model"/>
       <param description="Model" type="object" variable="$model">
@@ -32,20 +32,20 @@
       <type full="\\Mage_Core_Model_Abstract" namespace="\" name="Mage_Core_Model_Abstract"/>
     </parameter>
   </method>
-  <parent full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namepsace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract">
-    <method name="getClassName" start="35" end="35" abstract="true" final="false" static="false" visibility="protected">
+  <parent full="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract">
+    <method name="_getClassName" start="35" end="35" abstract="true" final="false" static="false" visibility="protected">
       <docblock>
         <description compact="Abstract method for retrieving the class name."/>
         <return type="string"/>
       </docblock>
     </method>
-    <method name="getRoutePath" start="42" end="42" abstract="true" final="false" static="false" visibility="protected">
+    <method name="_getRoutePath" start="42" end="42" abstract="true" final="false" static="false" visibility="protected">
       <docblock>
         <description compact="Abstract method for retrieving the route path."/>
         <return type="string"/>
       </docblock>
     </method>
-    <method name="getRouteParams" start="50" end="50" abstract="true" final="false" static="false" visibility="protected">
+    <method name="_getRouteParams" start="50" end="50" abstract="true" final="false" static="false" visibility="protected">
       <docblock>
         <description compact="Abstract method for retrieving the route params."/>
         <param description="Object" type="object" variable="$model">
@@ -68,7 +68,7 @@
         <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
       </parameter>
     </method>
-    <method name="getRowUrl" start="82" end="93" abstract="false" final="false" static="false" visibility="public">
+    <method name="_getRowUrl" start="82" end="93" abstract="false" final="false" static="false" visibility="protected">
       <docblock>
         <description compact="Retrieve the row url with the given parameters."/>
         <param description="History Model" type="object" variable="$history">

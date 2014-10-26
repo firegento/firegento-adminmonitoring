@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_History" namespace="" name="FireGento_AdminMonitoring_Test_Model_History" abstract="false" final="false" start="25" end="131">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model" file="History.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/History.php" size="3306" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="ff25517c71d72c3a5162899702b2509328fdd928" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/History.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_History"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_History" namespace="" name="FireGento_AdminMonitoring_Model_History"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+  <method name="getOriginalModel" start="56" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="getDecodedContentDiff" start="70" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="getDecodedContent" start="83" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="isInsert" start="96" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="isUpdate" start="106" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="isDelete" start="116" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="isLogin" start="126" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+</class>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Resource_History" namespace="" name="FireGento_AdminMonitoring_Model_Resource_History" abstract="false" final="false" start="28" end="39">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource" file="History.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History.php" size="1252" time="2013-10-26T22:41:11+02:00" unixtime="1382820071" sha1="dd2927e4533db116072e825c3440d27d6c662e98"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Resource_History" namespace="" name="FireGento_AdminMonitoring_Model_Resource_History" abstract="false" final="false" start="28" end="39">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource" file="History.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History.php" size="1252" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="e2532c3b49e13b9bbd9828ffe951cf44590301b7" relative="app/code/community/FireGento/AdminMonitoring/Model/Resource/History.php"/>
   <docblock>
     <description compact="History Resource Model"/>
     <category value="FireGento"/>

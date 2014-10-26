@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Login" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Login" abstract="false" final="false" start="29" end="92">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer" file="Login.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Login.php" size="3155" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="b94f36fcfc852434dcac04296aab29575fc5c21d" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Login.php"/>
+  <docblock>
+    <description compact="Logs the successful and failed logins to the admin backend"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="FireGento_AdminMonitoring_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Log"/>
+  <method name="logSuccess" start="35" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$observer">
+        <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+      </param>
+    </docblock>
+    <parameter name="observer" byreference="false" type="object">
+      <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+    </parameter>
+  </method>
+  <method name="logFailure" start="46" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$observer">
+        <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+      </param>
+    </docblock>
+    <parameter name="observer" byreference="false" type="object">
+      <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+    </parameter>
+  </method>
+  <method name="_saveLoginHistory" start="69" end="91" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Save the login history item for the given user"/>
+      <param description="User" type="object" variable="$user">
+        <type full="Mage_Admin_Model_User" namespace="" name="Mage_Admin_Model_User"/>
+      </param>
+      <param description="Message" type="string" variable="$message"/>
+      <throws type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="user" byreference="false" type="{unknown}"/>
+    <parameter name="failure" byreference="false" type="{unknown}" default="false"/>
+    <parameter name="message" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="Add some error information when login failed" line="84"/>
+    </inline>
+  </method>
+  <parent full="FireGento_AdminMonitoring_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Log">
+    <method name="log" start="35" end="53" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Log the data for the given observer model."/>
+        <param description="Observer Instance" type="object" variable="$observer">
+          <type full="Varien_Event_Observer" namespace="" name="Varien_Event_Observer"/>
+        </param>
+      </docblock>
+      <parameter name="observer" byreference="false" type="object">
+        <type full="\\Varien_Event_Observer" namespace="\" name="Varien_Event_Observer"/>
+      </parameter>
+    </method>
+    <method name="getUserId" start="60" end="69" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the current admin user id"/>
+        <return description="User ID" type="int"/>
+      </docblock>
+    </method>
+    <method name="getUserName" start="76" end="85" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the current admin user name"/>
+        <return description="User Name" type="string"/>
+      </docblock>
+    </method>
+    <method name="getUser" start="92" end="97" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the current admin user"/>
+        <return type="object">
+          <type full="Mage_Admin_Model_User" namespace="" name="Mage_Admin_Model_User"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getUserAgent" start="104" end="107" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the user agent of the current user."/>
+        <return description="User Agent" type="string"/>
+      </docblock>
+    </method>
+    <method name="getRemoteAddr" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve the remote address of the current user."/>
+        <return description="IPv4|long" type="string"/>
+      </docblock>
+    </method>
+  </parent>
+</class>
