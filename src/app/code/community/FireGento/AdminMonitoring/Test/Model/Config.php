@@ -25,7 +25,7 @@
 class FireGento_AdminMonitoring_Test_Model_Config extends EcomDev_PHPUnit_Test_Case
 {
     /**
-     * @var FireGento_AdminMonitoring_Model_History
+     * @var FireGento_AdminMonitoring_Model_Config
      */
     protected $_model;
 
@@ -47,5 +47,48 @@ class FireGento_AdminMonitoring_Test_Model_Config extends EcomDev_PHPUnit_Test_C
             'FireGento_AdminMonitoring_Model_config',
             $this->_model
         );
+    }
+
+    /**
+     * @test
+     */
+    public function getObjectTypeExcludes()
+    {
+        $objectTypeExcludes = $this->_model->getObjectTypeExcludes();
+        $this->assertGreaterThan(0, $objectTypeExcludes);
+        $this->assertContains('FireGento_AdminMonitoring_Model_History', $objectTypeExcludes);
+    }
+
+    /**
+     * @test
+     */
+    public function getGlobalAdminRouteExcludes()
+    {
+        $globalAdminRouteExcludes = $this->_model->getGlobalAdminRouteExcludes();
+        $this->assertGreaterThan(0, $globalAdminRouteExcludes);
+        $this->assertContains('admin_sales_order_create_loadBlock', $globalAdminRouteExcludes);
+        $this->assertNotContains('admin_promo_catalog_save', $globalAdminRouteExcludes);
+    }
+
+    /**
+     * @test
+     */
+    public function getPartialAdminRouteExcludes()
+    {
+        $partialAdminRouteExcludes = $this->_model->getPartialAdminRouteExcludes();
+        $this->assertGreaterThan(0, $partialAdminRouteExcludes);
+        $this->assertArrayHasKey('admin_promo_catalog_save', $partialAdminRouteExcludes);
+        $this->assertArrayNotHasKey('admin_sales_order_create_loadBlock', $partialAdminRouteExcludes);
+    }
+
+    /**
+     * @test
+     */
+    public function getFieldExcludes()
+    {
+        $fieldExcludes = $this->_model->getFieldExcludes();
+        $this->assertGreaterThan(0, $fieldExcludes);
+        $this->assertContains('created_at', $fieldExcludes);
+        $this->assertContains('updated_at', $fieldExcludes);
     }
 }

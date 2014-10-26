@@ -36,13 +36,8 @@ class FireGento_AdminMonitoring_Test_Model_History_Diff extends EcomDev_PHPUnit_
     {
         parent::setUp();
 
-        $modelMock = $this->getModelMock('cms/page', array());
-        $this->replaceByMock('model', 'cms/page', $modelMock);
-
-        $dataMock = $this->getModelMock('firegento_adminmonitoring/history_data', array(), false, array($modelMock));
-        $this->replaceByMock('model', 'firegento_adminmonitoring/history_data', $dataMock);
-
-        $this->_model = Mage::getModel('firegento_adminmonitoring/history_diff', $dataMock);
+        $dataModel = Mage::getModel('firegento_adminmonitoring/history_data', Mage::getModel('cms/page'));
+        $this->_model = Mage::getModel('firegento_adminmonitoring/history_diff', $dataModel);
     }
 
     /**
@@ -54,5 +49,41 @@ class FireGento_AdminMonitoring_Test_Model_History_Diff extends EcomDev_PHPUnit_
             'FireGento_AdminMonitoring_Model_History_Diff',
             $this->_model
         );
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDiffCmsPage
+     */
+    public function hasChanged()
+    {
+        $model = $this->_getModel();
+        $this->assertTrue($model->hasChanged());
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDiffCmsPage
+     */
+    public function getSerializedDiff()
+    {
+        $model = $this->_getModel();
+        $this->assertEquals('{"title":"Foo Baz","is_active":0}', $model->getSerializedDiff());
+    }
+
+    /**
+     * Retrieve the changed model
+     *
+     * @return FireGento_AdminMonitoring_Model_History_Diff
+     */
+    protected function _getModel()
+    {
+        $page = Mage::getModel('cms/page')->load(99);
+        $page->setOrigData('title', 'Foo Baz');
+        $page->setOrigData('is_active', 0);
+
+        $dataModel = Mage::getModel('firegento_adminmonitoring/history_data', $page);
+
+        return Mage::getModel('firegento_adminmonitoring/history_diff', $dataModel);
     }
 }

@@ -22,7 +22,7 @@
 /**
  * Class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Customer
  */
-class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Customer extends EcomDev_PHPUnit_Test_Case
+class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Customer extends EcomDev_PHPUnit_Test_Case_Controller
 {
     /**
      * @var FireGento_AdminMonitoring_Model_RowUrl_Model_Customer
@@ -51,5 +51,28 @@ class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Customer extends EcomDev
             'FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract',
             $this->_model
         );
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function setRowUrl()
+    {
+        $history = Mage::getModel('firegento_adminmonitoring/history')->load(6);
+
+        $transport = new Varien_Object();
+
+        $observer = new Varien_Event_Observer();
+        $event = new Varien_Event();
+        $event->setData('history', $history);
+        $event->setData('transport', $transport);
+        $observer->setEvent($event);
+        $observer->setData('history', $history);
+        $observer->setData('transport', $transport);
+
+        $this->_model->setRowUrl($observer);
+
+        $this->assertContains('customer/edit/id/1/', $transport->getRowUrl());
     }
 }

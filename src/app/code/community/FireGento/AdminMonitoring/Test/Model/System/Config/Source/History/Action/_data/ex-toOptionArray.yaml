@@ -1,0 +1,10 @@
+options:
+  result:
+    - value: 1
+      label: INSERT
+    - value: 2
+      label: UPDATE
+    - value: 3
+      label: DELETE
+    - value: 4
+      label: LOGIN

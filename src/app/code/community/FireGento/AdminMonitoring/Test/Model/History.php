@@ -48,4 +48,84 @@ class FireGento_AdminMonitoring_Test_Model_History extends EcomDev_PHPUnit_Test_
             $this->_model
         );
     }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function getOriginalModel()
+    {
+        $model = $this->_model->load(2);
+        $this->assertInstanceOf(
+            'Mage_Cms_Model_Page',
+            $model->getOriginalModel()
+        );
+        $this->assertEquals(1, $model->getOriginalModel()->getId());
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function getDecodedContentDiff()
+    {
+        $model = $this->_model->load(2);
+        $this->assertEquals(
+            array('content_heading' => 'foo baz'),
+            $model->getDecodedContentDiff()
+        );
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function getDecodedContent()
+    {
+        $model = $this->_model->load(2);
+        $this->assertEquals(
+            array('content_heading' => 'foo bar'),
+            $model->getDecodedContent()
+        );
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function isInsert()
+    {
+        $model = $this->_model->load(1);
+        $this->assertTrue($model->isInsert());
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function isUpdate()
+    {
+        $model = $this->_model->load(2);
+        $this->assertTrue($model->isUpdate());
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function isDelete()
+    {
+        $model = $this->_model->load(3);
+        $this->assertTrue($model->isDelete());
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function isLogin()
+    {
+        $model = $this->_model->load(4);
+        $this->assertTrue($model->isLogin());
+    }
 }

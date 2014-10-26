@@ -52,4 +52,28 @@ class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Status e
             $this->_model
         );
     }
+
+    /**
+     * @test
+     * @loadExpectations
+     */
+    public function toOptionArray()
+    {
+        $this->assertEquals(
+            $this->expected('options')->getResult(),
+            $this->_model->toOptionArray()
+        );
+    }
+
+    /**
+     * @test
+     * @loadExpectations
+     */
+    public function toOptionHash()
+    {
+        $this->assertEquals(
+            $this->expected('options')->getResult(),
+            $this->_model->toOptionHash()
+        );
+    }
 }

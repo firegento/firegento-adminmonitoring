@@ -20,12 +20,12 @@
  */
 
 /**
- * Class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Action
+ * Class FireGento_AdminMonitoring_Test_Model_Resource_History_Collection
  */
-class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Action extends EcomDev_PHPUnit_Test_Case
+class FireGento_AdminMonitoring_Test_Model_Resource_History_Collection extends EcomDev_PHPUnit_Test_Case
 {
     /**
-     * @var FireGento_AdminMonitoring_Model_System_Config_Source_History_Action
+     * @var FireGento_AdminMonitoring_Model_Resource_History_Collection
      */
     protected $_model;
 
@@ -35,7 +35,7 @@ class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Action e
     protected function setUp()
     {
         parent::setUp();
-        $this->_model = Mage::getModel('firegento_adminmonitoring/system_config_source_history_action');
+        $this->_model = Mage::getResourceModel('firegento_adminmonitoring/history_collection');
     }
 
     /**
@@ -44,36 +44,8 @@ class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Action e
     public function testInstance()
     {
         $this->assertInstanceOf(
-            'FireGento_AdminMonitoring_Model_System_Config_Source_History_Action',
+            'FireGento_AdminMonitoring_Model_Resource_History_Collection',
             $this->_model
-        );
-        $this->assertInstanceOf(
-            'FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstract',
-            $this->_model
-        );
-    }
-
-    /**
-     * @test
-     * @loadExpectations
-     */
-    public function toOptionArray()
-    {
-        $this->assertEquals(
-            $this->expected('options')->getResult(),
-            $this->_model->toOptionArray()
-        );
-    }
-
-    /**
-     * @test
-     * @loadExpectations
-     */
-    public function toOptionHash()
-    {
-        $this->assertEquals(
-            $this->expected('options')->getResult(),
-            $this->_model->toOptionHash()
         );
     }
 }

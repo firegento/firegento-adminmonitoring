@@ -1,0 +1,10 @@
+tables:
+  cms/page:
+    - page_id: 99
+      title: Foo Bar
+      identifier: foobar
+      content_heading: Foo Bar
+      content: Lorem ipsum dolor sit amet.
+      is_active: 1
+      creation_time: 2014-10-01 13:00:00
+      update_time: 2014-10-01 13:00:00

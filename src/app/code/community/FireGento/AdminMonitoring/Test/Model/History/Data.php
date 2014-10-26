@@ -35,11 +35,7 @@ class FireGento_AdminMonitoring_Test_Model_History_Data extends EcomDev_PHPUnit_
     protected function setUp()
     {
         parent::setUp();
-
-        $modelMock = $this->getModelMock('cms/page', array());
-        $this->replaceByMock('model', 'cms/page', $modelMock);
-
-        $this->_model = Mage::getModel('firegento_adminmonitoring/history_data', $modelMock);
+        $this->_model = Mage::getModel('firegento_adminmonitoring/history_data', Mage::getModel('cms/page'));
     }
 
     /**
@@ -51,5 +47,74 @@ class FireGento_AdminMonitoring_Test_Model_History_Data extends EcomDev_PHPUnit_
             'FireGento_AdminMonitoring_Model_History_Data',
             $this->_model
         );
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDataCmsPage
+     */
+    public function getSerializedContent()
+    {
+        $model = $this->_getModel();
+        $serializedContent = $model->getSerializedContent();
+        $this->assertContains('"title":"Foo Baz"', $serializedContent);
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDataCmsPage
+     */
+    public function getContent()
+    {
+        $model = $this->_getModel();
+        $content = $model->getContent();
+        $this->assertGreaterThan(0, count($content));
+        $this->assertTrue(isset($content['title']));
+        $this->assertEquals('Foo Baz', $content['title']);
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDataCmsPage
+     */
+    public function getOrigContent()
+    {
+        $model = $this->_getModel();
+        $origContent = $model->getOrigContent();
+        $this->assertGreaterThan(0, count($origContent));
+        $this->assertTrue(isset($origContent['title']));
+        $this->assertEquals('Foo Baz', $origContent['title']);
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDataCmsPage
+     */
+    public function getObjectType()
+    {
+        $model = $this->_getModel();
+        $this->assertEquals('Mage_Cms_Model_Page', $model->getObjectType());
+    }
+
+    /**
+     * @test
+     * @loadFixture historyDataCmsPage
+     */
+    public function getObjectId()
+    {
+        $model = $this->_getModel();
+        $this->assertEquals(99, $model->getObjectId());
+    }
+
+    /**
+     * Retrieve the changed model
+     *
+     * @return FireGento_AdminMonitoring_Model_History_Data
+     */
+    protected function _getModel()
+    {
+        $page = Mage::getModel('cms/page')->load(99);
+
+        return Mage::getModel('firegento_adminmonitoring/history_data', $page);
     }
 }

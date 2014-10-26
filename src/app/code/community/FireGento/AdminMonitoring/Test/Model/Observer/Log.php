@@ -22,7 +22,7 @@
 /**
  * Class FireGento_AdminMonitoring_Test_Model_Observer_Log
  */
-class FireGento_AdminMonitoring_Test_Model_Observer_Log extends EcomDev_PHPUnit_Test_Case
+class FireGento_AdminMonitoring_Test_Model_Observer_Log extends EcomDev_PHPUnit_Test_Case_Controller
 {
     /**
      * @var FireGento_AdminMonitoring_Model_Observer_Log
@@ -47,5 +47,66 @@ class FireGento_AdminMonitoring_Test_Model_Observer_Log extends EcomDev_PHPUnit_
             'FireGento_AdminMonitoring_Model_Observer_Log',
             $this->_model
         );
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function getUserId()
+    {
+        $this->_mockAdminSession();
+        $this->assertEquals(1, $this->_model->getUserId());
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function getUserName()
+    {
+        $this->_mockAdminSession();
+        $this->assertEquals('admin', $this->_model->getUserName());
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     */
+    public function getUser()
+    {
+        $this->_mockAdminSession();
+        $this->assertInstanceOf(
+            'Mage_Admin_Model_User',
+            $this->_model->getUser()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getRemoteAddr()
+    {
+        $helperMock = $this->getHelperMock('core/http', array('getRemoteAddr'));
+        $helperMock->expects($this->any())
+            ->method('getRemoteAddr')
+            ->will($this->returnValue('8.8.8.8'));
+        $this->replaceByMock('helper', 'core/http', $helperMock);
+
+        $this->assertEquals('8.8.8.8', $this->_model->getRemoteAddr());
+    }
+
+    /**
+     * Mock an admin session with returning the same admin user
+     */
+    protected function _mockAdminSession()
+    {
+        $adminUser = Mage::getModel('admin/user')->load(1);
+
+        $sessionMock = $this->getModelMock('admin/session', array('getUser'));
+        $sessionMock->expects($this->any())
+            ->method('getUser')
+            ->will($this->returnValue($adminUser));
+        $this->replaceByMock('singleton', 'admin/session', $sessionMock);
     }
 }
