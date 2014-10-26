@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" abstract="true" final="false" start="28" end="128">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php" size="3917" time="2013-10-27T13:18:28+01:00" unixtime="1382876308" sha1="a65042a533d3dd4a9a2d1aebdc7487f6e61c5c58"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" abstract="true" final="false" start="28" end="153">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php" size="4791" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="c4e51756e1cf6df380a79a16d51074e098bf85b4" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php"/>
   <docblock>
     <description compact="Abstract observer class; provides some common functions for subclasses"/>
     <category value="FireGento"/>
     <package value="FireGento_AdminMonitoring"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
-  <member name="_savedModel" type="{unknown}" visibility="protected">
+  <member name="_savedModel" type="{unknown}" visibility="protected" line="33">
     <docblock>
-      <description compact=""/>
+      <description/>
       <var type="object">
         <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
       </var>
     </docblock>
   </member>
-  <member name="_diffModel" type="{unknown}" visibility="protected">
+  <member name="_diffModel" type="{unknown}" visibility="protected" line="38">
     <docblock>
-      <description compact=""/>
+      <description/>
       <var type="object">
         <type full="FireGento_AdminMonitoring_Model_History_Diff" namespace="" name="FireGento_AdminMonitoring_Model_History_Diff"/>
       </var>
     </docblock>
   </member>
-  <member name="_dataModel" type="{unknown}" visibility="protected">
+  <member name="_dataModel" type="{unknown}" visibility="protected" line="43">
     <docblock>
-      <description compact=""/>
+      <description/>
       <var type="object">
         <type full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data"/>
       </var>
@@ -72,11 +72,24 @@
       <description compact="Dispatch event for creating a history entry"/>
     </docblock>
   </method>
-  <method name="isExcludedClass" start="114" end="127" abstract="false" final="false" static="false" visibility="private">
+  <method name="isExcludedClass" start="114" end="144" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Check if the dispatched model has to be excluded from the logging."/>
       <return description="Result" type="object">
         <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Check if full action name is restricted" line="120"/>
+      <comment value="Fetch all object type excludes" line="126"/>
+      <comment value="Add all object type excludes from the partial admin route excludes" line="130"/>
+    </inline>
+  </method>
+  <method name="getConfig" start="149" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Model_Config" namespace="" name="FireGento_AdminMonitoring_Model_Config"/>
       </return>
     </docblock>
   </method>

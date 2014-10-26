@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Block_Adminhtml_History_View" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_View" abstract="false" final="false" start="29" end="79">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History" file="View.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View.php" size="2742" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="e8551525dc1841c137594d4450912666f04e2c99" relative="app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View.php"/>
+  <docblock>
+    <description compact="Displays the logging history detail page"/>
+    <category value="FireGento"/>
+    <package value="FireGento_AdminMonitoring"/>
+    <author value="FireGento Team &lt;team@firegento.com&gt;"/>
+  </docblock>
+  <extends full="Mage_Adminhtml_Block_Widget_Grid_Container" namespace="" name="Mage_Adminhtml_Block_Widget_Grid_Container"/>
+  <constructor name="__construct" start="35" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor of the grid container"/>
+    </docblock>
+    <inline>
+      <comment value="Add back to history button" line="46"/>
+      <comment value="Add revert button is possible" line="49"/>
+    </inline>
+  </constructor>
+  <method name="_prepareLayout" start="65" end="68" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call not the direct parent but the parent-parent class because we don't want to add an actual grid block here."/>
+      <return type="object">
+        <type full="FireGento_AdminMonitoring_Block_Adminhtml_History_View" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_View"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getBackUrl" start="75" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the back url"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

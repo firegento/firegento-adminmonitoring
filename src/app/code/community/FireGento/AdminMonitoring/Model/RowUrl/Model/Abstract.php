@@ -15,7 +15,7 @@
  * @category  FireGento
  * @package   FireGento_AdminMonitoring
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 /**
@@ -32,14 +32,14 @@ abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
      *
      * @return string
      */
-    abstract protected function getClassName();
+    abstract protected function _getClassName();
 
     /**
      * Abstract method for retrieving the route path.
      *
      * @return string
      */
-    abstract protected function getRoutePath();
+    abstract protected function _getRoutePath();
 
     /**
      * Abstract method for retrieving the route params.
@@ -47,7 +47,7 @@ abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
      * @param  Mage_Core_Model_Abstract $model Object
      * @return array
      */
-    abstract protected function getRouteParams(Mage_Core_Model_Abstract $model);
+    abstract protected function _getRouteParams(Mage_Core_Model_Abstract $model);
 
     /**
      * Sets the row url in the transport object for a cms_page model
@@ -58,11 +58,11 @@ abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
     {
         /* @var $history FireGento_AdminMonitoring_Model_History */
         $history = $observer->getHistory();
-        $rowUrl = $this->getRowUrl(
+        $rowUrl = $this->_getRowUrl(
             $history,
-            $this->getClassName(),
-            $this->getRoutePath(),
-            $this->getRouteParams($history->getOriginalModel())
+            $this->_getClassName(),
+            $this->_getRoutePath(),
+            $this->_getRouteParams($history->getOriginalModel())
         );
 
         if ($rowUrl) {
@@ -79,7 +79,7 @@ abstract class FireGento_AdminMonitoring_Model_RowUrl_Model_Abstract
      * @param  array                                   $routeParams Route Params
      * @return Mage_Adminhtml_Model_Url
      */
-    public function getRowUrl(FireGento_AdminMonitoring_Model_History $history, $className, $routePath, $routeParams)
+    protected function _getRowUrl(FireGento_AdminMonitoring_Model_History $history, $className, $routePath, $routeParams)
     {
         /* @var $history FireGento_AdminMonitoring_Model_History */
         if (!$history->isDelete()) {

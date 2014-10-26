@@ -1,311 +1,182 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>FireGento_AdminMonitoring - FireGento_AdminMonitoring_Model_Observer_Model_Save - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - FireGento_AdminMonitoring_Model_Observer_Model_Save</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">FireGento_AdminMonitoring - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">FireGento_AdminMonitoring_Model_Observer_Model_Save</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#_currentHash">$_currentHash</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#_beforeIds">$_beforeIds</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#_savedModel">$_savedModel</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#_diffModel">$_diffModel</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#_dataModel">$_dataModel</a>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Save.php.xhtml#line28">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>FireGento_AdminMonitoring_Model_Observer_Model_Save</h1>
+        <h4>Observes Model Save</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#getAction">getAction</a>
-          </li>
-          <li>
-            <a href="#getAction">getAction</a>
-          </li>
-          <li>
-            <a href="#getObjectHash">getObjectHash</a>
-          </li>
-          <li>
-            <a href="#hadIdAtBefore">hadIdAtBefore</a>
-          </li>
-          <li>
-            <a href="#hasChanged">hasChanged</a>
-          </li>
-          <li>
-            <a href="#hasChanged">hasChanged</a>
-          </li>
-          <li>
-            <a href="#hasOrigData">hasOrigData</a>
-          </li>
-          <li>
-            <a href="#isUpdate">isUpdate</a>
-          </li>
-          <li>
-            <a href="#modelAfter">modelAfter</a>
-          </li>
-          <li>
-            <a href="#modelAfter">modelAfter</a>
-          </li>
-          <li>
-            <a href="#modelBefore">modelBefore</a>
-          </li>
-          <li>
-            <a href="#setCurrentHash">setCurrentHash</a>
-          </li>
-          <li>
-            <a href="#storeBeforeId">storeBeforeId</a>
-          </li>
-          <li>
-            <a href="#storeByObserver">storeByObserver</a>
-          </li>
+          <li>Author: FireGento Team &lt;team@firegento.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>FireGento_AdminMonitoring_Model_Observer_Model_Save</h2>
-        <div class="file-notice">
-          <p>Observes Model Save</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class FireGento_AdminMonitoring_Model_Observer_Model_Save
+                extends <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract.xhtml">FireGento_AdminMonitoring_Model_Observer_Model_Abstract</a>
+            {<br/><ul class="none"><li>// members</li><li>protected string <a href="#members">$_currentHash</a>;
+                    </li><li>protected array <a href="#members">$_beforeIds</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract">FireGento_AdminMonitoring_Model_Observer_Model_Abstract</span></li><li>protected <span title="Mage_Core_Model_Abstract">Mage_Core_Model_Abstract</span> <a href="#members">$_savedModel</a>;
+                        </li><li>protected <span title="FireGento_AdminMonitoring_Model_History_Diff">FireGento_AdminMonitoring_Model_History_Diff</span> <a href="#members">$_diffModel</a>;
+                        </li><li>protected <span title="FireGento_AdminMonitoring_Model_History_Data">FireGento_AdminMonitoring_Model_History_Data</span> <a href="#members">$_dataModel</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/modelAfter.xhtml">modelAfter</a>()
+                    </li><li>private void <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/setCurrentHash.xhtml">setCurrentHash</a>()
+                    </li><li>private string <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/getObjectHash.xhtml">getObjectHash</a>()
+                    </li><li>protected bool <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/hasChanged.xhtml">hasChanged</a>()
+                    </li><li>private bool <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/isUpdate.xhtml">isUpdate</a>()
+                    </li><li>public void <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/modelBefore.xhtml">modelBefore</a>()
+                    </li><li>private void <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/storeBeforeId.xhtml">storeBeforeId</a>()
+                    </li><li>protected int <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/getAction.xhtml">getAction</a>()
+                    </li><li>private bool <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/hadIdAtBefore.xhtml">hadIdAtBefore</a>()
+                    </li><li>private bool <a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/hasOrigData.xhtml">hasOrigData</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract">FireGento_AdminMonitoring_Model_Observer_Model_Abstract</span></li><li>protected abstract int <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/getAction.xhtml">getAction</a>()
+                        </li><li>public void <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/modelAfter.xhtml">modelAfter</a>()
+                        </li><li>protected bool <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/hasChanged.xhtml">hasChanged</a>()
+                        </li><li>protected void <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/storeByObserver.xhtml">storeByObserver</a>()
+                        </li><li>public FireGento_AdminMonitoring_Model_Config <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/getConfig.xhtml">getConfig</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract.xhtml">FireGento_AdminMonitoring_Model_Observer_Model_Abstract</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>FireGento Team &lt;team@firegento.com&gt;</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="_currentHash"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $_currentHash</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_beforeIds"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $_beforeIds</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="modelAfter"/>
-            <h4><span class="label public">public</span>modelAfter<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handle the model_save_after event.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$observer</code> - Observer Instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="modelAfter"/>
-            <h4><span class="label public">public</span>modelAfter<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handle the model_save_after and model_delete_after events</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$observer</code> - Observer Instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="modelBefore"/>
-            <h4><span class="label public">public</span>modelBefore<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handle the model_save_before event.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$observer</code> - Observer Instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAction"/>
-            <h4><span class="label protected">protected</span>getAction<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve the current monitoring action</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Action ID</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAction"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>getAction<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Abstract method for retrieving the history action.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasChanged"/>
-            <h4><span class="label protected">protected</span>hasChanged<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if data has changed.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Result</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasChanged"/>
-            <h4><span class="label protected">protected</span>hasChanged<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the data has changed.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="storeByObserver"/>
-            <h4><span class="label protected">protected</span>storeByObserver<span style="font-size:90%;">( <span class="param-type"><span title="\\Varien_Event_Observer">Varien_Event_Observer</span></span><strong> $observer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the data has changed and create a history entry if there are changes.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$observer</code> - Observer Instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getObjectHash"/>
-            <h4><span class="label private">private</span>getObjectHash<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $object</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve the object hash for the given model.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$object</code> - Object to hash</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Hashed object</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hadIdAtBefore"/>
-            <h4><span class="label private">private</span>hadIdAtBefore<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the id was there before.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Result</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasOrigData"/>
-            <h4><span class="label private">private</span>hasOrigData<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the saved model has original data.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Result</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isUpdate"/>
-            <h4><span class="label private">private</span>isUpdate<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the current action is an update.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCurrentHash"/>
-            <h4><span class="label private">private</span>setCurrentHash<span style="font-size:90%;">( <span class="param-type"><span title="\\Mage_Core_Model_Abstract">Mage_Core_Model_Abstract</span></span><strong> $model</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the current hash of the given model.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$model</code> - Object</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="storeBeforeId"/>
-            <h4><span class="label private">private</span>storeBeforeId<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Store the before id for the current hash.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - Object ID</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5 - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_beforeIds"><strong>$_beforeIds</strong>
+                —
+                array</li>
+            <li id="_currentHash"><strong>$_currentHash</strong>
+                —
+                string</li>
+            <li id="_dataModel"><strong>$_dataModel</strong>
+                —
+                <a href="#">FireGento_AdminMonitoring_Model_History_Data</a></li>
+            <li id="_diffModel"><strong>$_diffModel</strong>
+                —
+                <a href="#">FireGento_AdminMonitoring_Model_History_Diff</a></li>
+            <li id="_savedModel"><strong>$_savedModel</strong>
+                —
+                <a href="#">Mage_Core_Model_Abstract</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="getObjectHash"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/getObjectHash.xhtml">getObjectHash()</a>
+                — Retrieve the object hash for the given model.</li>
+            <li id="hadIdAtBefore"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/hadIdAtBefore.xhtml">hadIdAtBefore()</a>
+                — Check if the id was there before.</li>
+            <li id="hasOrigData"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/hasOrigData.xhtml">hasOrigData()</a>
+                — Check if the saved model has original data.</li>
+            <li id="isUpdate"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/isUpdate.xhtml">isUpdate()</a>
+                — Check if the current action is an update.</li>
+            <li id="setCurrentHash"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/setCurrentHash.xhtml">setCurrentHash()</a>
+                — Set the current hash of the given model.</li>
+            <li id="storeBeforeId"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/storeBeforeId.xhtml">storeBeforeId()</a>
+                — Store the before id for the current hash.</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="getAction"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/getAction.xhtml">getAction()</a>
+                — Retrieve the current monitoring action</li>
+            <li id="hasChanged"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/hasChanged.xhtml">hasChanged()</a>
+                — Check if data has changed.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="modelAfter"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/modelAfter.xhtml">modelAfter()</a>
+                — Handle the model_save_after event.</li>
+            <li id="modelBefore"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Save" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Save/modelBefore.xhtml">modelBefore()</a>
+                — Handle the model_save_before event.</li>
+          </ul>
+          <h3>Inherited from <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract.xhtml">FireGento_AdminMonitoring_Model_Observer_Model_Abstract</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="getAction"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/getAction.xhtml">getAction()</a>
+                — Abstract method for retrieving the history action.</li>
+            <li id="hasChanged"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/hasChanged.xhtml">hasChanged()</a>
+                — Check if the data has changed.</li>
+            <li id="storeByObserver"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/storeByObserver.xhtml">storeByObserver()</a>
+                — Check if the data has changed and create a history entry if there are changes.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getConfig">
+              <a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/getConfig.xhtml">getConfig()</a>
+            </li>
+            <li id="modelAfter"><a title="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" href="../classes/FireGento_AdminMonitoring_Model_Observer_Model_Abstract/modelAfter.xhtml">modelAfter()</a>
+                — Handle the model_save_after and model_delete_after events</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

@@ -1,4 +1,5 @@
 src/app/code/community/FireGento/AdminMonitoring/                               app/code/community/FireGento/AdminMonitoring/
 src/app/etc/modules/FireGento_AdminMonitoring.xml                               app/etc/modules/FireGento_AdminMonitoring.xml
 src/app/design/adminhtml/default/default/layout/firegento_adminmonitoring.xml   app/design/adminhtml/default/default/layout/firegento_adminmonitoring.xml
+src/app/design/adminhtml/default/default/template/firegento/adminmonitoring/    app/design/adminhtml/default/default/template/firegento/adminmonitoring/
 src/app/locale/de_DE/FireGento_AdminMonitoring.csv                              app/locale/de_DE/FireGento_AdminMonitoring.csv

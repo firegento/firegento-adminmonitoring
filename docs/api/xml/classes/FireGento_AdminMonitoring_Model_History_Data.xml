@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.de/src#" full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data" abstract="false" final="false" start="28" end="117">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History/Data.php" size="3124" time="2013-10-27T13:21:53+01:00" unixtime="1382876513" sha1="80d2a23dc01bc4e73b4aaf76937805360451f6bc"/>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data" abstract="false" final="false" start="28" end="121">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History/Data.php" size="3201" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="00441dc027628937ef5bee71e603a00aa7f60f65" relative="app/code/community/FireGento/AdminMonitoring/Model/History/Data.php"/>
   <docblock>
     <description compact="History Data Model"/>
     <category value="FireGento"/>
     <package value="FireGento_AdminMonitoring"/>
     <author value="FireGento Team &lt;team@firegento.com&gt;"/>
   </docblock>
-  <member name="_savedModel" type="{unknown}" visibility="protected">
+  <member name="_savedModel" type="{unknown}" visibility="protected" line="33">
     <docblock>
-      <description compact=""/>
+      <description/>
       <var type="object">
         <type full="Mage_Core_Model_Abstract" namespace="" name="Mage_Core_Model_Abstract"/>
       </var>
@@ -32,13 +32,17 @@
       <return description="Serialized Content" type="string"/>
     </docblock>
   </method>
-  <method name="getContent" start="60" end="69" abstract="false" final="false" static="false" visibility="public">
+  <method name="getContent" start="60" end="73" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the content of the saved model"/>
       <return description="Content" type="array"/>
     </docblock>
+    <inline>
+      <comment value="have to re-load the model as based on database datatypes the format of values changes" line="62"/>
+      <comment value="Add store id if given" line="66"/>
+    </inline>
   </method>
-  <method name="filterObligatoryFields" start="77" end="85" abstract="false" final="false" static="false" visibility="protected">
+  <method name="_filterObligatoryFields" start="81" end="89" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="Remove the obligatory fields from the data"/>
       <param description="Data" type="array" variable="$data"/>
@@ -46,19 +50,19 @@
     </docblock>
     <parameter name="data" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getOrigContent" start="92" end="96" abstract="false" final="false" static="false" visibility="public">
+  <method name="getOrigContent" start="96" end="100" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the original content of the saved model"/>
       <return description="Data" type="array"/>
     </docblock>
   </method>
-  <method name="getObjectType" start="103" end="106" abstract="false" final="false" static="false" visibility="public">
+  <method name="getObjectType" start="107" end="110" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the object type of the saved model"/>
       <return description="Object Type" type="string"/>
     </docblock>
   </method>
-  <method name="getObjectId" start="113" end="116" abstract="false" final="false" static="false" visibility="public">
+  <method name="getObjectId" start="117" end="120" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Retrieve the object id of the saved model"/>
       <return description="Object ID" type="int"/>

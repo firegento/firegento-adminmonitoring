@@ -14,35 +14,16 @@
  * @category  FireGento
  * @package   FireGento_AdminMonitoring
  * @author    FireGento Team <team@firegento.com>
- * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
 -->
 <config>
     <modules>
         <FireGento_AdminMonitoring>
-            <version>1.0.1</version>
+            <version>1.2.0</version>
         </FireGento_AdminMonitoring>
     </modules>
-    <default>
-        <firegento_adminmonitoring_config>
-            <exclude>
-                <object_types>
-                    <Mage_Index_Model_Event />
-                    <Mage_Admin_Model_User />
-                    <Enterprise_Logging_Model_Event_Changes />
-                    <Enterprise_Logging_Model_Event />
-                    <!-- omit infinite loops -->
-                    <FireGento_AdminMonitoring_Model_History />
-                </object_types>
-                <fields>
-                    <updated_at />
-                    <update_time />
-                    <low_stock_date />
-                </fields>
-            </exclude>
-        </firegento_adminmonitoring_config>
-    </default>
     <global>
         <blocks>
             <firegento_adminmonitoring>
@@ -136,6 +117,14 @@
                         <class>firegento_adminmonitoring/rowUrl_model_page</class>
                         <method>setRowUrl</method>
                     </cms_page>
+                    <sales_order>
+                        <class>firegento_adminmonitoring/rowUrl_model_order</class>
+                        <method>setRowUrl</method>
+                    </sales_order>
+                    <customer_customer>
+                        <class>firegento_adminmonitoring/rowUrl_model_customer</class>
+                        <method>setRowUrl</method>
+                    </customer_customer>
                 </observers>
             </firegento_adminmonitoring_rowurl>
             <firegento_adminmonitoring_log>
@@ -146,6 +135,22 @@
                     </firegento_adminmonitoring>
                 </observers>
             </firegento_adminmonitoring_log>
+            <admin_session_user_login_success>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>firegento_adminmonitoring/observer_login</class>
+                        <method>logSuccess</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </admin_session_user_login_success>
+            <admin_session_user_login_failed>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>firegento_adminmonitoring/observer_login</class>
+                        <method>logFailure</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </admin_session_user_login_failed>
         </events>
         <translate>
             <modules>
@@ -180,6 +185,16 @@
             </firegento_adminmonitoring>
         </jobs>
     </crontab>
+    <default>
+        <admin>
+            <firegento_adminmonitoring>
+                <enable_cleaning>1</enable_cleaning>
+                <interval>30</interval>
+                <product_import_logging>0</product_import_logging>
+                <product_mass_update_logging>0</product_mass_update_logging>
+            </firegento_adminmonitoring>
+        </admin>
+    </default>
     <phpunit>
         <suite>
             <modules>

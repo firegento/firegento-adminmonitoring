@@ -1,0 +1,6 @@
+options:
+  result:
+    1: INSERT
+    2: UPDATE
+    3: DELETE
+    4: LOGIN

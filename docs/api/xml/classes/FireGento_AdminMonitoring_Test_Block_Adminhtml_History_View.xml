@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Block_Adminhtml_History_View" namespace="" name="FireGento_AdminMonitoring_Test_Block_Adminhtml_History_View" abstract="false" final="false" start="25" end="64">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Block/Adminhtml/History" file="View.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Block/Adminhtml/History/View.php" size="1900" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="314ee7788506561aa18f275383db9859772e75ce" relative="app/code/community/FireGento/AdminMonitoring/Test/Block/Adminhtml/History/View.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Block_Adminhtml_History_View"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case_Controller" namespace="" name="EcomDev_PHPUnit_Test_Case_Controller"/>
+  <member name="_block" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Block_Adminhtml_History_View" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_View"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="44" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="tearDown" start="49" end="52" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Tear down test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="57" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+</class>

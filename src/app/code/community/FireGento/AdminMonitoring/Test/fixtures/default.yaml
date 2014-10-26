@@ -1,0 +1,163 @@
+tables:
+  admin/user:
+    - user_id: 1
+      firstname: John
+      lastname: Doe
+      username: admin
+      is_active: 1
+
+  firegento_adminmonitoring/history:
+    - history_id: 1
+      content: '{"content_heading":"foo baz"}'
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:00:00
+      user_agent: USERAGENT
+      action: 1
+      object_type: Mage_Cms_Model_Page
+      object_id: 1
+      content_diff: '[]'
+      status: 1
+
+    - history_id: 2
+      content: '{"content_heading":"foo bar"}'
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:05:00
+      user_agent: USERAGENT
+      action: 2
+      object_type: Mage_Cms_Model_Page
+      object_id: 1
+      content_diff: '{"content_heading":"foo baz"}'
+      status: 1
+
+    - history_id: 3
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:10:00
+      user_agent: USERAGENT
+      action: 3
+      object_type: Mage_Cms_Model_Page
+      object_id: 99
+      status: 1
+
+    - history_id: 4
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:15:00
+      user_agent: USERAGENT
+      action: 4
+      object_type: Mage_Admin_Model_User
+      object_id: 1
+      history_message: 'Invalid User Name or Password.'
+      status: 2
+
+    - history_id: 5
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:20:00
+      user_agent: USERAGENT
+      action: 4
+      object_type: Mage_Admin_Model_User
+      object_id: 1
+      status: 1
+
+    - history_id: 6
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:25:00
+      user_agent: USERAGENT
+      action: 2
+      object_type: Mage_Customer_Model_Customer
+      object_id: 1
+      status: 1
+
+    - history_id: 7
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:30:00
+      user_agent: USERAGENT
+      action: 2
+      object_type: Mage_Catalog_Model_Product
+      object_id: 1
+      status: 1
+
+    - history_id: 8
+      user_id: 1
+      user_name: admin
+      ip: 127.0.0.1
+      created_at: 2014-10-01 12:35:00
+      user_agent: USERAGENT
+      action: 2
+      object_type: Mage_Sales_Model_Order
+      object_id: 1
+      status: 1
+
+  cms/page:
+    - page_id: 1
+      title: Foo Bar
+      identifier: foobar
+      content_heading: Foo Bar
+      content: Lorem ipsum dolor sit amet.
+      is_active: 1
+      creation_time: 2014-10-01 13:00:00
+      update_time: 2014-10-01 13:00:00
+
+  sales/order:
+    - entity_id: 1
+      store_id: 1
+      increment_id: 100000001
+      base_currency_code: EUR
+      state: processing
+      is_virtual: 0
+      base_grand_total: 99.99
+      base_shipping_amount: 0
+      base_subtotal: 99.99
+      grand_total: 99.99
+      subtotal: 99.99
+      customer_email: email@example.org
+      customer_prefix: Herr
+      customer_firstname: Foo
+      customer_lastname: Bar
+      created_at: "2014-10-01 12:35:00"s
+
+eav:
+  customer:
+    - entity_id: 1
+      website_id: 1
+      email: email@example.org
+      firstname: Foo
+      lastname: Bar
+      group_id: 1
+      store_id: 1
+      is_active: 1
+      attribute_set_id: 0
+      prefix: Herr
+      password_hash: 47ec2dd791e31e2ef2076caf64ed9b3d
+      created_at: 2014-01-01 00:00:01
+      updated_at: 2014-01-01 00:00:01
+
+  catalog_product:
+    - entity_id: 1
+      sku: test-product-1
+      name: Test Product 1
+      attribute_set_id: 1
+      type_id: simple
+      tax_class_id: 2
+      price: 99.99
+      visibility: 4
+      status: 1
+      stock:
+        qty: 1000
+        is_in_stock: 1
+      website_ids:
+        - base
+      category_ids:
+        - 2

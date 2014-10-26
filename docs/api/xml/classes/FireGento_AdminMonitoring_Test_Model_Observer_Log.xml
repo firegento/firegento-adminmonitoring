@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Test_Model_Observer_Log" abstract="false" final="false" start="25" end="112">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer" file="Log.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Log.php" size="3139" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="159c4b08db302904b83afc8052f753f51bdf6c4b" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Log.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_Observer_Log"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case_Controller" namespace="" name="EcomDev_PHPUnit_Test_Case_Controller"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_Observer_Log" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Log"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+  <method name="getUserId" start="56" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="getUserName" start="66" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="getUser" start="76" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <loadfixture value="~FireGento_AdminMonitoring/default"/>
+    </docblock>
+  </method>
+  <method name="getRemoteAddr" start="88" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="_mockAdminSession" start="102" end="111" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Mock an admin session with returning the same admin user"/>
+    </docblock>
+  </method>
+</class>

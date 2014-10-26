@@ -1,0 +1,139 @@
+<?php
+/**
+ * This file is part of a FireGento e.V. module.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @category  FireGento
+ * @package   FireGento_AdminMonitoring
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2014 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+/**
+ * @var $this FireGento_AdminMonitoring_Block_Adminhtml_History_View_Detail
+ */
+?>
+<div class="entry-edit">
+    <div id="history_view_detail">
+        <div>
+            <div class="box-left">
+                <div class="entry-edit">
+                    <div class="entry-edit-head">
+                        <h4 class="icon-head head-account"><?php echo $this->__('User Data') ?></h4>
+                    </div>
+                    <div class="fieldset">
+                        <table cellspacing="0" class="form-list">
+                            <tbody>
+                            <tr>
+                                <td class="label"><label><?php echo $this->__('Admin User') ?></label></td>
+                                <td class="value"><strong>
+                                        <?php if ($this->getAdminUser()): ?>
+                                            <a href="<?php echo $this->getUrl('adminhtml/permissions_user/edit', array('user_id' => $this->getAdminUser()->getId())) ?>">
+                                                <?php echo $this->getAdminUserName() ?>
+                                            </a>
+                                        <?php else: ?>
+                                            <?php echo $this->getAdminUserName() ?>
+                                        <?php endif; ?>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label"><label><?php echo $this->__('Date/Time') ?></label></td>
+                                <td class="value">
+                                    <strong><?php echo $this->helper('core')->formatDate($this->getHistory()->getData('created_at'), Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM, true) ?></strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label"><label><?php echo $this->__('Remote Address') ?></label></td>
+                                <td class="value"><strong><?php echo $this->getHistory()->getData('ip') ?></strong></td>
+                            </tr>
+                            <tr>
+                                <td class="label"><label><?php echo $this->__('User Agent') ?></label></td>
+                                <td class="value">
+                                    <strong><?php echo $this->getHistory()->getData('user_agent') ?></strong></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="box-right">
+                <div class="entry-edit-head">
+                    <h4 class="icon-head head-account"><?php echo $this->__('History Data') ?></h4>
+                </div>
+                <div class="fieldset">
+                    <table cellspacing="0" class="form-list">
+                        <tbody>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Status') ?></label></td>
+                            <td class="value"><strong><?php echo $this->getHistory()->getData('status') ?></strong></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Action') ?></label></td>
+                            <td class="value"><strong><?php echo $this->getHistory()->getData('action') ?></strong></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Object Type') ?></label></td>
+                            <td class="value"><strong><?php echo $this->getHistory()->getData('object_type') ?></strong></td>
+                        </tr>
+                        <?php if ($link = $this->getObjectLink()): ?>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Link') ?></label></td>
+                            <td class="value"><strong><?php echo sprintf('<a href="%s">%s</a>', $link, $this->__('Go To Object'))?></strong></td>
+                        </tr>
+                        <?php endif; ?>
+                        <tr>
+                            <td class="label"><label><?php echo $this->__('Message') ?></label></td>
+                            <td class="value"><strong><?php echo $this->getMessage() ?></strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<?php if ($this->getHistory()->getContentDiff()): ?>
+    <div class="entry-edit">
+        <div class="entry-edit">
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Object Changes') ?></h4>
+            </div>
+            <div class="log-details-grid">
+                <div class="grid">
+                    <div class="hor-scroll">
+                        <table cellspacing="0" class="data" id="loggingDetailsGrid_table">
+                            <col width="50%"/>
+                            <col width="50%"/>
+                            <thead>
+                            <tr class="headings">
+                                <th class="no-link"><?php echo $this->__('Old Content') ?></th>
+                                <th class="no-link last"><?php echo $this->__('New Content') ?></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr title="#" class="even">
+                                <td class="first">
+                                    <?php echo $this->getOldContent() ?>
+                                </td>
+                                <td class=" last">
+                                    <?php echo $this->getNewContent() ?>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

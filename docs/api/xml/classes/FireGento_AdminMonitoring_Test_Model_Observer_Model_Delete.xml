@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Model_Observer_Model_Delete" namespace="" name="FireGento_AdminMonitoring_Test_Model_Observer_Model_Delete" abstract="false" final="false" start="25" end="55">
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Model" file="Delete.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Model/Delete.php" size="1665" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="7b0e396acd203b8123202a9c25073892f5da69e5" relative="app/code/community/FireGento/AdminMonitoring/Test/Model/Observer/Model/Delete.php"/>
+  <docblock>
+    <description compact="Class FireGento_AdminMonitoring_Test_Model_Observer_Model_Delete"/>
+  </docblock>
+  <extends full="EcomDev_PHPUnit_Test_Case" namespace="" name="EcomDev_PHPUnit_Test_Case"/>
+  <member name="_model" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="FireGento_AdminMonitoring_Model_Observer_Model_Delete" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Delete"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="35" end="39" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set up test class"/>
+    </docblock>
+  </method>
+  <method name="testInstance" start="44" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test model instance"/>
+    </docblock>
+  </method>
+</class>
