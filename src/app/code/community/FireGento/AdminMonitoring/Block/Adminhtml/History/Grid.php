@@ -127,9 +127,9 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid
             'width'  => 110
         ));
 
-        $this->addColumn('user_agent', array(
-            'header' => $this->getMonitoringHelper()->__('User Agent'),
-            'index'  => 'user_agent',
+        $this->addColumn('history_message', array(
+            'header' => $this->getMonitoringHelper()->__('Message'),
+            'index'  => 'history_message',
         ));
 
         $this->addColumn('object_link', array(
