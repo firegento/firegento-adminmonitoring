@@ -36,10 +36,15 @@
                 <children>
                     <system>
                         <children>
+                            <history>
+                                <title>Admin Monitoring</title>
+                                <sort_order>10</sort_order>
+                            </history>
                             <config>
                                 <children>
                                     <firegento_adminmonitoring translate="title" module="firegento_adminmonitoring">
                                         <title>Firegento AdminMonitoring</title>
+                                        <sort_order>200</sort_order>
                                     </firegento_adminmonitoring>
                                 </children>
                             </config>

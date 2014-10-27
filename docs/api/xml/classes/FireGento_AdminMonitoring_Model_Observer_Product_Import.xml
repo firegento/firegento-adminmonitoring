@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Product_Import" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Product_Import" abstract="false" final="false" start="28" end="74">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product" file="Import.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php" size="2717" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="943cef2eab617d3ead41c2e82221bbc809ecbedf" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product" file="Import.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php" size="2717" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="943cef2eab617d3ead41c2e82221bbc809ecbedf" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php"/>
   <docblock>
     <description compact="Observes the product import"/>
     <category value="FireGento"/>

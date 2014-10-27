@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Test_Config_Config" namespace="" name="FireGento_AdminMonitoring_Test_Config_Config" abstract="false" final="false" start="3" end="146">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Config" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Config/Config.php" size="5150" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="72faece98e8d84945b3c27ec3a17ca028de04c0f" relative="app/code/community/FireGento/AdminMonitoring/Test/Config/Config.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Config" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Test/Config/Config.php" size="5150" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="72faece98e8d84945b3c27ec3a17ca028de04c0f" relative="app/code/community/FireGento/AdminMonitoring/Test/Config/Config.php"/>
   <extends full="EcomDev_PHPUnit_Test_Case_Config" namespace="" name="EcomDev_PHPUnit_Test_Case_Config"/>
   <method name="globalConfig" start="9" end="19" abstract="false" final="false" static="false" visibility="public">
     <docblock>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_RowUrl_Model_Customer" namespace="" name="FireGento_AdminMonitoring_Model_RowUrl_Model_Customer" abstract="false" final="false" start="28" end="63">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Customer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Customer.php" size="1872" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="932fe50828047f018bb9ee2209073e5c1257ffa9" relative="app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Customer.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Customer.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Customer.php" size="1872" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="932fe50828047f018bb9ee2209073e5c1257ffa9" relative="app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Customer.php"/>
   <docblock>
     <description compact="RowUrl Implementation for Customers"/>
     <category value="FireGento"/>

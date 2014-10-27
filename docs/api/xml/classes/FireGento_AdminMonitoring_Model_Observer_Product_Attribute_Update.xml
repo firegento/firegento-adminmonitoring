@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update" abstract="false" final="false" start="28" end="73">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Attribute" file="Update.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" size="2748" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="073b4779882877ee53fe39b490eff5015b4b8b40" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Attribute/Update.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Attribute" file="Update.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Attribute/Update.php" size="2748" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="073b4779882877ee53fe39b490eff5015b4b8b40" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Attribute/Update.php"/>
   <docblock>
     <description compact="Observes the product attribute updates"/>
     <category value="FireGento"/>

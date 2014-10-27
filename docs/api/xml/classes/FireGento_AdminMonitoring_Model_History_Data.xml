@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_History_Data" namespace="" name="FireGento_AdminMonitoring_Model_History_Data" abstract="false" final="false" start="28" end="121">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History/Data.php" size="3201" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="00441dc027628937ef5bee71e603a00aa7f60f65" relative="app/code/community/FireGento/AdminMonitoring/Model/History/Data.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History" file="Data.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/History/Data.php" size="3201" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="00441dc027628937ef5bee71e603a00aa7f60f65" relative="app/code/community/FireGento/AdminMonitoring/Model/History/Data.php"/>
   <docblock>
     <description compact="History Data Model"/>
     <category value="FireGento"/>

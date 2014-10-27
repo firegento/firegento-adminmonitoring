@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring" file="upgrade-1.0.2-1.0.3.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.0.2-1.0.3.php" size="1359" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="ffa88352e4bc1b0bbf9965c9923fc125e6971840" relative="app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.0.2-1.0.3.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring" file="upgrade-1.0.2-1.0.3.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.0.2-1.0.3.php" size="1359" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="ffa88352e4bc1b0bbf9965c9923fc125e6971840" relative="app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.0.2-1.0.3.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
