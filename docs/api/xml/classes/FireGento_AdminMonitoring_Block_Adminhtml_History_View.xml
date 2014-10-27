@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Block_Adminhtml_History_View" namespace="" name="FireGento_AdminMonitoring_Block_Adminhtml_History_View" abstract="false" final="false" start="29" end="79">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History" file="View.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View.php" size="2742" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="e8551525dc1841c137594d4450912666f04e2c99" relative="app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History" file="View.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View.php" size="2742" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="e8551525dc1841c137594d4450912666f04e2c99" relative="app/code/community/FireGento/AdminMonitoring/Block/Adminhtml/History/View.php"/>
   <docblock>
     <description compact="Displays the logging history detail page"/>
     <category value="FireGento"/>

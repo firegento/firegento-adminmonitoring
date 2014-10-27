@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Product.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php" size="1921" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="2d2dd487f7cbb80fcb4bc09f5c7acff1ef2e39a6" relative="app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model" file="Product.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php" size="1921" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="2d2dd487f7cbb80fcb4bc09f5c7acff1ef2e39a6" relative="app/code/community/FireGento/AdminMonitoring/Model/RowUrl/Model/Product.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring" file="upgrade-1.0.1-1.0.2.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.0.1-1.0.2.php" size="1356" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="0137fdbff08f4ce26970556a5ac501be766c2a9a" relative="app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.0.1-1.0.2.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring" file="upgrade-1.2.0-1.2.1.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.2.0-1.2.1.php" size="1072" time="2014-10-26T15:34:48+01:00" unixtime="1414334088" sha1="bb560aafb49b0bdd653829cd3afc522045016540" relative="app/code/community/FireGento/AdminMonitoring/sql/firegento_adminmonitoring/upgrade-1.2.0-1.2.1.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -65,7 +65,7 @@
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="22">
-    <token name="T_DOC_COMMENT"> * Displays the logging history</token>
+    <token name="T_DOC_COMMENT"> * Setup script</token>
   </line>
   <line no="23">
     <token name="T_DOC_COMMENT"> *</token>
@@ -103,74 +103,8 @@
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="32"/>
-  <line no="33">
-    <token name="T_VARIABLE">$installer</token>
-    <token name="T_OBJECT_OPERATOR">-&gt;</token>
-    <token name="T_STRING">getConnection</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_OBJECT_OPERATOR">-&gt;</token>
-    <token name="T_STRING">addColumn</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-  </line>
+  <line no="33"/>
   <line no="34">
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_VARIABLE">$installer</token>
-    <token name="T_OBJECT_OPERATOR">-&gt;</token>
-    <token name="T_STRING">getTable</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'firegento_adminmonitoring/history'</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_COMMA">,</token>
-  </line>
-  <line no="35">
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'history_message'</token>
-    <token name="T_PHPDOX_COMMA">,</token>
-  </line>
-  <line no="36">
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_ARRAY">array</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-  </line>
-  <line no="37">
-    <token name="T_WHITESPACE">         </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'type'</token>
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_DOUBLE_ARROW">=&gt;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">Varien_Db_Ddl_Table</token>
-    <token name="T_DOUBLE_COLON">::</token>
-    <token name="T_STRING">TYPE_TEXT</token>
-    <token name="T_PHPDOX_COMMA">,</token>
-  </line>
-  <line no="38">
-    <token name="T_WHITESPACE">         </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'size'</token>
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_DOUBLE_ARROW">=&gt;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">null</token>
-    <token name="T_PHPDOX_COMMA">,</token>
-  </line>
-  <line no="39">
-    <token name="T_WHITESPACE">         </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'comment'</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_DOUBLE_ARROW">=&gt;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'History Message'</token>
-  </line>
-  <line no="40">
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-  </line>
-  <line no="41">
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-  </line>
-  <line no="42"/>
-  <line no="43">
     <token name="T_VARIABLE">$installer</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">endSetup</token>
@@ -178,5 +112,5 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="44"/>
+  <line no="35"/>
 </source>

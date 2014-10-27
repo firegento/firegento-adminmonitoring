@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Model_Delete" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Delete" abstract="false" final="false" start="28" end="40">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Delete.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php" size="1293" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="6193a1380d33bf066a40d114939af0c174be7b2a" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Delete.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php" size="1293" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="6193a1380d33bf066a40d114939af0c174be7b2a" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Delete.php"/>
   <docblock>
     <description compact="Observes Model Delete"/>
     <category value="FireGento"/>

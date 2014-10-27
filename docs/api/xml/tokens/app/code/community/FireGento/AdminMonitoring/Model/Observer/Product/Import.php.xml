@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product" file="Import.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php" size="2717" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="943cef2eab617d3ead41c2e82221bbc809ecbedf" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product" file="Import.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php" size="2717" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="943cef2eab617d3ead41c2e82221bbc809ecbedf" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Product/Import.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
