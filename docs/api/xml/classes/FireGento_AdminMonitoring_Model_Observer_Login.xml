@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Login" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Login" abstract="false" final="false" start="29" end="92">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer" file="Login.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Login.php" size="3155" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="b94f36fcfc852434dcac04296aab29575fc5c21d" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Login.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer" file="Login.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Login.php" size="3155" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="b94f36fcfc852434dcac04296aab29575fc5c21d" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Login.php"/>
   <docblock>
     <description compact="Logs the successful and failed logins to the admin backend"/>
     <category value="FireGento"/>

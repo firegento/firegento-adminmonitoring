@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" namespace="" name="FireGento_AdminMonitoring_Model_Observer_Model_Abstract" abstract="true" final="false" start="28" end="153">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php" size="4791" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="c4e51756e1cf6df380a79a16d51074e098bf85b4" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model" file="Abstract.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php" size="4791" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="c4e51756e1cf6df380a79a16d51074e098bf85b4" relative="app/code/community/FireGento/AdminMonitoring/Model/Observer/Model/Abstract.php"/>
   <docblock>
     <description compact="Abstract observer class; provides some common functions for subclasses"/>
     <category value="FireGento"/>

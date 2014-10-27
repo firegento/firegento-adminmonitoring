@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="FireGento_AdminMonitoring_Model_Config" namespace="" name="FireGento_AdminMonitoring_Model_Config" abstract="false" final="false" start="25" end="195">
-  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Config.php" size="4963" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="a985136f365354a324b6431cd2b76d94e7c759cb" relative="app/code/community/FireGento/AdminMonitoring/Model/Config.php"/>
+  <file path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model" file="Config.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Config.php" size="4963" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="a985136f365354a324b6431cd2b76d94e7c759cb" relative="app/code/community/FireGento/AdminMonitoring/Model/Config.php"/>
   <docblock>
     <description compact="Class FireGento_AdminMonitoring_Model_Config"/>
   </docblock>

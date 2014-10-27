@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History" file="Collection.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History/Collection.php" size="1289" time="2014-10-26T15:31:53+01:00" unixtime="1414333913" sha1="dcf3765bed822da060b4ee944f8327636a0f955e" relative="app/code/community/FireGento/AdminMonitoring/Model/Resource/History/Collection.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History" file="Collection.php" realpath="/Users/rouven/Sites/firegento/.modman/firegento-adminmonitoring/src/app/code/community/FireGento/AdminMonitoring/Model/Resource/History/Collection.php" size="1289" time="2014-10-26T15:34:44+01:00" unixtime="1414334084" sha1="dcf3765bed822da060b4ee944f8327636a0f955e" relative="app/code/community/FireGento/AdminMonitoring/Model/Resource/History/Collection.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
