@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Observes the product import
  *
@@ -44,9 +45,6 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Import
 
         $productIds = $observer->getEvent()->getAdapter()->getAffectedEntityIds();
 
-        /* @var FireGento_AdminMonitoring_Model_History $history */
-        $history = Mage::getModel('firegento_adminmonitoring/history');
-
         $objectType = get_class(Mage::getModel('catalog/product'));
         $content = json_encode(array('updated_during_import' => ''));
         $userAgent = $this->getUserAgent();
@@ -55,20 +53,22 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Import
         $userName = $this->getUserName();
 
         foreach ($productIds as $productId) {
+            /* @var FireGento_AdminMonitoring_Model_History $history */
+            $history = Mage::getModel('firegento_adminmonitoring/history');
             $history->setData(array(
-                    'object_id' => $productId,
-                    'object_type' => $objectType,
-                    'content' => $content,
-                    'content_diff' => '{}',
-                    'user_agent' => $userAgent,
-                    'ip' => $ip,
-                    'user_id' => $userId,
-                    'user_name' => $userName,
-                    'action' => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
-                    'created_at' => now(),
+                'object_id'    => $productId,
+                'object_type'  => $objectType,
+                'content'      => $content,
+                'content_diff' => '{}',
+                'user_agent'   => $userAgent,
+                'ip'           => $ip,
+                'user_id'      => $userId,
+                'user_name'    => $userName,
+                'action'       => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
+                'created_at'   => now(),
             ));
-
             $history->save();
+            $history->clearInstance();
         }
     }
 }

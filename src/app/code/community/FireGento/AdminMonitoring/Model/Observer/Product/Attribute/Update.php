@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Observes the product attribute updates
  *
@@ -42,9 +43,6 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update
             return;
         }
 
-        /* @var FireGento_AdminMonitoring_Model_History $history */
-        $history = Mage::getModel('firegento_adminmonitoring/history');
-
         $objectType = get_class(Mage::getModel('catalog/product'));
         $content = json_encode($observer->getEvent()->getAttributesData());
         $userAgent = $this->getUserAgent();
@@ -53,17 +51,19 @@ class FireGento_AdminMonitoring_Model_Observer_Product_Attribute_Update
         $userName = $this->getUserName();
 
         foreach ($observer->getEvent()->getProductIds() as $productId) {
+            /* @var FireGento_AdminMonitoring_Model_History $history */
+            $history = Mage::getModel('firegento_adminmonitoring/history');
             $history->setData(array(
-                    'object_id' => $productId,
-                    'object_type' => $objectType,
-                    'content' => $content,
-                    'content_diff' => '{}',
-                    'user_agent' => $userAgent,
-                    'ip' => $ip,
-                    'user_id' => $userId,
-                    'user_name' => $userName,
-                    'action' => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
-                    'created_at' => now(),
+                'object_id'    => $productId,
+                'object_type'  => $objectType,
+                'content'      => $content,
+                'content_diff' => '{}',
+                'user_agent'   => $userAgent,
+                'ip'           => $ip,
+                'user_id'      => $userId,
+                'user_name'    => $userName,
+                'action'       => FireGento_AdminMonitoring_Helper_Data::ACTION_UPDATE,
+                'created_at'   => now(),
             ));
 
             $history->save();

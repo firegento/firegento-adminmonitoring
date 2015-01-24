@@ -167,7 +167,8 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <firegento_adminmonitoring before="Mage_Adminhtml">FireGento_AdminMonitoring_Adminhtml</firegento_adminmonitoring>
+                        <firegento_adminmonitoring before="Mage_Adminhtml">FireGento_AdminMonitoring_Adminhtml
+                        </firegento_adminmonitoring>
                     </modules>
                 </args>
             </adminhtml>
@@ -198,7 +199,7 @@
     <phpunit>
         <suite>
             <modules>
-                <FireGento_AdminMonitoring />
+                <FireGento_AdminMonitoring/>
             </modules>
         </suite>
     </phpunit>

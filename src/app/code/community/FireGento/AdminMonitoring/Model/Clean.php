@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Cleans the history after a configurable amount of time.
  *
@@ -71,7 +72,7 @@ class FireGento_AdminMonitoring_Model_Clean
             ->addFieldToFilter(
                 'created_at',
                 array(
-                    'lt' => new Zend_Db_Expr("DATE_SUB('" . now() . "', INTERVAL " . (int) $interval . " DAY)")
+                    'lt' => new Zend_Db_Expr("DATE_SUB('" . now() . "', INTERVAL " . (int)$interval . " DAY)")
                 )
             );
 

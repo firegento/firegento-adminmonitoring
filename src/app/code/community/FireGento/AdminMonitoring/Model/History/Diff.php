@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * History Diff Model
  *
@@ -86,6 +87,7 @@ class FireGento_AdminMonitoring_Model_History_Diff
     public function getSerializedDiff()
     {
         $dataDiff = $this->getObjectDiff();
+
         return json_encode($dataDiff);
     }
 }

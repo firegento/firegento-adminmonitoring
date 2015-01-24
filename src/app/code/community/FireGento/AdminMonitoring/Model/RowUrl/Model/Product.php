@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * RowUrl Implementation for Products
  *
@@ -57,7 +58,7 @@ class FireGento_AdminMonitoring_Model_RowUrl_Model_Product
     protected function _getRouteParams(Mage_Core_Model_Abstract $model)
     {
         return array(
-            'id' => $model->getId(),
+            'id'    => $model->getId(),
             'store' => $model->getStoreId(),
         );
     }

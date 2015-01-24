@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Abstract observer class; provides some common functions for subclasses
  *
@@ -96,11 +97,11 @@ abstract class FireGento_AdminMonitoring_Model_Observer_Model_Abstract
     private function createHistoryForModelAction()
     {
         $eventData = array(
-             'object_id' => $this->_dataModel->getObjectId(),
-             'object_type' => $this->_dataModel->getObjectType(),
-             'content' => $this->_dataModel->getSerializedContent(),
-             'content_diff' => $this->_diffModel->getSerializedDiff(),
-             'action' => $this->getAction(),
+            'object_id'    => $this->_dataModel->getObjectId(),
+            'object_type'  => $this->_dataModel->getObjectType(),
+            'content'      => $this->_dataModel->getSerializedContent(),
+            'content_diff' => $this->_diffModel->getSerializedDiff(),
+            'action'       => $this->getAction(),
         );
 
         Mage::dispatchEvent('firegento_adminmonitoring_log', $eventData);
