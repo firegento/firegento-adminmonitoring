@@ -37,11 +37,45 @@
 class FireGento_AdminMonitoring_Model_History extends Mage_Core_Model_Abstract
 {
     /**
+     * @var bool
+     */
+    protected $_forcedLogging = false;
+
+    /**
      * Inits the resource model and resource collection model
      */
     protected function _construct()
     {
         $this->_init('firegento_adminmonitoring/history');
+    }
+
+    /**
+     * Processing object before save data
+     *
+     * @return FireGento_AdminMonitoring_Model_History
+     */
+    protected function _beforeSave()
+    {
+        if (Mage::helper('firegento_adminmonitoring')->isAdminUserIdExcluded($this->getData('user_id'))
+            && !$this->_forcedLogging
+        ) {
+            $this->_dataSaveAllowed = false;
+        }
+
+        return parent::_beforeSave();
+    }
+
+    /**
+     * Set the forced logging value
+     *
+     * @param  bool $flag Flag
+     * @return FireGento_AdminMonitoring_Model_History
+     */
+    public function setForcedLogging($flag)
+    {
+        $this->_forcedLogging = $flag;
+
+        return $this;
     }
 
     /**

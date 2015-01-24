@@ -42,13 +42,29 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
     const ACTION_INSERT = 1;
     const ACTION_UPDATE = 2;
     const ACTION_DELETE = 3;
-    const ACTION_LOGIN  = 4;
+    const ACTION_LOGIN = 4;
 
     /**
      * STATUS
      */
     const STATUS_SUCCESS = 1;
     const STATUS_FAILURE = 2;
+
+    /**
+     * Checks if the given admin user id is excluded
+     *
+     * @param  int $userId User ID
+     * @return bool
+     */
+    public function isAdminUserIdExcluded($userId)
+    {
+        $excludedUserIds = explode(',', Mage::getStoreConfig('admin/firegento_adminmonitoring/exclude_admin_users'));
+        if (in_array($userId, $excludedUserIds)) {
+            return true;
+        }
+
+        return false;
+    }
 
     /**
      * Retrieve the attribute type by provided class name
@@ -113,7 +129,7 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
      * @param  string $separator Separator
      * @return string
      */
-    public function getFullActionName($separator='_')
+    public function getFullActionName($separator = '_')
     {
         $request = array(
             Mage::app()->getRequest()->getModuleName(),
