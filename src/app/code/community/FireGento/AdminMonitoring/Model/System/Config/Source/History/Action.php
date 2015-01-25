@@ -32,9 +32,10 @@ class FireGento_AdminMonitoring_Model_System_Config_Source_History_Action
     /**
      * Retrieve the option array
      *
+     * @param  bool $withEmpty Flag if empty value should be added
      * @return array
      */
-    public function toOptionArray()
+    public function toOptionArray($withEmpty = true)
     {
         if (null === $this->_options) {
             $this->_options = array(

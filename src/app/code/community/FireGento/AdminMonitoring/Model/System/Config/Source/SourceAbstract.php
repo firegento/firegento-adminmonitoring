@@ -36,18 +36,20 @@ abstract class FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstra
     /**
      * Retrieve the option array
      *
+     * @param  bool $withEmpty Flag if empty value should be added
      * @return array
      */
-    abstract public function toOptionArray();
+    abstract public function toOptionArray($withEmpty = true);
 
     /**
      * Retrieve the option hash
      *
+     * @param  bool $withEmpty Flag if empty value should be added
      * @return array
      */
-    public function toOptionHash()
+    public function toOptionHash($withEmpty = true)
     {
-        $options = $this->toOptionArray();
+        $options = $this->toOptionArray($withEmpty);
         $optionHash = array();
 
         foreach ($options as $option) {
@@ -55,5 +57,15 @@ abstract class FireGento_AdminMonitoring_Model_System_Config_Source_SourceAbstra
         }
 
         return $optionHash;
+    }
+
+    /**
+     * Retrieve the helper instance
+     *
+     * @return FireGento_AdminMonitoring_Helper_Data
+     */
+    protected function _getHelper()
+    {
+        return Mage::helper('firegento_adminmonitoring');
     }
 }
