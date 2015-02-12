@@ -88,11 +88,14 @@ class FireGento_AdminMonitoring_Test_Model_History_Data extends EcomDev_PHPUnit_
 
     /**
      * @test
-     * @loadFixture historyDataCmsPage
      */
     public function getObjectType()
     {
-        $model = $this->_getModel();
+        $object = new Mage_Cms_Model_Page();
+
+        /** @var FireGento_AdminMonitoring_Model_History_Data $model */
+        $model  = Mage::getModel('firegento_adminmonitoring/history_data', $object);
+
         $this->assertEquals('Mage_Cms_Model_Page', $model->getObjectType());
     }
 
