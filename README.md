@@ -122,7 +122,7 @@ DROP TABLE 'firegento_adminmonitoring_history';
 
 Support
 -------
-If you have any issues with this extension, open an issue on [GitHub](https://github.com/firegento/firegento-customer/issues).
+If you have any issues with this extension, open an issue on [GitHub](https://github.com/firegento/firegento-adminmonitoring/issues).
 
 Contribution
 ------------
