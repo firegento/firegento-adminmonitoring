@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_Observer_Model_Delete
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_Observer_Model_Delete extends EcomDev_PHPUnit_Test_Case
 {

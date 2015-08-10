@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Customer
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Customer extends EcomDev_PHPUnit_Test_Case_Controller
 {

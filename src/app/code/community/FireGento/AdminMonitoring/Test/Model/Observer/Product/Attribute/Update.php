@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_Observer_Product_Attribute_Update
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_Observer_Product_Attribute_Update extends EcomDev_PHPUnit_Test_Case
 {

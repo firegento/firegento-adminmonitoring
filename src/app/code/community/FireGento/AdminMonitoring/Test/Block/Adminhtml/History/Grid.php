@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Block_Adminhtml_History_Grid
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Block_Adminhtml_History_Grid extends EcomDev_PHPUnit_Test_Case
 {

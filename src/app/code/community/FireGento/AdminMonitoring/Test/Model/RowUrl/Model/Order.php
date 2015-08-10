@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Order
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_RowUrl_Model_Order extends EcomDev_PHPUnit_Test_Case_Controller
 {
