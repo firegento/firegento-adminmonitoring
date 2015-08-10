@@ -1,4 +1,3 @@
 options:
   result:
-    '': No admin user
     1: admin

@@ -28,3 +28,6 @@
 "History Data","Verlauf Informationen"
 "Message","Nachricht"
 "Back","Zurück"
+"Exclude admin users","Admin-Benutzer ausschließen"
+"No admin user","Kein Admin-Benutzer"
+"The logging will be disabled for the admin users selected in this config setting.","Das Logging wird für die ausgewählten Benutzer in dieser Einstellung deaktiviert."

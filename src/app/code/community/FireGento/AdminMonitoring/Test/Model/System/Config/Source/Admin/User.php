@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_System_Config_Source_Admin_User
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_System_Config_Source_Admin_User extends EcomDev_PHPUnit_Test_Case
 {
@@ -71,11 +73,37 @@ class FireGento_AdminMonitoring_Test_Model_System_Config_Source_Admin_User exten
      * @loadFixture ~FireGento_AdminMonitoring/default
      * @loadExpectations
      */
+    public function toOptionArrayWithoutEmpty()
+    {
+        $this->assertEquals(
+            $this->expected('options')->getResult(),
+            $this->_model->toOptionArray(false)
+        );
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     * @loadExpectations
+     */
     public function toOptionHash()
     {
         $this->assertEquals(
             $this->expected('options')->getResult(),
             $this->_model->toOptionHash()
+        );
+    }
+
+    /**
+     * @test
+     * @loadFixture ~FireGento_AdminMonitoring/default
+     * @loadExpectations
+     */
+    public function toOptionHashWithoutEmpty()
+    {
+        $this->assertEquals(
+            $this->expected('options')->getResult(),
+            $this->_model->toOptionHash(false)
         );
     }
 }

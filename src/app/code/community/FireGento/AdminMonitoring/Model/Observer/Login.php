@@ -70,6 +70,7 @@ class FireGento_AdminMonitoring_Model_Observer_Login
     {
         /* @var $history FireGento_AdminMonitoring_Model_History */
         $history = Mage::getModel('firegento_adminmonitoring/history');
+        $history->setForcedLogging(true);
         $history->setData(array(
             'object_id'   => $user->getId(),
             'object_type' => get_class($user),

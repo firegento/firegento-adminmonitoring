@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_History
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_History extends EcomDev_PHPUnit_Test_Case
 {

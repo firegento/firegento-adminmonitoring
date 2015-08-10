@@ -32,19 +32,20 @@ class FireGento_AdminMonitoring_Model_System_Config_Source_History_Status
     /**
      * Retrieve the option array
      *
+     * @param  bool $withEmpty Flag if empty value should be added
      * @return array
      */
-    public function toOptionArray()
+    public function toOptionArray($withEmpty = true)
     {
         if (null === $this->_options) {
             $this->_options = array(
                 array(
                     'value' => FireGento_AdminMonitoring_Helper_Data::STATUS_SUCCESS,
-                    'label' => Mage::helper('firegento_adminmonitoring')->__('Success'),
+                    'label' => $this->_getHelper()->__('Success'),
                 ),
                 array(
                     'value' => FireGento_AdminMonitoring_Helper_Data::STATUS_FAILURE,
-                    'label' => Mage::helper('firegento_adminmonitoring')->__('Failure'),
+                    'label' => $this->_getHelper()->__('Failure'),
                 )
             );
         }

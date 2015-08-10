@@ -32,9 +32,10 @@ class FireGento_AdminMonitoring_Model_System_Config_Source_Admin_User
     /**
      * Retrieve the option array
      *
+     * @param  bool $withEmpty Flag if empty value should be added
      * @return array
      */
-    public function toOptionArray()
+    public function toOptionArray($withEmpty = true)
     {
         if (null === $this->_options) {
             $userCollection = Mage::getModel('admin/user')->getCollection();
@@ -44,6 +45,13 @@ class FireGento_AdminMonitoring_Model_System_Config_Source_Admin_User
                     'value' => $user->getData('user_id'),
                     'label' => $user->getData('username'),
                 );
+            }
+
+            if ($withEmpty) {
+                array_unshift($this->_options, array(
+                    'value' => '',
+                    'label' => $this->_getHelper()->__('No admin user')
+                ));
             }
         }
 

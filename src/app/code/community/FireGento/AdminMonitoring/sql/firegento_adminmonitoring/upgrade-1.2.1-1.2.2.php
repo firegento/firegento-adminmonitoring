@@ -18,36 +18,17 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
-
 /**
- * Class FireGento_AdminMonitoring_Test_Model_Resource_History_Collection
+ * Setup script
  *
- * @group FireGento_AdminMonitoring
+ * @category FireGento
+ * @package  FireGento_AdminMonitoring
+ * @author   FireGento Team <team@firegento.com>
  */
-class FireGento_AdminMonitoring_Test_Model_Resource_History_Collection extends EcomDev_PHPUnit_Test_Case
-{
-    /**
-     * @var FireGento_AdminMonitoring_Model_Resource_History_Collection
-     */
-    protected $_model;
 
-    /**
-     * Set up test class
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->_model = Mage::getResourceModel('firegento_adminmonitoring/history_collection');
-    }
+/* @var $installer Mage_Core_Model_Resource_Setup */
+$installer = $this;
+$installer->startSetup();
 
-    /**
-     * Test model instance
-     */
-    public function testInstance()
-    {
-        $this->assertInstanceOf(
-            'FireGento_AdminMonitoring_Model_Resource_History_Collection',
-            $this->_model
-        );
-    }
-}
+
+$installer->endSetup();

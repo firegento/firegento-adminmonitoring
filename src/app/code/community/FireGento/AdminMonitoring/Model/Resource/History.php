@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * History Resource Model
  *
@@ -35,5 +36,4 @@ class FireGento_AdminMonitoring_Model_Resource_History
     {
         $this->_init('firegento_adminmonitoring/history', 'history_id');
     }
-
 }

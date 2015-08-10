@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Logging model
  *
@@ -37,16 +38,16 @@ class FireGento_AdminMonitoring_Model_Observer_Log
         /* @var $history FireGento_AdminMonitoring_Model_History */
         $history = Mage::getModel('firegento_adminmonitoring/history');
         $history->setData(array(
-                 'object_id'    => $observer->getObjectId(),
-                 'object_type'  => $observer->getObjectType(),
-                 'content'      => $observer->getContent(),
-                 'content_diff' => $observer->getContentDiff(),
-                 'user_agent'   => $this->getUserAgent(),
-                 'ip'           => $this->getRemoteAddr(),
-                 'user_id'      => $this->getUserId(),
-                 'user_name'    => $this->getUserName(),
-                 'action'       => $observer->getAction(),
-                 'created_at'   => now(),
+            'object_id'    => $observer->getObjectId(),
+            'object_type'  => $observer->getObjectType(),
+            'content'      => $observer->getContent(),
+            'content_diff' => $observer->getContentDiff(),
+            'user_agent'   => $this->getUserAgent(),
+            'ip'           => $this->getRemoteAddr(),
+            'user_id'      => $this->getUserId(),
+            'user_name'    => $this->getUserName(),
+            'action'       => $observer->getAction(),
+            'created_at'   => now(),
         ));
 
         $history->save();
@@ -93,6 +94,7 @@ class FireGento_AdminMonitoring_Model_Observer_Log
     {
         /* @var $session Mage_Admin_Model_Session */
         $session = Mage::getSingleton('admin/session');
+
         return $session->getUser();
     }
 
@@ -103,7 +105,7 @@ class FireGento_AdminMonitoring_Model_Observer_Log
      */
     public function getUserAgent()
     {
-        return (isset($_SERVER['HTTP_USER_AGENT']) ? (string) $_SERVER['HTTP_USER_AGENT'] : '');
+        return (isset($_SERVER['HTTP_USER_AGENT']) ? (string)$_SERVER['HTTP_USER_AGENT'] : '');
     }
 
     /**

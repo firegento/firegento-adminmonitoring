@@ -21,7 +21,7 @@
 <config>
     <modules>
         <FireGento_AdminMonitoring>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </FireGento_AdminMonitoring>
     </modules>
     <global>
@@ -91,6 +91,14 @@
                     </firegento_adminmonitoring>
                 </observers>
             </model_delete_after>
+            <category_move>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>firegento_adminmonitoring/observer_category_move</class>
+                        <method>catalogCategoryMove</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </category_move>
             <catalog_product_attribute_update_before>
                 <observers>
                     <firegento_adminmonitoring>
@@ -198,7 +206,7 @@
     <phpunit>
         <suite>
             <modules>
-                <FireGento_AdminMonitoring />
+                <FireGento_AdminMonitoring/>
             </modules>
         </suite>
     </phpunit>

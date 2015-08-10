@@ -18,6 +18,7 @@
  * @copyright 2014 FireGento Team (http://www.firegento.com)
  * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  */
+
 /**
  * Observes Model Save
  *
@@ -150,6 +151,7 @@ class FireGento_AdminMonitoring_Model_Observer_Model_Save
 
         // unset website_ids as this is even on new entities set for catalog_product models
         unset($data['website_ids']);
-        return (bool) $data;
+
+        return (bool)$data;
     }
 }

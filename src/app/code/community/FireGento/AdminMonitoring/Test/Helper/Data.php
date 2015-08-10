@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Helper_Data
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Helper_Data extends EcomDev_PHPUnit_Test_Case
 {

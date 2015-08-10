@@ -113,7 +113,7 @@ class FireGento_AdminMonitoring_Block_Adminhtml_History_Grid
 
         /* @var $adminUsers FireGento_AdminMonitoring_Model_System_Config_Source_Admin_User */
         $adminUsers = Mage::getModel('firegento_adminmonitoring/system_config_source_admin_user');
-        $userOptions = $adminUsers->toOptionHash();
+        $userOptions = $adminUsers->toOptionHash(false);
         $this->addColumn('user_id', array(
             'header'  => $this->getMonitoringHelper()->__('User'),
             'index'   => 'user_id',

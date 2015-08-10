@@ -21,6 +21,8 @@
 
 /**
  * Class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Status
+ *
+ * @group FireGento_AdminMonitoring
  */
 class FireGento_AdminMonitoring_Test_Model_System_Config_Source_History_Status extends EcomDev_PHPUnit_Test_Case
 {
