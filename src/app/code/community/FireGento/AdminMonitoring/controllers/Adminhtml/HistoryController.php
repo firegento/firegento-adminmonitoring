@@ -117,4 +117,15 @@ class FireGento_AdminMonitoring_Adminhtml_HistoryController extends Mage_Adminht
     {
         return Mage::helper('firegento_adminmonitoring');
     }
+    
+   
+    /**
+     * Check is allowed access to action - needed afer security patch SUPEE-6285
+     *
+     * @return bool
+     */
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('system/history');
+    }
 }
