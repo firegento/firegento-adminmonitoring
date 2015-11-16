@@ -36,7 +36,7 @@ class FireGento_AdminMonitoring_Adminhtml_HistoryController extends Mage_Adminht
     protected function _initAction()
     {
         $this->loadLayout();
-        $this->_setActiveMenu('firegento_adminmonitoring/history');
+        $this->_setActiveMenu('system/history');
         $this->_addBreadcrumb(
             $this->getMonitoringHelper()->__('Admin Monitoring'),
             $this->getMonitoringHelper()->__('History')
