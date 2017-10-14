@@ -39,4 +39,4 @@ matrix:
       env: MAGENTO_VERSION="magento-mirror-1.9.0.1"
 
 script:
-  - curl --retry 2 --retry-delay 5 -f -sSL https://raw.githubusercontent.com/AOEpeople/MageTestStand/master/setup.sh | bash
+  - curl --retry 2 --retry-delay 5 -f -sSL https://raw.githubusercontent.com/kkrieger85/MageTestStand/master/setup.sh | bash
