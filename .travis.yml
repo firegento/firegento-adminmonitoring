@@ -14,7 +14,7 @@ env:
   - MAGENTO_VERSION="magento-mirror-1.9.0.1"
   - MAGENTO_VERSION="magento-mirror-1.9.1.1"
   - MAGENTO_VERSION="magento-mirror-1.9.2.4"
-  - MAGENTO_VERSION="magento-mirror-1.9.3.6"
+  - MAGENTO_VERSION="magento-mirror-1.9.3.4"
 
 matrix:
   fast_finish: true
