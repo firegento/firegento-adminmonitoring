@@ -70,6 +70,8 @@ class FireGento_AdminMonitoring_Model_History_Data
         }
         $model->load($this->_savedModel->getId());
 
+        Mage::dispatchEvent('firegento_adminmonitoring_enrich_model_content', ['object' => $model]);
+
         return $this->_filterObligatoryFields($model->getData());
     }
 
@@ -96,9 +98,11 @@ class FireGento_AdminMonitoring_Model_History_Data
      */
     public function getOrigContent()
     {
-        $data = $this->_savedModel->getOrigData();
+        $data = new Varien_Object($this->_savedModel->getOrigData());
 
-        return $this->_filterObligatoryFields($data);
+        Mage::dispatchEvent('firegento_adminmonitoring_enrich_model_orig_content', ['data_object' => $data, 'model_object' => $this->_savedModel]);
+
+        return $this->_filterObligatoryFields($data->getData());
     }
 
     /**
