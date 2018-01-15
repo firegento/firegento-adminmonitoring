@@ -8,6 +8,7 @@
                 <Enterprise_Logging_Model_Event/>
                 <!-- omit infinite loops -->
                 <FireGento_AdminMonitoring_Model_History/>
+                <Mage_Oauth_Model_Nonce/>
             </object_types>
             <fields>
                 <created_at/>
