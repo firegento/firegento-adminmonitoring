@@ -73,11 +73,11 @@
                         <tbody>
                         <tr>
                             <td class="label"><label><?php echo $this->__('Status') ?></label></td>
-                            <td class="value"><strong><?php echo $this->getHistory()->getData('status') ?></strong></td>
+                            <td class="value"><strong><?php echo Mage::helper('firegento_adminmonitoring')->statusIdToName($this->getHistory()->getData('status')) ?></strong></td>
                         </tr>
                         <tr>
                             <td class="label"><label><?php echo $this->__('Action') ?></label></td>
-                            <td class="value"><strong><?php echo $this->getHistory()->getData('action') ?></strong></td>
+                            <td class="value"><strong><?php echo Mage::helper('firegento_adminmonitoring')->actionIdToName($this->getHistory()->getData('action')) ?></strong></td>
                         </tr>
                         <tr>
                             <td class="label"><label><?php echo $this->__('Object Type') ?></label></td>
