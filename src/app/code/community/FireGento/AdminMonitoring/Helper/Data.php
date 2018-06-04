@@ -60,9 +60,9 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
     {
         switch ($id) {
             case self::STATUS_SUCCESS:
-                return "Success";
+                return $this->__("Success");
             case self::STATUS_FAILURE:
-                return "Fail";
+                return $this->__("Fail");
         }
     }
 
@@ -76,13 +76,13 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
     {
         switch ($id) {
             case self::ACTION_INSERT:
-                return "Insert";
+                return $this->__("Insert");
             case self::ACTION_UPDATE:
-                return "Update";
+                return $this->__("Update");
             case self::ACTION_DELETE:
-                return "Delete";
+                return $this->__("Delete");
             case self::ACTION_LOGIN:
-                return "Login";
+                return $this->__("Login");
         }
     }
 
