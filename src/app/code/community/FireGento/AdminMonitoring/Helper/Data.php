@@ -51,6 +51,42 @@ class FireGento_AdminMonitoring_Helper_Data extends Mage_Core_Helper_Abstract
     const STATUS_FAILURE = 2;
 
     /**
+     * Retrieve status name from status id
+     *
+     * @param  int $id Status id
+     * @return string Status name
+     */
+    public function statusIdToName($id)
+    {
+        switch ($id) {
+            case self::STATUS_SUCCESS:
+                return $this->__("Success");
+            case self::STATUS_FAILURE:
+                return $this->__("Fail");
+        }
+    }
+
+    /**
+     * Retrieve action name from action id
+     *
+     * @param  int $id Action id
+     * @return string Action name
+     */
+    public function actionIdToName($id)
+    {
+        switch ($id) {
+            case self::ACTION_INSERT:
+                return $this->__("Insert");
+            case self::ACTION_UPDATE:
+                return $this->__("Update");
+            case self::ACTION_DELETE:
+                return $this->__("Delete");
+            case self::ACTION_LOGIN:
+                return $this->__("Login");
+        }
+    }
+
+    /**
      * Checks if the given admin user id is excluded
      *
      * @param  int $userId User ID

@@ -143,6 +143,22 @@
                     </firegento_adminmonitoring>
                 </observers>
             </firegento_adminmonitoring_log>
+            <firegento_adminmonitoring_enrich_model_content>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>FireGento_AdminMonitoring_Model_Observer_Enrich_Content</class>
+                        <method>enrich</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </firegento_adminmonitoring_enrich_model_content>
+            <firegento_adminmonitoring_enrich_model_orig_content>
+                <observers>
+                    <firegento_adminmonitoring>
+                        <class>FireGento_AdminMonitoring_Model_Observer_Enrich_OrigContent</class>
+                        <method>enrich</method>
+                    </firegento_adminmonitoring>
+                </observers>
+            </firegento_adminmonitoring_enrich_model_orig_content>
             <admin_session_user_login_success>
                 <observers>
                     <firegento_adminmonitoring>

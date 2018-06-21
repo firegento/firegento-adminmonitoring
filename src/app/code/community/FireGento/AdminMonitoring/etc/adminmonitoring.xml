@@ -4,12 +4,11 @@
         <excludes>
             <object_types>
                 <Mage_Index_Model_Event/>
-                <Mage_Admin_Model_User/>
                 <Enterprise_Logging_Model_Event_Changes/>
                 <Enterprise_Logging_Model_Event/>
                 <!-- omit infinite loops -->
-		<FireGento_AdminMonitoring_Model_History/>
-		<Mage_Oauth_Model_Nonce/>
+                <FireGento_AdminMonitoring_Model_History/>
+                <Mage_Oauth_Model_Nonce/>
             </object_types>
             <fields>
                 <created_at/>
