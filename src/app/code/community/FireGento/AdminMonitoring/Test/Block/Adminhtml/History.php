@@ -24,7 +24,7 @@
  *
  * @group FireGento_AdminMonitoring
  */
-class FireGento_AdminMonitoring_Test_Block_Adminhtml_History extends EcomDev_PHPUnit_Test_Case
+class FireGento_AdminMonitoring_Test_Block_Adminhtml_History extends EcomDev_PHPUnit_Test_Case_Controller
 {
     /**
      * @var FireGento_AdminMonitoring_Block_Adminhtml_History
