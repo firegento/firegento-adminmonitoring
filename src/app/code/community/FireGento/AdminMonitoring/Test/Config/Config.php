@@ -32,12 +32,10 @@ class FireGento_AdminMonitoring_Test_Config_Config extends EcomDev_PHPUnit_Test_
      */
     public function globalConfig()
     {
-        $this->assertModuleVersion($this->expected('module')->getVersion());
         $this->assertModuleCodePool($this->expected('module')->getCodePool());
 
         $this->assertSetupResourceDefined();
         $this->assertSetupResourceExists();
-        $this->assertSetupScriptVersions();
 
         $this->assertTableAlias('firegento_adminmonitoring/history', 'firegento_adminmonitoring_history');
     }

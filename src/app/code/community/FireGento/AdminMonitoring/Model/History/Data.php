@@ -61,8 +61,8 @@ class FireGento_AdminMonitoring_Model_History_Data
     public function getContent()
     {
         // have to re-load the model as based on database datatypes the format of values changes
-        $className = get_class($this->_savedModel);
-        $model = new $className;
+        $model = clone $this->_savedModel;
+        $model->setData(array());
 
         // Add store id if given
         if ($storeId = $this->_savedModel->getStoreId()) {
