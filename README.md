@@ -1,23 +1,18 @@
-FireGento_AdminMonitoring
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-=========================
-
+# FireGento_AdminMonitoring
 The admin monitoring allows an shop owner to log almost every activity in the backend.
 
-Facts
------
+## Facts
 - Version: check [config.xml](https://github.com/firegento/firegento-adminmonitoring/blob/master/src/app/code/community/FireGento/AdminMonitoring/etc/config.xml)
 - [Extension on GitHub](https://github.com/firegento/firegento-adminmonitoring/)
 
-Builds
-------
+## Builds
 - Branch: master [![Build Status](https://travis-ci.org/firegento/firegento-adminmonitoring.png?branch=master)](https://travis-ci.org/firegento/firegento-adminmonitoring)
 - Branch: develop [![Build Status](https://travis-ci.org/firegento/firegento-adminmonitoring.png?branch=develop)](https://travis-ci.org/firegento/firegento-adminmonitoring)
 
-Description
------------
+## Description
 The admin monitoring allows an shop owner to log almost every activity in the backend. The goal is to monitor all changes in the backend and show them in a nice view so that
 a shop owner can monitor who changed what, e.g. logged in to the admin account, saved a product, deleted a customer, e.g.
 
@@ -95,25 +90,21 @@ If you want to exclude some more fields, admin routes, object types just create 
 in your custom module and add the necessary values in the same structure like in the default *adminmonitoring.xml* file of this extension.
 
 
-Requirements
-------------
+## Requirements
 - PHP >= 5.3.0 (or even 5.0 as long as [spl](http://www.php.net/manual/en/book.spl.php) is activated)
 - PHP >= 5.5.0: json extension
 
-Compatibility
--------------
+## Compatibility
 - Magento CE >= 1.6
 - Magento EE >= 1.12
 
-Installation Instructions
--------------------------
+## Installation Instructions
 1. Install the extension by copying all the extension files into your document root.
 2. Clear the cache, logout from the admin panel and then login again.
 3. You can now configure the extenion via *System -> Configuration -> Advanced -> Admin -> Admin Monitoring*
 4. You can view all logging entries in *System -> Configuration -> Admin Monitoring*
 
-Uninstallation
---------------
+## Uninstallation
 1. Remove all extension files from your Magento installation
 2. Run the following sql script in your database:
 
@@ -123,12 +114,10 @@ DROP TABLE 'firegento_adminmonitoring_history';
 
 3. Please remove all integration for the admin monitoring in your custom modules.
 
-Support
--------
+## Support
 If you have any issues with this extension, open an issue on [GitHub](https://github.com/firegento/firegento-adminmonitoring/issues).
 
-Contribution
-------------
+## Contribution
 Any contribution is highly appreciated. The best way to contribute code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
 ## Contributors ✨
@@ -163,8 +152,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-Developer
----------
+## Developer
 FireGento Team
 * Website: [http://firegento.com](http://firegento.com)
 * Twitter: [@firegento](https://twitter.com/firegento)
@@ -172,11 +160,9 @@ FireGento Team
 Developers:
 * Please see the [contributor page](https://github.com/firegento/firegento-adminmonitoring/graphs/contributors) on github.
 
-License
--------
+## License
 [GNU General Public License, version 3 (GPLv3)](http://opensource.org/licenses/gpl-3.0)
 
-Copyright
----------
+## Copyright
 (c) 2013-2014 FireGento Team
 
