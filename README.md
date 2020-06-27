@@ -1,6 +1,6 @@
 FireGento_AdminMonitoring
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 =========================
 
@@ -164,6 +164,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://janpapenbrock.de/"><img src="https://avatars1.githubusercontent.com/u/2108728?v=4" width="100px;" alt=""/><br /><sub><b>Jan Papenbrock</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=janpapenbrock" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dh1984"><img src="https://avatars1.githubusercontent.com/u/6348686?v=4" width="100px;" alt=""/><br /><sub><b>Daniel</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=dh1984" title="Code">💻</a></td>
     <td align="center"><a href="https://copex.io/"><img src="https://avatars1.githubusercontent.com/u/584168?v=4" width="100px;" alt=""/><br /><sub><b>Roman Hutterer</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=roman204" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://elgentos.nl/"><img src="https://avatars2.githubusercontent.com/u/431360?v=4" width="100px;" alt=""/><br /><sub><b>Peter Jaap Blaakmeer</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=peterjaap" title="Code">💻</a></td>
   </tr>
 </table>
 
