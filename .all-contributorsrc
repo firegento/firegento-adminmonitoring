@@ -1,0 +1,123 @@
+{
+  "projectName": "firegento-adminmonitoring",
+  "projectOwner": "firegento",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "Schrank",
+      "name": "Fabian Blechschmidt",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/379680?v=4",
+      "profile": "http://www.fabian-blechschmidt.de/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "therouv",
+      "name": "Rouven Alexander Rieker",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/393419?v=4",
+      "profile": "https://rouven.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mryvlin",
+      "name": "Michael Ryvlin",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3071413?v=4",
+      "profile": "https://github.com/mryvlin",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "neoshops",
+      "name": "Carmen",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3316754?v=4",
+      "profile": "http://neoshops.de/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "janpapenbrock",
+      "name": "Jan Papenbrock",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2108728?v=4",
+      "profile": "https://janpapenbrock.de/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dh1984",
+      "name": "Daniel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6348686?v=4",
+      "profile": "https://github.com/dh1984",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "roman204",
+      "name": "Roman Hutterer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/584168?v=4",
+      "profile": "https://copex.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "peterjaap",
+      "name": "Peter Jaap Blaakmeer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/431360?v=4",
+      "profile": "http://elgentos.nl/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "midlan",
+      "name": "Milan Davídek",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4263992?v=4",
+      "profile": "http://milandavidek.cz/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "michael-sauerwald",
+      "name": "michael-sauerwald",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1592971?v=4",
+      "profile": "https://github.com/michael-sauerwald",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dimajanzen",
+      "name": "dimajanzen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/156927?v=4",
+      "profile": "https://github.com/dimajanzen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kkrieger85",
+      "name": "Kevin Krieger",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4435523?v=4",
+      "profile": "https://github.com/kkrieger85",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
