@@ -1,6 +1,6 @@
 FireGento_AdminMonitoring
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 =========================
 
@@ -162,6 +162,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/mryvlin"><img src="https://avatars3.githubusercontent.com/u/3071413?v=4" width="100px;" alt=""/><br /><sub><b>Michael Ryvlin</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=mryvlin" title="Code">💻</a></td>
     <td align="center"><a href="http://neoshops.de/"><img src="https://avatars0.githubusercontent.com/u/3316754?v=4" width="100px;" alt=""/><br /><sub><b>Carmen</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=neoshops" title="Code">💻</a></td>
     <td align="center"><a href="https://janpapenbrock.de/"><img src="https://avatars1.githubusercontent.com/u/2108728?v=4" width="100px;" alt=""/><br /><sub><b>Jan Papenbrock</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=janpapenbrock" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dh1984"><img src="https://avatars1.githubusercontent.com/u/6348686?v=4" width="100px;" alt=""/><br /><sub><b>Daniel</b></sub></a><br /><a href="https://github.com/firegento/firegento-adminmonitoring/commits?author=dh1984" title="Code">💻</a></td>
   </tr>
 </table>
 
